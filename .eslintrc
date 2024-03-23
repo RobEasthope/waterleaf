@@ -2,7 +2,6 @@
   "extends": [
     "@thoughtbot/eslint-config",
     "@thoughtbot/eslint-config/typescript",
-    "prettier",
   ],
   "ignorePatterns": ["node_modules", "build", ".cache"],
   "plugins": ["prettier", "simple-import-sort"],
