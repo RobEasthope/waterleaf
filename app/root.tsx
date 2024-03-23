@@ -78,9 +78,9 @@ export const loader = async ({request}: LoaderFunctionArgs) => {
       stegaEnabled,
     },
     ENV: {
-      VITE_SANITY_PROJECT_ID: import.meta.env.VITE_SANITY_PROJECT_ID!,
-      VITE_SANITY_DATASET: import.meta.env.VITE_SANITY_DATASET!,
-      VITE_SANITY_API_VERSION: import.meta.env.VITE_SANITY_API_VERSION!,
+      VITE_SANITY_PROJECT_ID: import.meta.env.VITE_SANITY_PROJECT_ID,
+      VITE_SANITY_DATASET: import.meta.env.VITE_SANITY_DATASET,
+      VITE_SANITY_API_VERSION: import.meta.env.VITE_SANITY_API_VERSION,
       // URL of the Frontend that will be loaded into Presentation
       VITE_SANITY_FRONTEND_URL: frontendUrl,
       // URL of the Studio to allow requests from Presentation
@@ -110,11 +110,9 @@ export default function App() {
         {sanity.isStudioRoute ? (
           <Outlet />
         ) : (
-          <>
-            <Layout home={loading || !data ? initial.data : data} theme={theme}>
-              <Outlet />
-            </Layout>
-          </>
+          <Layout home={loading || !data ? initial.data : data} theme={theme}>
+            <Outlet />
+          </Layout>
         )}
         <ScrollRestoration />
         <script
