@@ -11,5 +11,5 @@ export function ExitPreview() {
         </button>
       </form>
     </div>
-  )
+  );
 }
