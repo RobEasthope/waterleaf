@@ -1,10 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 
-const {theme} = require('@sanity/demo/tailwind')
+const { theme } = require("@sanity/demo/tailwind");
 
 module.exports = {
-  content: ['./app/**/*.{js,ts,jsx,tsx}'],
-  darkMode: 'class',
+  content: ["./app/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "class",
   theme,
-  plugins: [require('@tailwindcss/typography')],
-}
+  plugins: [require("@tailwindcss/typography")],
+};

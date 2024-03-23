@@ -1,16 +1,16 @@
-import type {PropsWithChildren} from 'react'
-import {useEffect, useState} from 'react'
+import type { PropsWithChildren } from "react";
+import { useEffect, useState } from "react";
 
-let isHydrating = true
+let isHydrating = true;
 
 // https://remix.run/docs/en/1.19.3/guides/migrating-react-router-app#client-only-components
 export function Hydrated(props: PropsWithChildren): JSX.Element {
-  const [isHydrated, setIsHydrated] = useState(!isHydrating)
+  const [isHydrated, setIsHydrated] = useState(!isHydrating);
 
   useEffect(() => {
-    isHydrating = false
-    setIsHydrated(true)
-  }, [])
+    isHydrating = false;
+    setIsHydrated(true);
+  }, []);
 
-  return isHydrated && props.children ? <>{props.children}</> : <></>
+  return isHydrated && props.children ? <>{props.children}</> : <></>;
 }

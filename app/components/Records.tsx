@@ -1,16 +1,16 @@
-import {Link} from '@remix-run/react'
-import type {EncodeDataAttributeCallback} from '@sanity/react-loader'
+import { Link } from "@remix-run/react";
+import type { EncodeDataAttributeCallback } from "@sanity/react-loader";
 
-import {RecordCover} from '~/components/RecordCover'
-import type {RecordStub} from '~/types/record'
+import { RecordCover } from "~/components/RecordCover";
+import type { RecordStub } from "~/types/record";
 
 type RecordsProps = {
-  records: RecordStub[]
-  encodeDataAttribute?: EncodeDataAttributeCallback
-}
+  records: RecordStub[];
+  encodeDataAttribute?: EncodeDataAttributeCallback;
+};
 
 export function Records(props: RecordsProps) {
-  const {records = [], encodeDataAttribute} = props
+  const { records = [], encodeDataAttribute } = props;
 
   return records.length > 0 ? (
     <ul className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:gap-12 lg:grid-cols-4">
@@ -18,7 +18,7 @@ export function Records(props: RecordsProps) {
         <li key={record._id} className="group relative flex flex-col">
           <div
             className="relative overflow-hidden transition-all duration-200 ease-in-out group-hover:scale-105 group-hover:opacity-90"
-            data-sanity={encodeDataAttribute?.([recordI, 'image'])}
+            data-sanity={encodeDataAttribute?.([recordI, "image"])}
           >
             <div className="absolute z-0 h-48 w-[200%] translate-x-20 translate-y-20 -rotate-45 bg-gradient-to-b from-white to-transparent opacity-25 mix-blend-overlay transition-transform duration-500 ease-in-out group-hover:translate-x-10 group-hover:translate-y-10 group-hover:opacity-75" />
             {record?.slug ? (
@@ -60,13 +60,13 @@ export function Records(props: RecordsProps) {
         content!
       </p>
       <p>
-        Or, run{' '}
+        Or, run{" "}
         <code>
           npx sanity@latest exec ./scripts/createData.ts --with-user-token
-        </code>{' '}
+        </code>{" "}
         from the command line to delete existing documents populate the site
-        with content.{' '}
+        with content.{" "}
       </p>
     </div>
-  )
+  );
 }

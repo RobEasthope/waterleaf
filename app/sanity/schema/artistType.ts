@@ -1,27 +1,27 @@
-import {Users} from 'lucide-react'
-import {defineField, defineType} from 'sanity'
+import { Users } from "lucide-react";
+import { defineField, defineType } from "sanity";
 
 export const artistType = defineType({
-  name: 'artist',
-  title: 'Artist',
-  type: 'document',
+  name: "artist",
+  title: "Artist",
+  type: "document",
   icon: Users,
   fields: [
     defineField({
-      name: 'name',
-      type: 'string',
+      name: "name",
+      type: "string",
     }),
     defineField({
-      name: 'slug',
-      type: 'slug',
+      name: "slug",
+      type: "slug",
       options: {
-        source: 'title',
+        source: "title",
       },
     }),
     defineField({
-      name: 'image',
-      type: 'image',
-      options: {hotspot: true},
+      name: "image",
+      type: "image",
+      options: { hotspot: true },
     }),
   ],
-})
+});

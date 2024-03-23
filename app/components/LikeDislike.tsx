@@ -1,40 +1,40 @@
-import {useFetcher, useLocation} from '@remix-run/react'
-import {ThumbsDown, ThumbsUp} from 'lucide-react'
+import { useFetcher, useLocation } from "@remix-run/react";
+import { ThumbsDown, ThumbsUp } from "lucide-react";
 
 type LikeDislikeProps = {
-  id: string
-  likes: number
-  dislikes: number
-}
+  id: string;
+  likes: number;
+  dislikes: number;
+};
 
 export function LikeDislike(props: LikeDislikeProps) {
-  const {id} = props
+  const { id } = props;
   const fetcher = useFetcher<{
-    likes: number
-    dislikes: number
-  }>()
-  const location = useLocation()
+    likes: number;
+    dislikes: number;
+  }>();
+  const location = useLocation();
 
   // Use fresh data returned from the ActionFunction, if a mutation has just finished
-  const isDone = fetcher.state === 'idle' && fetcher.data !== null
+  const isDone = fetcher.state === "idle" && fetcher.data !== null;
   const isWorking =
-    fetcher.state === 'loading' || fetcher.state === 'submitting'
+    fetcher.state === "loading" || fetcher.state === "submitting";
 
   const likes =
-    isDone && fetcher.data ? Number(fetcher?.data?.likes) : props?.likes
+    isDone && fetcher.data ? Number(fetcher?.data?.likes) : props?.likes;
   const optimisticLikes =
-    fetcher.formData && fetcher.formData.get('action') === 'LIKE'
+    fetcher.formData && fetcher.formData.get("action") === "LIKE"
       ? likes + 1
-      : likes
-  const displayLikes = optimisticLikes || likes
+      : likes;
+  const displayLikes = optimisticLikes || likes;
 
   const dislikes =
-    isDone && fetcher.data ? Number(fetcher?.data?.dislikes) : props?.dislikes
+    isDone && fetcher.data ? Number(fetcher?.data?.dislikes) : props?.dislikes;
   const optimisticDislikes =
-    fetcher.formData && fetcher.formData.get('action') === 'DISLIKE'
+    fetcher.formData && fetcher.formData.get("action") === "DISLIKE"
       ? dislikes + 1
-      : dislikes
-  const displayDislikes = optimisticDislikes || dislikes
+      : dislikes;
+  const displayDislikes = optimisticDislikes || dislikes;
 
   return (
     <fetcher.Form
@@ -68,5 +68,5 @@ export function LikeDislike(props: LikeDislikeProps) {
         <span className="sr-only">Dislike</span>
       </button>
     </fetcher.Form>
-  )
+  );
 }
