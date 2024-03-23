@@ -1,7 +1,5 @@
 {
   "extends": [
-    "@remix-run/eslint-config",
-    "@remix-run/eslint-config/node",
     "@thoughtbot/eslint-config",
     "@thoughtbot/eslint-config/typescript",
     "prettier",
