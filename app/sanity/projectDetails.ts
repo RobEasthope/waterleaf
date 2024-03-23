@@ -18,8 +18,8 @@ declare global {
 const { VITE_SANITY_PROJECT_ID, VITE_SANITY_DATASET, VITE_SANITY_API_VERSION } =
   typeof document === 'undefined' ? import.meta.env : window.ENV;
 
-export const projectId = VITE_SANITY_PROJECT_ID!;
-export const dataset = VITE_SANITY_DATASET!;
+export const projectId = VITE_SANITY_PROJECT_ID;
+export const dataset = VITE_SANITY_DATASET;
 export const apiVersion = VITE_SANITY_API_VERSION ?? `2024-02-13`;
 
 export const projectDetails = () => ({
@@ -44,8 +44,8 @@ export const getFrontendUrl =
   typeof document === 'undefined'
     ? process.env.VERCEL
       ? `https://${process.env.VERCEL_BRANCH_URL}`
-      : import.meta.env.VITE_SANITY_FRONTEND_URL!
-    : window.ENV.VITE_SANITY_FRONTEND_URL!;
+      : import.meta.env.VITE_SANITY_FRONTEND_URL
+    : window.ENV.VITE_SANITY_FRONTEND_URL;
 
 export const frontendUrl = getFrontendUrl ?? 'http://localhost:3000';
 
@@ -56,8 +56,8 @@ export const getStudioUrl =
       ? process.env.VERCEL_ENV !== 'production'
         ? `https://${process.env.VERCEL_URL}`
         : PRODUCTION_URL
-      : import.meta.env.VITE_SANITY_URL!
-    : window.ENV.VITE_SANITY_URL!;
+      : import.meta.env.VITE_SANITY_URL
+    : window.ENV.VITE_SANITY_URL;
 
 export const studioUrl = getStudioUrl ?? 'http://localhost:3000';
 
