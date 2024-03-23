@@ -40,26 +40,24 @@ export function Record(props: RecordProps) {
           <SanityContent value={content} />
         ) : null}
         {tracks && tracks?.length > 0 ? (
-          <>
-            <ul className="grid grid-cols-1 divide-y divide-gray-100 dark:divide-gray-900">
-              <li className="py-3 text-2xl font-bold tracking-tighter">
-                {tracks?.length === 1 ? `1 Track` : `${tracks?.length} Tracks`}
+          <ul className="grid grid-cols-1 divide-y divide-gray-100 dark:divide-gray-900">
+            <li className="py-3 text-2xl font-bold tracking-tighter">
+              {tracks?.length === 1 ? `1 Track` : `${tracks?.length} Tracks`}
+            </li>
+            {tracks.map((track) => (
+              <li
+                key={track._key}
+                className="flex items-center justify-between py-3"
+              >
+                <span className="text-lg">{track.title}</span>
+                {track.duration ? (
+                  <span className="text-sm font-bold">
+                    {secondsToMinutes(track.duration)}
+                  </span>
+                ) : null}
               </li>
-              {tracks.map((track) => (
-                <li
-                  key={track._key}
-                  className="flex items-center justify-between py-3"
-                >
-                  <span className="text-lg">{track.title}</span>
-                  {track.duration ? (
-                    <span className="text-sm font-bold">
-                      {secondsToMinutes(track.duration)}
-                    </span>
-                  ) : null}
-                </li>
-              ))}
-            </ul>
-          </>
+            ))}
+          </ul>
         ) : null}
       </div>
     </article>
