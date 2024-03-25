@@ -1,3 +1,5 @@
+import './app.css';
+
 import type { LinksFunction, LoaderFunctionArgs } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import {
