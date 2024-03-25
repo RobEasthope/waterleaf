@@ -1,11 +1,11 @@
 import { useLocation } from '@remix-run/react';
 import { type PropsWithChildren } from 'react';
 
-import { Footer } from "~/components/Footer";
-import { Header } from "~/components/Header";
-import { Title } from "~/components/Title";
-import type { LogoProps } from "~/types/home";
-import type { ThemePreference } from "~/types/themePreference";
+import { Footer } from '~/components/Footer/Footer';
+import { Header } from '~/components/Header/Header';
+import { Title } from '~/components/Title';
+import type { LogoProps } from '~/types/home';
+import type { ThemePreference } from '~/types/themePreference';
 
 export type LayoutProps = PropsWithChildren<
   LogoProps & { theme: ThemePreference }
