@@ -2,6 +2,7 @@ module.exports = {
   extends: [
     '@thoughtbot/eslint-config',
     '@thoughtbot/eslint-config/typescript',
+    'plugin:storybook/recommended',
     'plugin:prettier/recommended',
   ],
   ignorePatterns: ['node_modules', 'build', '.cache'],

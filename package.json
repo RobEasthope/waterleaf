@@ -81,10 +81,5 @@
   },
   "engines": {
     "node": "20.x"
-  },
-  "eslintConfig": {
-    "extends": [
-      "plugin:storybook/recommended"
-    ]
   }
 }
