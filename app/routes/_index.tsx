@@ -2,7 +2,6 @@ import type { LoaderFunctionArgs, MetaFunction } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 
-import { Records } from '~/components/decommisioning/Records/Records';
 import type { Loader as RootLoader } from '~/root';
 import { isStegaEnabled } from '~/sanity/isStegaEnabled.server';
 import { useQuery } from '~/sanity/loader';
@@ -48,22 +47,14 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 
 export default function Index() {
   const { initial, query, params } = useLoaderData<typeof loader>();
-  const { data, loading, encodeDataAttribute } = useQuery<typeof initial.data>(
-    query,
-    params,
-    {
-      // @ts-expect-error Sanity says to just expect the error due the problems of handling types in Sanity datasets after a certain point
-      initial,
-    },
-  );
+  const { data, loading } = useQuery<typeof initial.data>(query, params, {
+    // @ts-expect-error Sanity says to just expect the error due the problems of handling types in Sanity datasets after a certain point
+    initial,
+  });
 
   if (loading || !data) {
     return <div>Loading...</div>;
   }
 
-  return (
-    <div className="grid grid-cols-1 gap-6 lg:gap-12">
-      <Records records={data} encodeDataAttribute={encodeDataAttribute} />
-    </div>
-  );
+  return <div>Home</div>;
 }
