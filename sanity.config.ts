@@ -10,8 +10,8 @@ import { defaultDocumentNode, structure } from '~/sanity/structure';
 
 export const config = defineConfig({
   ...projectDetails(),
-  name: 'sanity-remix',
-  title: 'Sanity Remix',
+  name: 'waterleaf',
+  title: 'Waterleaf',
   plugins: [
     structureTool({ structure, defaultDocumentNode }),
     presentationTool({
