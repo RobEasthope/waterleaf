@@ -1,11 +1,11 @@
 import type { EncodeDataAttributeCallback } from '@sanity/react-loader';
 
-import { LikeDislike } from '~/components/LikeDislike/LikeDislike';
-import { RecordCover } from '~/components/RecordCover/RecordCover';
-import { SanityContent } from '~/components/SanityContent/SanityContent';
-import { Title } from '~/components/Title/Title';
-import { secondsToMinutes } from '~/utils/secondsToMinutes';
+import { LikeDislike } from '~/components/decommisioning/LikeDislike/LikeDislike';
+import { RecordCover } from '~/components/decommisioning/RecordCover/RecordCover';
+import { SanityContent } from '~/components/decommisioning/SanityContent/SanityContent';
+import { Title } from '~/components/decommisioning/Title/Title';
 import type { RecordDocument } from '~/types/record';
+import { secondsToMinutes } from '~/utils/secondsToMinutes';
 
 type RecordProps = {
   data: RecordDocument;

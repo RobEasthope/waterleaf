@@ -9,10 +9,9 @@ import {
   useLoaderData,
 } from '@remix-run/react';
 import { lazy, Suspense } from 'react';
+import { Layout } from '~/components/decommisioning/Layout/Layout';
 
-import { Layout } from '~/components/Layout/Layout';
 import { themePreferenceCookie } from '~/cookies';
-import { getBodyClassNames } from '~/utils/getBodyClassNames';
 import { isStegaEnabled } from '~/sanity/isStegaEnabled.server';
 import { useQuery } from '~/sanity/loader';
 import { loadQuery } from '~/sanity/loader.server';
@@ -22,9 +21,10 @@ import styles from '~/tailwind.css?url';
 import type { HomeDocument } from '~/types/home';
 import { homeZ } from '~/types/home';
 import { themePreference } from '~/types/themePreference';
+import { getBodyClassNames } from '~/utils/getBodyClassNames';
 
 const LiveVisualEditing = lazy(
-  () => import('~/components/LiveVisualEditing/LiveVisualEditing'),
+  () => import('~/components/base/LiveVisualEditing/LiveVisualEditing'),
 );
 
 export const links: LinksFunction = () => {

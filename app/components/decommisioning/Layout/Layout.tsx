@@ -1,9 +1,9 @@
 import { useLocation } from '@remix-run/react';
 import { type PropsWithChildren } from 'react';
 
+import { Title } from '~/components/decommisioning/Title/Title';
 import { Footer } from '~/components/navigation/Footer/Footer';
 import { Header } from '~/components/navigation/Header/Header';
-import { Title } from '~/components/Title/Title';
 import type { LogoProps } from '~/types/home';
 import type { ThemePreference } from '~/types/themePreference';
 

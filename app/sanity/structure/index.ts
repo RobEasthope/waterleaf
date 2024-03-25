@@ -4,7 +4,7 @@ import type {
   StructureResolver,
 } from 'sanity/structure';
 
-import OGPreview from '~/sanity/components/OGPreview';
+import OGPreview from '~/sanity/components/OGPreview/OGPreview';
 import { resolveOGUrl } from '~/sanity/structure/resolveOGUrl';
 
 export const structure: StructureResolver = (S) =>
@@ -19,6 +19,7 @@ export const structure: StructureResolver = (S) =>
         .id('home')
         .title('Home'),
       S.divider(),
+
       // Document lists
       S.documentTypeListItem('record').title('Records').icon(Disc),
       S.documentTypeListItem('artist').title('Artists').icon(Users),

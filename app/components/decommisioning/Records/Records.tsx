@@ -1,7 +1,7 @@
 import { Link } from '@remix-run/react';
 import type { EncodeDataAttributeCallback } from '@sanity/react-loader';
 
-import { RecordCover } from '~/components/RecordCover/RecordCover';
+import { RecordCover } from '~/components/decommisioning/RecordCover/RecordCover';
 import type { RecordStub } from '~/types/record';
 
 type RecordsProps = {
