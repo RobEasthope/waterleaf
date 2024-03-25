@@ -1,4 +1,4 @@
-import { Logo } from '~/components/LogoLogo/';
+import { Logo } from '~/components/Logo/Logo';
 import type { LogoProps } from '~/types/home';
 
 export function Footer(props: LogoProps) {
