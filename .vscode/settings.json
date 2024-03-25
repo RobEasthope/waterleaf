@@ -1,0 +1,9 @@
+{
+  // Get eslint to validate code in .js, .jsx, .ts, and .tsx files.
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ]
+}
