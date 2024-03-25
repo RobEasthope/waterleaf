@@ -12,5 +12,6 @@ export function Hydrated({ children }: PropsWithChildren): JSX.Element {
     setIsHydrated(true);
   }, []);
 
+  // eslint-disable-next-line react/jsx-no-useless-fragment
   return isHydrated && children ? <>{children}</> : <></>;
 }
