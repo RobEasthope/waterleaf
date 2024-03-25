@@ -2,7 +2,7 @@ import type { LoaderFunctionArgs, MetaFunction } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 
-import { Records } from '~/components/Records';
+import { Records } from '~/components/Records/Records';
 import type { Loader as RootLoader } from '~/root';
 import { isStegaEnabled } from '~/sanity/isStegaEnabled.server';
 import { useQuery } from '~/sanity/loader';

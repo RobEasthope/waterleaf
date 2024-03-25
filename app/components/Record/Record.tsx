@@ -1,9 +1,9 @@
 import type { EncodeDataAttributeCallback } from '@sanity/react-loader';
 
-import { LikeDislike } from '~/components/LikeDislike';
-import { RecordCover } from '~/components/RecordCover';
-import { SanityContent } from '~/components/SanityContent';
-import { Title } from '~/components/Title';
+import { LikeDislike } from '~/components/LikeDislike/LikeDislike';
+import { RecordCover } from '~/components/RecordCover/RecordCover';
+import { SanityContent } from '~/components/SanityContent/SanityContent';
+import { Title } from '~/components/Title/Title';
 import { secondsToMinutes } from '~/lib/secondsToMinutes';
 import type { RecordDocument } from '~/types/record';
 

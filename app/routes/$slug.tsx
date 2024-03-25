@@ -6,7 +6,7 @@ import type {
 import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 
-import { Record } from '~/components/Record';
+import { Record } from '~/components/Record/Record';
 import type { Loader as RootLoader } from '~/root';
 import { OG_IMAGE_HEIGHT, OG_IMAGE_WIDTH } from '~/routes/resource.og';
 import { client } from '~/sanity/client';

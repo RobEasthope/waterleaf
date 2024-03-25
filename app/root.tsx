@@ -10,7 +10,7 @@ import {
 } from '@remix-run/react';
 import { lazy, Suspense } from 'react';
 
-import { Layout } from '~/components/Layout';
+import { Layout } from '~/components/Layout/Layout';
 import { themePreferenceCookie } from '~/cookies';
 import { getBodyClassNames } from '~/lib/getBodyClassNames';
 import { isStegaEnabled } from '~/sanity/isStegaEnabled.server';
@@ -23,7 +23,9 @@ import type { HomeDocument } from '~/types/home';
 import { homeZ } from '~/types/home';
 import { themePreference } from '~/types/themePreference';
 
-const LiveVisualEditing = lazy(() => import('~/components/LiveVisualEditing'));
+const LiveVisualEditing = lazy(
+  () => import('~/components/LiveVisualEditing/LiveVisualEditing'),
+);
 
 export const links: LinksFunction = () => {
   return [
