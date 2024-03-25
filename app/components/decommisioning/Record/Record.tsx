@@ -1,4 +1,5 @@
 import type { EncodeDataAttributeCallback } from '@sanity/react-loader';
+import { v4 as uuidv4 } from 'uuid';
 
 import { LikeDislike } from '~/components/decommisioning/LikeDislike/LikeDislike';
 import { RecordCover } from '~/components/decommisioning/RecordCover/RecordCover';
@@ -41,7 +42,7 @@ export function Record({ data, encodeDataAttribute }: RecordProps) {
             </li>
             {tracks.map((track) => (
               <li
-                key={track?._key}
+                key={uuidv4()}
                 className="flex items-center justify-between py-3"
               >
                 <span className="text-lg">{track.title}</span>
