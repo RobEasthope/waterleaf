@@ -11,6 +11,9 @@ dependencies:
   '@portabletext/react':
     specifier: ^3.0.11
     version: 3.0.11(react@18.2.0)
+  '@radix-ui/react-slot':
+    specifier: ^1.0.2
+    version: 1.0.2(@types/react@18.2.61)(react@18.2.0)
   '@remix-run/node':
     specifier: ^2.8.0
     version: 2.8.0(typescript@5.3.3)
@@ -3050,7 +3053,6 @@ packages:
       '@babel/runtime': 7.24.0
       '@types/react': 18.2.61
       react: 18.2.0
-    dev: true
 
   /@radix-ui/react-slot@1.0.2(@types/react@18.2.61)(react@18.2.0):
     resolution: {integrity: sha512-YeTpuq4deV+6DusvVUW4ivBgnkHwECUu0BiN43L5UCDFgdhsRUWAghhTF5MbvNTPzmiFOx90asDSUjWuCNapwg==}
@@ -3065,7 +3067,6 @@ packages:
       '@radix-ui/react-compose-refs': 1.0.1(@types/react@18.2.61)(react@18.2.0)
       '@types/react': 18.2.61
       react: 18.2.0
-    dev: true
 
   /@remix-run/dev@2.8.0(@remix-run/serve@2.8.0)(typescript@5.3.3)(vite@5.1.4):
     resolution: {integrity: sha512-kZtmK/7vKk7QV8CGCyC9Or3wP7EwL4rOJS9vObmTRAPv8mLyznR8bJxeNVWA7ICnCGejF8s2X3abVJrkEMiFlg==}
