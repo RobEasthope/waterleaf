@@ -52,7 +52,7 @@ export default function Index() {
     query,
     params,
     {
-      // @ts-expect-error
+      // @ts-expect-error Sanity says to just expect the error due the problems of handling types in Sanity datasets after a certain point
       initial,
     },
   );

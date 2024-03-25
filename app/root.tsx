@@ -95,7 +95,7 @@ export default function App() {
   const { initial, query, params, theme, bodyClassNames, sanity, ENV } =
     useLoaderData<typeof loader>();
   const { data, loading } = useQuery<typeof initial.data>(query, params, {
-    // @ts-expect-error
+    // @ts-expect-error Sanity says to just expect the error due the problems of handling types in Sanity datasets after a certain point
     initial,
   });
 
