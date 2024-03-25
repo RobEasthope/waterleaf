@@ -118,6 +118,7 @@ export default function App() {
         )}
         <ScrollRestoration />
         <script
+          // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{
             __html: `window.ENV = ${JSON.stringify(ENV)}`,
           }}
