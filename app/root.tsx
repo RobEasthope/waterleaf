@@ -1,4 +1,6 @@
-import type { LinksFunction, LoaderFunctionArgs } from '@remix-run/node';
+import './app.css';
+
+import type { LoaderFunctionArgs } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import {
   Links,
@@ -11,13 +13,11 @@ import {
 import { lazy, Suspense } from 'react';
 
 import { Layout } from '~/components/decommisioning/Layout/Layout';
-import { themePreferenceCookie } from '~/cookies';
 import { isStegaEnabled } from '~/sanity/isStegaEnabled.server';
 import { useQuery } from '~/sanity/loader';
 import { loadQuery } from '~/sanity/loader.server';
 import { frontendUrl, studioUrl } from '~/sanity/projectDetails';
 import { HOME_QUERY } from '~/sanity/queries';
-import styles from '~/tailwind.css?url';
 import type { HomeDocument } from '~/types/home';
 import { homeZ } from '~/types/home';
 import { themePreference } from '~/types/themePreference';
@@ -27,37 +27,10 @@ const LiveVisualEditing = lazy(
   () => import('~/components/base/LiveVisualEditing/LiveVisualEditing'),
 );
 
-export const links: LinksFunction = () => {
-  return [
-    { rel: 'stylesheet', href: styles },
-    { rel: 'preconnect', href: 'https://cdn.sanity.io' },
-    {
-      rel: 'preconnect',
-      href: 'https://fonts.gstatic.com',
-      crossOrigin: 'anonymous',
-    },
-    {
-      rel: 'preconnect',
-      href: 'https://fonts.googleapis.com',
-      crossOrigin: 'anonymous',
-    },
-    {
-      href: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;700&family=Inter:wght@500;700;800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap',
-      rel: 'stylesheet',
-    },
-  ];
-};
-
 export type Loader = typeof loader;
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
   const stegaEnabled = isStegaEnabled(request.url);
-
-  // Dark/light mode
-  const cookieHeader = request.headers.get('Cookie');
-  const cookieValue = (await themePreferenceCookie.parse(cookieHeader)) || {};
-  const theme = themePreference.parse(cookieValue.themePreference) || 'light';
-  const bodyClassNames = getBodyClassNames(theme);
 
   // Sanity content reused throughout the site
   const query = HOME_QUERY;
@@ -73,8 +46,6 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
     initial,
     query,
     params: queryParams,
-    theme,
-    bodyClassNames,
     sanity: {
       isStudioRoute: new URL(request.url).pathname.startsWith('/studio'),
       stegaEnabled,
@@ -92,7 +63,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 };
 
 export default function App() {
-  const { initial, query, params, theme, bodyClassNames, sanity, ENV } =
+  const { initial, query, params, sanity, ENV } =
     useLoaderData<typeof loader>();
   const { data, loading } = useQuery<typeof initial.data>(query, params, {
     // @ts-expect-error Sanity says to just expect the error due the problems of handling types in Sanity datasets after a certain point
@@ -108,11 +79,11 @@ export default function App() {
         <link rel="icon" href="https://fav.farm/🌊" />
         <Links />
       </head>
-      <body className={bodyClassNames}>
+      <body>
         {sanity.isStudioRoute ? (
           <Outlet />
         ) : (
-          <Layout home={loading || !data ? initial.data : data} theme={theme}>
+          <Layout home={loading || !data ? initial.data : data}>
             <Outlet />
           </Layout>
         )}
