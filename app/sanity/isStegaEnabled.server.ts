@@ -6,7 +6,7 @@ export function isStegaEnabled(url: string) {
   const stegaShouldBeEnabled = hostname !== new URL(PRODUCTION_URL).hostname;
 
   if (stegaShouldBeEnabled && !process.env.SANITY_READ_TOKEN) {
-    console.info(
+    console.error(
       'Cannot enable Stega when SANITY_READ_TOKEN is missing in .env',
     );
     return false;
