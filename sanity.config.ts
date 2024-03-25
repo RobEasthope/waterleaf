@@ -1,17 +1,17 @@
-import { presentationTool } from "@sanity/presentation";
-import { visionTool } from "@sanity/vision";
-import { defineConfig } from "sanity";
-import { structureTool } from "sanity/structure";
+import { presentationTool } from '@sanity/presentation';
+import { visionTool } from '@sanity/vision';
+import { defineConfig } from 'sanity';
+import { structureTool } from 'sanity/structure';
 
-import { locate } from "~/sanity/presentation/locate";
-import { frontendUrl, projectDetails } from "~/sanity/projectDetails";
-import schema from "~/sanity/schema";
-import { defaultDocumentNode, structure } from "~/sanity/structure";
+import { locate } from '~/sanity/presentation/locate';
+import { frontendUrl, projectDetails } from '~/sanity/projectDetails';
+import schema from '~/sanity/schema';
+import { defaultDocumentNode, structure } from '~/sanity/structure';
 
 export const config = defineConfig({
   ...projectDetails(),
-  name: "sanity-remix",
-  title: "Sanity Remix",
+  name: 'sanity-remix',
+  title: 'Sanity Remix',
   plugins: [
     structureTool({ structure, defaultDocumentNode }),
     presentationTool({

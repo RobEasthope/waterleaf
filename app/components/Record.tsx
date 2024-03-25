@@ -1,11 +1,11 @@
-import type { EncodeDataAttributeCallback } from "@sanity/react-loader";
+import type { EncodeDataAttributeCallback } from '@sanity/react-loader';
 
-import { LikeDislike } from "~/components/LikeDislike";
-import { RecordCover } from "~/components/RecordCover";
-import { SanityContent } from "~/components/SanityContent";
-import { Title } from "~/components/Title";
-import { secondsToMinutes } from "~/lib/secondsToMinutes";
-import type { RecordDocument } from "~/types/record";
+import { LikeDislike } from '~/components/LikeDislike';
+import { RecordCover } from '~/components/RecordCover';
+import { SanityContent } from '~/components/SanityContent';
+import { Title } from '~/components/Title';
+import { secondsToMinutes } from '~/lib/secondsToMinutes';
+import type { RecordDocument } from '~/types/record';
 
 type RecordProps = {
   data: RecordDocument;
@@ -21,7 +21,7 @@ export function Record(props: RecordProps) {
       <div className="grid-gap-4 grid max-w-[70vw] grid-cols-1">
         <div
           className="max-w-sm"
-          data-sanity={props?.encodeDataAttribute?.("image")}
+          data-sanity={props?.encodeDataAttribute?.('image')}
         >
           <RecordCover image={image} />
         </div>

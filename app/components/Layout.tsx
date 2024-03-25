@@ -1,5 +1,5 @@
-import { useLocation } from "@remix-run/react";
-import { type PropsWithChildren } from "react";
+import { useLocation } from '@remix-run/react';
+import { type PropsWithChildren } from 'react';
 
 import { Footer } from "~/components/Footer";
 import { Header } from "~/components/Header";
@@ -18,7 +18,7 @@ export function Layout({ home, theme, children }: LayoutProps) {
     <>
       <Header home={home} theme={theme} />
       <div className="container mx-auto p-4 lg:p-12 grid grid-cols-1 gap-4 lg:gap-12">
-        {home?.title && pathname === "/" ? <Title>{home?.title}</Title> : null}
+        {home?.title && pathname === '/' ? <Title>{home?.title}</Title> : null}
         {children}
       </div>
       <Footer home={home} />

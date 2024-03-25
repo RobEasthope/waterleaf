@@ -1,8 +1,8 @@
-import { VisualEditing } from "@sanity/visual-editing/remix";
-import { useMemo } from "react";
+import { VisualEditing } from '@sanity/visual-editing/remix';
+import { useMemo } from 'react';
 
-import { client } from "~/sanity/client";
-import { useLiveMode } from "~/sanity/loader";
+import { client } from '~/sanity/client';
+import { useLiveMode } from '~/sanity/loader';
 
 type VisualEditingProps = {
   studioUrl: string;

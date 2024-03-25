@@ -2,20 +2,20 @@ import type {
   ActionFunction,
   LoaderFunctionArgs,
   MetaFunction,
-} from "@remix-run/node";
-import { json } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
+} from '@remix-run/node';
+import { json } from '@remix-run/node';
+import { useLoaderData } from '@remix-run/react';
 
-import { Record } from "~/components/Record";
-import type { Loader as RootLoader } from "~/root";
-import { OG_IMAGE_HEIGHT, OG_IMAGE_WIDTH } from "~/routes/resource.og";
-import { client } from "~/sanity/client";
-import { isStegaEnabled } from "~/sanity/isStegaEnabled.server";
-import { useQuery } from "~/sanity/loader";
-import { loadQuery } from "~/sanity/loader.server";
-import { RECORD_QUERY } from "~/sanity/queries";
-import type { RecordDocument } from "~/types/record";
-import { recordZ } from "~/types/record";
+import { Record } from '~/components/Record';
+import type { Loader as RootLoader } from '~/root';
+import { OG_IMAGE_HEIGHT, OG_IMAGE_WIDTH } from '~/routes/resource.og';
+import { client } from '~/sanity/client';
+import { isStegaEnabled } from '~/sanity/isStegaEnabled.server';
+import { useQuery } from '~/sanity/loader';
+import { loadQuery } from '~/sanity/loader.server';
+import { RECORD_QUERY } from '~/sanity/queries';
+import type { RecordDocument } from '~/types/record';
+import { recordZ } from '~/types/record';
 
 export const meta: MetaFunction<
   typeof loader,
@@ -27,24 +27,24 @@ export const meta: MetaFunction<
   const home = rootData ? rootData.initial.data : null;
   const title = [data?.initial?.data?.title, home?.siteTitle]
     .filter(Boolean)
-    .join(" | ");
+    .join(' | ');
   const ogImageUrl = data ? data.ogImageUrl : null;
 
   return [
     { title },
-    { property: "twitter:card", content: "summary_large_image" },
-    { property: "twitter:title", content: title },
-    { property: "og:title", content: title },
-    { property: "og:image:width", content: String(OG_IMAGE_WIDTH) },
-    { property: "og:image:height", content: String(OG_IMAGE_HEIGHT) },
-    { property: "og:image", content: ogImageUrl },
+    { property: 'twitter:card', content: 'summary_large_image' },
+    { property: 'twitter:title', content: title },
+    { property: 'og:title', content: title },
+    { property: 'og:image:width', content: String(OG_IMAGE_WIDTH) },
+    { property: 'og:image:height', content: String(OG_IMAGE_HEIGHT) },
+    { property: 'og:image', content: ogImageUrl },
   ];
 };
 
 // Perform a `like` or `dislike` mutation on a `record` document
 export const action: ActionFunction = async ({ request }) => {
-  if (request.method !== "POST") {
-    throw new Response("Method not allowed", { status: 405 });
+  if (request.method !== 'POST') {
+    throw new Response('Method not allowed', { status: 405 });
   }
 
   const writeClient = client.withConfig({
@@ -61,12 +61,12 @@ export const action: ActionFunction = async ({ request }) => {
   }
 
   const body = await request.formData();
-  const id = String(body.get("id"));
-  const action = String(body.get("action"));
+  const id = String(body.get('id'));
+  const action = String(body.get('action'));
 
   if (id) {
     switch (action) {
-      case "LIKE":
+      case 'LIKE':
         return await writeClient
           .patch(id)
           .setIfMissing({ likes: 0 })
@@ -76,7 +76,7 @@ export const action: ActionFunction = async ({ request }) => {
             likes: likes ?? 0,
             dislikes: dislikes ?? 0,
           }));
-      case "DISLIKE":
+      case 'DISLIKE':
         return await writeClient
           .patch(id)
           .setIfMissing({ dislikes: 0 })
@@ -87,11 +87,11 @@ export const action: ActionFunction = async ({ request }) => {
             dislikes: dislikes ?? 0,
           }));
       default:
-        return json({ message: "Invalid action" }, 400);
+        return json({ message: 'Invalid action' }, 400);
     }
   }
 
-  return json({ message: "Bad request" }, 400);
+  return json({ message: 'Bad request' }, 400);
 };
 
 // Load the `record` document with this slug
@@ -103,14 +103,14 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
   // $slug.tsx has the params { slug: 'hello-world' }
   const queryParams = params;
   const initial = await loadQuery<RecordDocument>(query, queryParams, {
-    perspective: stegaEnabled ? "previewDrafts" : "published",
+    perspective: stegaEnabled ? 'previewDrafts' : 'published',
   }).then((res) => ({
     ...res,
     data: res.data ? recordZ.parse(res.data) : null,
   }));
 
   if (!initial.data) {
-    throw new Response("Not found", { status: 404 });
+    throw new Response('Not found', { status: 404 });
   }
 
   // Create social share image url

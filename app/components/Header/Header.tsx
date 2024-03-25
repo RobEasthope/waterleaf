@@ -1,6 +1,6 @@
-import type { LayoutProps } from "~/components/Layout";
-import { Logo } from "~/components/Logo";
-import { ThemeToggle } from "~/components/ThemeToggle";
+import type { LayoutProps } from '~/components/Layout';
+import { Logo } from '~/components/Logo';
+import { ThemeToggle } from '~/components/ThemeToggle';
 
 export function Header(props: LayoutProps) {
   return (
