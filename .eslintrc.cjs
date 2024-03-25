@@ -18,6 +18,7 @@ module.exports = {
     },
   ],
   rules: {
+    "no-console": ["error", { allow: ["warn", "error"] }],
     "import/prefer-default-export": "off",
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
