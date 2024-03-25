@@ -17,7 +17,6 @@ import { useQuery } from '~/sanity/loader';
 import { loadQuery } from '~/sanity/loader.server';
 import { frontendUrl, studioUrl } from '~/sanity/projectDetails';
 import { HOME_QUERY } from '~/sanity/queries';
-import styles from '~/tailwind.css?url';
 import type { HomeDocument } from '~/types/home';
 import { homeZ } from '~/types/home';
 import { themePreference } from '~/types/themePreference';
@@ -29,7 +28,6 @@ const LiveVisualEditing = lazy(
 
 export const links: LinksFunction = () => {
   return [
-    { rel: 'stylesheet', href: styles },
     { rel: 'preconnect', href: 'https://cdn.sanity.io' },
     {
       rel: 'preconnect',
