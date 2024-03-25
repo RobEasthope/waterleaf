@@ -3,7 +3,6 @@ import type { EncodeDataAttributeCallback } from '@sanity/react-loader';
 import { LikeDislike } from '~/components/decommisioning/LikeDislike/LikeDislike';
 import { RecordCover } from '~/components/decommisioning/RecordCover/RecordCover';
 import { SanityContent } from '~/components/decommisioning/SanityContent/SanityContent';
-import { Title } from '~/components/decommisioning/Title/Title';
 import type { RecordDocument } from '~/types/record';
 import { secondsToMinutes } from '~/utils/secondsToMinutes';
 
@@ -29,7 +28,7 @@ export function Record(props: RecordProps) {
       </div>
       <div className="flex flex-shrink-0 flex-col gap-4 lg:gap-6 lg:w-2/3">
         <header>
-          <Title>{title}</Title>
+          <h1>{title}</h1>
           {artist ? (
             <h2 className="bg-black text-2xl font-bold tracking-tighter text-white">
               {artist}
