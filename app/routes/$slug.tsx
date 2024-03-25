@@ -41,59 +41,6 @@ export const meta: MetaFunction<
   ];
 };
 
-// Perform a `like` or `dislike` mutation on a `record` document
-export const action: ActionFunction = async ({ request }) => {
-  if (request.method !== 'POST') {
-    throw new Response('Method not allowed', { status: 405 });
-  }
-
-  const writeClient = client.withConfig({
-    useCdn: false,
-    token: process.env.SANITY_WRITE_TOKEN,
-  });
-  const { token, projectId } = writeClient.config();
-
-  if (!token) {
-    throw new Response(
-      `Setup "SANITY_WRITE_TOKEN" with a token with "Editor" permissions to your environment variables. Create one at https://sanity.io/manage/project/${projectId}/api#tokens`,
-      { status: 401 },
-    );
-  }
-
-  const body = await request.formData();
-  const id = String(body.get('id'));
-  const action = String(body.get('action'));
-
-  if (id) {
-    switch (action) {
-      case 'LIKE':
-        return await writeClient
-          .patch(id)
-          .setIfMissing({ likes: 0 })
-          .inc({ likes: 1 })
-          .commit()
-          .then(({ likes, dislikes }) => ({
-            likes: likes ?? 0,
-            dislikes: dislikes ?? 0,
-          }));
-      case 'DISLIKE':
-        return await writeClient
-          .patch(id)
-          .setIfMissing({ dislikes: 0 })
-          .inc({ dislikes: 1 })
-          .commit()
-          .then(({ likes, dislikes }) => ({
-            likes: likes ?? 0,
-            dislikes: dislikes ?? 0,
-          }));
-      default:
-        return json({ message: 'Invalid action' }, 400);
-    }
-  }
-
-  return json({ message: 'Bad request' }, 400);
-};
-
 // Load the `record` document with this slug
 export const loader = async ({ params, request }: LoaderFunctionArgs) => {
   const stegaEnabled = isStegaEnabled(request.url);
@@ -140,5 +87,5 @@ export default function RecordPage() {
     return <div>Loading...</div>;
   }
 
-  return <Record data={data} encodeDataAttribute={encodeDataAttribute} />;
+  return <div>Slug route</div>;
 }

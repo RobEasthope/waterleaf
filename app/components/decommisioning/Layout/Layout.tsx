@@ -1,4 +1,3 @@
-import { useLocation } from '@remix-run/react';
 import { type PropsWithChildren } from 'react';
 
 import { Footer } from '~/components/navigation/Footer/Footer';
@@ -11,16 +10,11 @@ export type LayoutProps = PropsWithChildren<
 >;
 
 export function Layout({ home, theme, children }: LayoutProps) {
-  const { pathname } = useLocation();
-
   return (
     <>
-      <Header home={home} theme={theme} />
-      <div className="container mx-auto p-4 lg:p-12 grid grid-cols-1 gap-4 lg:gap-12">
-        {home?.title && pathname === '/' ? <h1>{home?.title}</h1> : null}
-        {children}
-      </div>
-      <Footer home={home} />
+      <Header />
+      <div>{children}</div>
+      <Footer />
     </>
   );
 }
