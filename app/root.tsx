@@ -12,7 +12,7 @@ import { lazy, Suspense } from 'react';
 
 import { Layout } from '~/components/Layout/Layout';
 import { themePreferenceCookie } from '~/cookies';
-import { getBodyClassNames } from '~/lib/getBodyClassNames';
+import { getBodyClassNames } from '~/utils/getBodyClassNames';
 import { isStegaEnabled } from '~/sanity/isStegaEnabled.server';
 import { useQuery } from '~/sanity/loader';
 import { loadQuery } from '~/sanity/loader.server';
