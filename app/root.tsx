@@ -13,7 +13,6 @@ import {
 import { lazy, Suspense } from 'react';
 
 import { Layout } from '~/components/decommisioning/Layout/Layout';
-import { themePreferenceCookie } from '~/cookies';
 import { isStegaEnabled } from '~/sanity/isStegaEnabled.server';
 import { useQuery } from '~/sanity/loader';
 import { loadQuery } from '~/sanity/loader.server';
@@ -33,12 +32,6 @@ export type Loader = typeof loader;
 export const loader = async ({ request }: LoaderFunctionArgs) => {
   const stegaEnabled = isStegaEnabled(request.url);
 
-  // Dark/light mode
-  const cookieHeader = request.headers.get('Cookie');
-  const cookieValue = (await themePreferenceCookie.parse(cookieHeader)) || {};
-  const theme = themePreference.parse(cookieValue.themePreference) || 'light';
-  const bodyClassNames = getBodyClassNames(theme);
-
   // Sanity content reused throughout the site
   const query = HOME_QUERY;
   const queryParams = {};
@@ -53,8 +46,6 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
     initial,
     query,
     params: queryParams,
-    theme,
-    bodyClassNames,
     sanity: {
       isStudioRoute: new URL(request.url).pathname.startsWith('/studio'),
       stegaEnabled,
@@ -72,7 +63,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 };
 
 export default function App() {
-  const { initial, query, params, theme, bodyClassNames, sanity, ENV } =
+  const { initial, query, params, sanity, ENV } =
     useLoaderData<typeof loader>();
   const { data, loading } = useQuery<typeof initial.data>(query, params, {
     // @ts-expect-error Sanity says to just expect the error due the problems of handling types in Sanity datasets after a certain point
@@ -88,11 +79,11 @@ export default function App() {
         <link rel="icon" href="https://fav.farm/🌊" />
         <Links />
       </head>
-      <body className={bodyClassNames}>
+      <body>
         {sanity.isStudioRoute ? (
           <Outlet />
         ) : (
-          <Layout home={loading || !data ? initial.data : data} theme={theme}>
+          <Layout home={loading || !data ? initial.data : data}>
             <Outlet />
           </Layout>
         )}
