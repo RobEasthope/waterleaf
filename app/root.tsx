@@ -9,8 +9,8 @@ import {
   useLoaderData,
 } from '@remix-run/react';
 import { lazy, Suspense } from 'react';
-import { Layout } from '~/components/decommisioning/Layout/Layout';
 
+import { Layout } from '~/components/decommisioning/Layout/Layout';
 import { themePreferenceCookie } from '~/cookies';
 import { isStegaEnabled } from '~/sanity/isStegaEnabled.server';
 import { useQuery } from '~/sanity/loader';
