@@ -1,5 +1,13 @@
 {
-  "include": ["env.d.ts", "**/*.ts", "**/*.tsx", ".eslintrc.cjs", "*.mjs"],
+  "include": [
+    "env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
+    ".eslintrc.cjs",
+    "*.mjs"
+  ],
   "compilerOptions": {
     "skipLibCheck": true,
     "lib": ["DOM", "DOM.Iterable", "ES2019"],
