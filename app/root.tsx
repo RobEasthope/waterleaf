@@ -1,6 +1,6 @@
 import './app.css';
 
-import type { LinksFunction, LoaderFunctionArgs } from '@remix-run/node';
+import type { LoaderFunctionArgs } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import {
   Links,
@@ -27,26 +27,6 @@ import { getBodyClassNames } from '~/utils/getBodyClassNames';
 const LiveVisualEditing = lazy(
   () => import('~/components/base/LiveVisualEditing/LiveVisualEditing'),
 );
-
-export const links: LinksFunction = () => {
-  return [
-    { rel: 'preconnect', href: 'https://cdn.sanity.io' },
-    {
-      rel: 'preconnect',
-      href: 'https://fonts.gstatic.com',
-      crossOrigin: 'anonymous',
-    },
-    {
-      rel: 'preconnect',
-      href: 'https://fonts.googleapis.com',
-      crossOrigin: 'anonymous',
-    },
-    {
-      href: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;700&family=Inter:wght@500;700;800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap',
-      rel: 'stylesheet',
-    },
-  ];
-};
 
 export type Loader = typeof loader;
 
