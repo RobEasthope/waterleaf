@@ -1,4 +1,4 @@
-import { createQueryStore } from "@sanity/react-loader";
+import { createQueryStore } from '@sanity/react-loader';
 
 export const {
   // Used only server side

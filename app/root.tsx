@@ -1,5 +1,5 @@
-import type { LinksFunction, LoaderFunctionArgs } from "@remix-run/node";
-import { json } from "@remix-run/node";
+import type { LinksFunction, LoaderFunctionArgs } from '@remix-run/node';
+import { json } from '@remix-run/node';
 import {
   Links,
   Meta,
@@ -7,41 +7,43 @@ import {
   Scripts,
   ScrollRestoration,
   useLoaderData,
-} from "@remix-run/react";
-import { lazy, Suspense } from "react";
+} from '@remix-run/react';
+import { lazy, Suspense } from 'react';
 
-import { Layout } from "~/components/Layout";
-import { themePreferenceCookie } from "~/cookies";
-import { getBodyClassNames } from "~/lib/getBodyClassNames";
-import { isStegaEnabled } from "~/sanity/isStegaEnabled.server";
-import { useQuery } from "~/sanity/loader";
-import { loadQuery } from "~/sanity/loader.server";
-import { frontendUrl, studioUrl } from "~/sanity/projectDetails";
-import { HOME_QUERY } from "~/sanity/queries";
-import styles from "~/tailwind.css?url";
-import type { HomeDocument } from "~/types/home";
-import { homeZ } from "~/types/home";
-import { themePreference } from "~/types/themePreference";
+import { Layout } from '~/components/decommisioning/Layout/Layout';
+import { themePreferenceCookie } from '~/cookies';
+import { isStegaEnabled } from '~/sanity/isStegaEnabled.server';
+import { useQuery } from '~/sanity/loader';
+import { loadQuery } from '~/sanity/loader.server';
+import { frontendUrl, studioUrl } from '~/sanity/projectDetails';
+import { HOME_QUERY } from '~/sanity/queries';
+import styles from '~/tailwind.css?url';
+import type { HomeDocument } from '~/types/home';
+import { homeZ } from '~/types/home';
+import { themePreference } from '~/types/themePreference';
+import { getBodyClassNames } from '~/utils/getBodyClassNames';
 
-const LiveVisualEditing = lazy(() => import("~/components/LiveVisualEditing"));
+const LiveVisualEditing = lazy(
+  () => import('~/components/base/LiveVisualEditing/LiveVisualEditing'),
+);
 
 export const links: LinksFunction = () => {
   return [
-    { rel: "stylesheet", href: styles },
-    { rel: "preconnect", href: "https://cdn.sanity.io" },
+    { rel: 'stylesheet', href: styles },
+    { rel: 'preconnect', href: 'https://cdn.sanity.io' },
     {
-      rel: "preconnect",
-      href: "https://fonts.gstatic.com",
-      crossOrigin: "anonymous",
+      rel: 'preconnect',
+      href: 'https://fonts.gstatic.com',
+      crossOrigin: 'anonymous',
     },
     {
-      rel: "preconnect",
-      href: "https://fonts.googleapis.com",
-      crossOrigin: "anonymous",
+      rel: 'preconnect',
+      href: 'https://fonts.googleapis.com',
+      crossOrigin: 'anonymous',
     },
     {
-      href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;700&family=Inter:wght@500;700;800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap",
-      rel: "stylesheet",
+      href: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;700&family=Inter:wght@500;700;800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap',
+      rel: 'stylesheet',
     },
   ];
 };
@@ -52,16 +54,16 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
   const stegaEnabled = isStegaEnabled(request.url);
 
   // Dark/light mode
-  const cookieHeader = request.headers.get("Cookie");
+  const cookieHeader = request.headers.get('Cookie');
   const cookieValue = (await themePreferenceCookie.parse(cookieHeader)) || {};
-  const theme = themePreference.parse(cookieValue.themePreference) || "light";
+  const theme = themePreference.parse(cookieValue.themePreference) || 'light';
   const bodyClassNames = getBodyClassNames(theme);
 
   // Sanity content reused throughout the site
   const query = HOME_QUERY;
   const queryParams = {};
   const initial = await loadQuery<HomeDocument>(query, queryParams, {
-    perspective: stegaEnabled ? "previewDrafts" : "published",
+    perspective: stegaEnabled ? 'previewDrafts' : 'published',
   }).then((res) => ({
     ...res,
     data: res.data ? homeZ.parse(res.data) : undefined,
@@ -74,7 +76,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
     theme,
     bodyClassNames,
     sanity: {
-      isStudioRoute: new URL(request.url).pathname.startsWith("/studio"),
+      isStudioRoute: new URL(request.url).pathname.startsWith('/studio'),
       stegaEnabled,
     },
     ENV: {
@@ -93,7 +95,7 @@ export default function App() {
   const { initial, query, params, theme, bodyClassNames, sanity, ENV } =
     useLoaderData<typeof loader>();
   const { data, loading } = useQuery<typeof initial.data>(query, params, {
-    // @ts-expect-error
+    // @ts-expect-error Sanity says to just expect the error due the problems of handling types in Sanity datasets after a certain point
     initial,
   });
 
@@ -116,6 +118,7 @@ export default function App() {
         )}
         <ScrollRestoration />
         <script
+          // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{
             __html: `window.ENV = ${JSON.stringify(ENV)}`,
           }}

@@ -1,10 +1,10 @@
-import type { ActionFunction, LoaderFunction } from "@remix-run/node";
-import { json, redirect } from "@remix-run/node";
+import type { ActionFunction, LoaderFunction } from '@remix-run/node';
+import { json, redirect } from '@remix-run/node';
 
-import { themePreferenceCookie } from "~/cookies";
+import { themePreferenceCookie } from '~/cookies';
 
 export const action: ActionFunction = async ({ request }) => {
-  const cookieHeader = request.headers.get("Cookie");
+  const cookieHeader = request.headers.get('Cookie');
   const cookie = (await themePreferenceCookie.parse(cookieHeader)) || {};
   const themePreference = cookie.themePreference === `dark` ? `light` : `dark`;
 
@@ -12,7 +12,7 @@ export const action: ActionFunction = async ({ request }) => {
     { themePreference },
     {
       headers: {
-        "Set-Cookie": await themePreferenceCookie.serialize({
+        'Set-Cookie': await themePreferenceCookie.serialize({
           themePreference,
         }),
       },
@@ -20,4 +20,4 @@ export const action: ActionFunction = async ({ request }) => {
   );
 };
 
-export const loader: LoaderFunction = () => redirect("/", { status: 404 });
+export const loader: LoaderFunction = () => redirect('/', { status: 404 });

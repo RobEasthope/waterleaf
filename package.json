@@ -43,6 +43,7 @@
     "sanity-plugin-iframe-pane": "^2.6.1",
     "satori": "^0.10.13",
     "styled-components": "^6.1.8",
+    "uuid": "^9.0.1",
     "zod": "^3.22.4"
   },
   "devDependencies": {
@@ -63,6 +64,7 @@
     "@types/react": "^18.2.61",
     "@types/react-dom": "^18.2.19",
     "@types/styled-components": "^5.1.34",
+    "@types/uuid": "^9.0.8",
     "autoprefixer": "^10.4.18",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",

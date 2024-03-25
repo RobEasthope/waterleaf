@@ -1,6 +1,6 @@
-import { Link } from "@remix-run/react";
+import { Link } from '@remix-run/react';
 
-import type { LogoProps } from "~/types/home";
+import type { LogoProps } from '~/types/home';
 
 export function Logo(props: LogoProps) {
   const { siteTitle } = props.home ?? {};

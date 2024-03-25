@@ -1,11 +1,11 @@
-import { Resvg } from "@resvg/resvg-js";
-import type { SanityDocument } from "@sanity/client";
-import urlBuilder from "@sanity/image-url";
-import type { SatoriOptions } from "satori";
-import satori from "satori";
+import { Resvg } from '@resvg/resvg-js';
+import type { SanityDocument } from '@sanity/client';
+import urlBuilder from '@sanity/image-url';
+import type { SatoriOptions } from 'satori';
+import satori from 'satori';
 
-import { OG_IMAGE_HEIGHT, OG_IMAGE_WIDTH } from "~/routes/resource.og";
-import { dataset, projectId } from "~/sanity/projectDetails";
+import { OG_IMAGE_HEIGHT, OG_IMAGE_WIDTH } from '~/routes/resource.og';
+import { dataset, projectId } from '~/sanity/projectDetails';
 
 // Load the font from the "public" directory
 const fontSans = (baseUrl: string) =>
@@ -26,9 +26,9 @@ export async function generatePngFromDocument(
     height: OG_IMAGE_HEIGHT,
     fonts: [
       {
-        name: "Inter",
+        name: 'Inter',
         data: fontSansData,
-        style: "normal",
+        style: 'normal',
       },
     ],
   };
@@ -39,21 +39,21 @@ export async function generatePngFromDocument(
       style={{
         width: options.width,
         height: options.height,
-        background: "linear-gradient( 135deg, black 10%, #444 100%)",
-        color: "white",
-        fontFamily: "Inter",
-        letterSpacing: "-0.05em",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        background: 'linear-gradient( 135deg, black 10%, #444 100%)',
+        color: 'white',
+        fontFamily: 'Inter',
+        letterSpacing: '-0.05em',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
         lineHeight: 1,
       }}
     >
       <div
         style={{
           width: image?.asset?._ref ? options.width - 500 : options.width,
-          display: "flex",
-          flexDirection: "column",
+          display: 'flex',
+          flexDirection: 'column',
           padding: 50,
           gap: 25,
         }}
@@ -67,9 +67,9 @@ export async function generatePngFromDocument(
         <div
           style={{
             width: 500,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
           }}
         >
           <img
@@ -79,8 +79,8 @@ export async function generatePngFromDocument(
               .image(image.asset._ref)
               .height(800)
               .width(800)
-              .fit("max")
-              .auto("format")
+              .fit('max')
+              .auto('format')
               .url()}
             width="500"
             height="500"

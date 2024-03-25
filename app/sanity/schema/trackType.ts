@@ -1,21 +1,21 @@
-import { defineField, defineType } from "sanity";
+import { defineField, defineType } from 'sanity';
 
-import { secondsToMinutes } from "~/lib/secondsToMinutes";
-import Duration from "~/sanity/components/Duration";
+import Duration from '~/sanity/components/Duration/Duration';
+import { secondsToMinutes } from '~/utils/secondsToMinutes';
 
 export const trackType = defineType({
-  name: "track",
-  title: "Track",
-  type: "object",
+  name: 'track',
+  title: 'Track',
+  type: 'object',
   fields: [
     defineField({
-      name: "title",
-      type: "string",
+      name: 'title',
+      type: 'string',
     }),
     defineField({
-      name: "duration",
-      description: "Time in seconds",
-      type: "number",
+      name: 'duration',
+      description: 'Time in seconds',
+      type: 'number',
       components: {
         input: Duration,
       },
@@ -23,8 +23,8 @@ export const trackType = defineType({
   ],
   preview: {
     select: {
-      title: "title",
-      duration: "duration",
+      title: 'title',
+      duration: 'duration',
     },
     prepare({ title, duration }) {
       return {

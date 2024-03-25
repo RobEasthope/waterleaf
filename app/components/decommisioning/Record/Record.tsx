@@ -1,35 +1,31 @@
-import type { EncodeDataAttributeCallback } from "@sanity/react-loader";
+import type { EncodeDataAttributeCallback } from '@sanity/react-loader';
+import { v4 as uuidv4 } from 'uuid';
 
-import { LikeDislike } from "~/components/LikeDislike";
-import { RecordCover } from "~/components/RecordCover";
-import { SanityContent } from "~/components/SanityContent";
-import { Title } from "~/components/Title";
-import { secondsToMinutes } from "~/lib/secondsToMinutes";
-import type { RecordDocument } from "~/types/record";
+import { LikeDislike } from '~/components/decommisioning/LikeDislike/LikeDislike';
+import { RecordCover } from '~/components/decommisioning/RecordCover/RecordCover';
+import { SanityContent } from '~/components/decommisioning/SanityContent/SanityContent';
+import type { RecordDocument } from '~/types/record';
+import { secondsToMinutes } from '~/utils/secondsToMinutes';
 
 type RecordProps = {
   data: RecordDocument;
   encodeDataAttribute?: EncodeDataAttributeCallback;
 };
 
-export function Record(props: RecordProps) {
-  const { _id, title, artist, content, image, tracks, likes, dislikes } =
-    props.data;
+export function Record({ data, encodeDataAttribute }: RecordProps) {
+  const { _id, title, artist, content, image, tracks, likes, dislikes } = data;
 
   return (
     <article className="flex flex-col items-start gap-4 lg:flex-row lg:gap-12">
       <div className="grid-gap-4 grid max-w-[70vw] grid-cols-1">
-        <div
-          className="max-w-sm"
-          data-sanity={props?.encodeDataAttribute?.("image")}
-        >
+        <div className="max-w-sm" data-sanity={encodeDataAttribute?.('image')}>
           <RecordCover image={image} />
         </div>
         <LikeDislike id={_id} likes={likes} dislikes={dislikes} />
       </div>
       <div className="flex flex-shrink-0 flex-col gap-4 lg:gap-6 lg:w-2/3">
         <header>
-          <Title>{title}</Title>
+          <h1>{title}</h1>
           {artist ? (
             <h2 className="bg-black text-2xl font-bold tracking-tighter text-white">
               {artist}
@@ -46,7 +42,7 @@ export function Record(props: RecordProps) {
             </li>
             {tracks.map((track) => (
               <li
-                key={track._key}
+                key={uuidv4()}
                 className="flex items-center justify-between py-3"
               >
                 <span className="text-lg">{track.title}</span>

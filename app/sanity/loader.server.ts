@@ -1,6 +1,6 @@
-import * as queryStore from "@sanity/react-loader";
+import * as queryStore from '@sanity/react-loader';
 
-import { client } from "~/sanity/client";
+import { client } from '~/sanity/client';
 
 if (!process.env.SANITY_READ_TOKEN) {
   throw new Error(
