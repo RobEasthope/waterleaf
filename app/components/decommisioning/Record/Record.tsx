@@ -11,7 +11,7 @@ type RecordProps = {
   encodeDataAttribute?: EncodeDataAttributeCallback;
 };
 
-export function Record({ data }: RecordProps) {
+export function Record({ data, encodeDataAttribute }: RecordProps) {
   const { _id, title, artist, content, image, tracks, likes, dislikes } = data;
 
   return (
