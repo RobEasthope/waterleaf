@@ -1,4 +1,4 @@
-import '~/sanity/studio.css?url';
+import '~/sanity/studio.css';
 
 import type { MetaFunction } from '@remix-run/node';
 import { Studio } from 'sanity';
