@@ -1,5 +1,5 @@
 import type { LayoutProps } from '~/components/Layout/Layout';
-import { Logo } from '~/components/Logo/Logo';
+import { Logo } from '~/components/navigation/Logo/Logo';
 import { ThemeToggle } from '~/components/ThemeToggle/ThemeToggle';
 
 export function Header(props: LayoutProps) {
