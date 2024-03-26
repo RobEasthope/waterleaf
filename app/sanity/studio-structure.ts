@@ -1,3 +1,4 @@
+import { BsBrush } from 'react-icons/bs';
 import { RxAvatar, RxLayers } from 'react-icons/rx';
 import type {
   DefaultDocumentNodeResolver,
@@ -20,7 +21,7 @@ export const structure: StructureResolver = (S) =>
       //   .title('Home'),
 
       // Document lists
-      S.documentTypeListItem('Stock').title('Stock').icon(RxLayers),
+      S.documentTypeListItem('Stock').title('Stock').icon(BsBrush),
       S.divider(),
       S.documentTypeListItem('Collection').title('Collections').icon(RxLayers),
       S.documentTypeListItem('Maker')
