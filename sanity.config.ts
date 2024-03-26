@@ -5,7 +5,7 @@ import { structureTool } from 'sanity/structure';
 
 import { locate } from '~/sanity/presentation/locate';
 import { frontendUrl, projectDetails } from '~/sanity/projectDetails';
-import schema from '~/sanity/schema';
+import schema from '~/sanity/schema-index';
 import { defaultDocumentNode, structure } from '~/sanity/structure';
 
 export const config = defineConfig({
