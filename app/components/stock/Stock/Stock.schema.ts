@@ -1,7 +1,7 @@
 import { RxLayers } from 'react-icons/rx';
 import { defineField, defineType } from 'sanity';
 
-export const Stock = defineType({
+export const StockSchema = defineType({
   name: 'Stock',
   title: 'Stock',
   type: 'document',
