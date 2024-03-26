@@ -1,11 +1,11 @@
-import { RxLayers } from 'react-icons/rx';
+import { BsBrush } from 'react-icons/bs';
 import { defineField, defineType } from 'sanity';
 
 export const StockSchema = defineType({
   name: 'Stock',
   title: 'Stock',
   type: 'document',
-  icon: RxLayers,
+  icon: BsBrush,
   fields: [
     defineField({
       name: 'name',
