@@ -1,7 +1,7 @@
 import { RxLayers } from 'react-icons/rx';
 import { defineField, defineType } from 'sanity';
 
-export const CollectionSchema = defineType({
+export const Collection = defineType({
   name: 'Collection',
   title: 'Collection',
   type: 'document',

@@ -1,7 +1,7 @@
 import { RxAvatar } from 'react-icons/rx';
 import { defineField, defineType } from 'sanity';
 
-export const MakerSchema = defineType({
+export const Maker = defineType({
   name: 'Maker',
   title: 'Naker',
   type: 'document',

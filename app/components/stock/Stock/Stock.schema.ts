@@ -1,7 +1,7 @@
 import { BsBrush } from 'react-icons/bs';
 import { defineField, defineType } from 'sanity';
 
-export const StockSchema = defineType({
+export const Stock = defineType({
   name: 'Stock',
   title: 'Stock',
   type: 'document',
