@@ -1,10 +1,11 @@
+import { RxLayers } from 'react-icons/rx';
 import { defineField, defineType } from 'sanity';
 
 export const Stock = defineType({
   name: 'Stock',
   title: 'Stock',
   type: 'document',
-  // icon: Users,
+  icon: RxLayers,
   fields: [
     defineField({
       name: 'name',
