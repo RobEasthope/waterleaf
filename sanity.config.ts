@@ -5,8 +5,8 @@ import { structureTool } from 'sanity/structure';
 
 import { locate } from '~/sanity/presentation/locate';
 import { frontendUrl, projectDetails } from '~/sanity/projectDetails';
-import schema from '~/sanity/schema-index';
-import { defaultDocumentNode, structure } from '~/sanity/studio-structure';
+import { schemasIndex } from '~/sanity/schemasIndex';
+import { defaultDocumentNode, structure } from '~/sanity/studioStructure';
 
 export const config = defineConfig({
   ...projectDetails(),
@@ -22,6 +22,6 @@ export const config = defineConfig({
   ],
   basePath: `/studio`,
   schema: {
-    types: schema,
+    types: schemasIndex,
   },
 });
