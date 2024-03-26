@@ -24,4 +24,15 @@ export const StockSchema = defineType({
       options: { hotspot: true },
     }),
   ],
+  preview: {
+    select: {
+      title: 'name',
+    },
+    prepare({ title }: { title: string }) {
+      return {
+        title,
+        subtitle: title || 'Unnamed stock item',
+      };
+    },
+  },
 });

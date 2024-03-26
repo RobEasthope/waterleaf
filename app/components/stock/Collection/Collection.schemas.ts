@@ -23,4 +23,15 @@ export const CollectionSchema = defineType({
       },
     }),
   ],
+  preview: {
+    select: {
+      title: 'name',
+    },
+    prepare({ title }: { title: string }) {
+      return {
+        title,
+        subtitle: title || 'Unnamed collection',
+      };
+    },
+  },
 });

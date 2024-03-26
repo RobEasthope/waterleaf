@@ -19,4 +19,15 @@ export const MakerSchema = defineType({
       },
     }),
   ],
+  preview: {
+    select: {
+      title: 'name',
+    },
+    prepare({ title }: { title: string }) {
+      return {
+        title,
+        subtitle: title || 'Unnamed maker',
+      };
+    },
+  },
 });
