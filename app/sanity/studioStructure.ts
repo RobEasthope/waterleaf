@@ -1,30 +1,30 @@
-import { Disc, Home, Tags, Users } from 'lucide-react';
+import { BsBrush } from 'react-icons/bs';
+import { RxAvatar, RxInfoCircled, RxLayers } from 'react-icons/rx';
 import type {
   DefaultDocumentNodeResolver,
   StructureResolver,
 } from 'sanity/structure';
 
 import OGPreview from '~/sanity/components/OGPreview/OGPreview';
-import { resolveOGUrl } from '~/sanity/structure/resolveOGUrl';
+import { resolveOGUrl } from '~/sanity/utils/resolveOGUrl';
 
 export const structure: StructureResolver = (S) =>
   S.list()
     .id('root')
     .title('Content')
     .items([
-      // Singleton, home page curation
+      S.documentTypeListItem('Stock').title('Stock').icon(BsBrush),
+      S.divider(),
+      S.documentTypeListItem('Collection').title('Collections').icon(RxLayers),
+      S.documentTypeListItem('Maker')
+        .title('Cartographers/Authors')
+        .icon(RxAvatar),
+      S.divider(),
       S.documentListItem()
-        .schemaType('home')
-        .icon(Home)
-        .id('home')
-        .title('Home'),
-      S.divider(),
-
-      // Document lists
-      S.documentTypeListItem('record').title('Records').icon(Disc),
-      S.documentTypeListItem('artist').title('Artists').icon(Users),
-      S.divider(),
-      S.documentTypeListItem('genre').title('Genres').icon(Tags),
+        .schemaType('AppSettings')
+        .icon(RxInfoCircled)
+        .id('AppSettings')
+        .title('App settings'),
     ]);
 
 export const defaultDocumentNode: DefaultDocumentNodeResolver = (
@@ -39,9 +39,7 @@ export const defaultDocumentNode: DefaultDocumentNodeResolver = (
     .title('OG Preview');
 
   switch (schemaType) {
-    case `home`:
-      return S.document().views([S.view.form()]);
-    case `record`:
+    case `Stock`:
       return S.document().views([S.view.form(), OGPreviewView]);
     default:
       return S.document().views([S.view.form()]);

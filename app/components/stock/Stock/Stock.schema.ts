@@ -1,11 +1,11 @@
-import { Users } from 'lucide-react';
+import { BsBrush } from 'react-icons/bs';
 import { defineField, defineType } from 'sanity';
 
-export const artistType = defineType({
-  name: 'artist',
-  title: 'Artist',
+export const Stock = defineType({
+  name: 'Stock',
+  title: 'Stock',
   type: 'document',
-  icon: Users,
+  icon: BsBrush,
   fields: [
     defineField({
       name: 'name',
@@ -24,4 +24,15 @@ export const artistType = defineType({
       options: { hotspot: true },
     }),
   ],
+  preview: {
+    select: {
+      title: 'name',
+    },
+    prepare({ title }: { title: string }) {
+      return {
+        title,
+        subtitle: title || 'Unnamed stock item',
+      };
+    },
+  },
 });
