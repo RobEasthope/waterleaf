@@ -1,4 +1,4 @@
-import { RxLayers } from 'react-icons/rx';
+import { RxAvatar, RxLayers } from 'react-icons/rx';
 import type {
   DefaultDocumentNodeResolver,
   StructureResolver,
@@ -21,6 +21,10 @@ export const structure: StructureResolver = (S) =>
 
       // Document lists
       S.documentTypeListItem('Stock').title('Stock').icon(RxLayers),
+      S.documentTypeListItem('Collection').title('Collections').icon(RxLayers),
+      S.documentTypeListItem('Maker')
+        .title('Cartographers/Authors')
+        .icon(RxAvatar),
       S.divider(),
     ]);
 
