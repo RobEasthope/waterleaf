@@ -1,4 +1,3 @@
-import { Disc, Home, Tags, Users } from 'lucide-react';
 import type {
   DefaultDocumentNodeResolver,
   StructureResolver,
@@ -8,24 +7,18 @@ import OGPreview from '~/sanity/components/OGPreview/OGPreview';
 import { resolveOGUrl } from '~/sanity/utils/resolveOGUrl';
 
 export const structure: StructureResolver = (S) =>
-  S.list()
-    .id('root')
-    .title('Content')
-    .items([
-      // Singleton, home page curation
-      S.documentListItem()
-        .schemaType('home')
-        .icon(Home)
-        .id('home')
-        .title('Home'),
-      S.divider(),
+  S.list().id('root').title('Content').items([
+    // Singleton, home page curation
+    // S.documentListItem()
+    //   .schemaType('home')
+    //   .icon(Home)
+    //   .id('home')
+    //   .title('Home'),
 
-      // Document lists
-      S.documentTypeListItem('record').title('Records').icon(Disc),
-      S.documentTypeListItem('artist').title('Artists').icon(Users),
-      S.divider(),
-      S.documentTypeListItem('genre').title('Genres').icon(Tags),
-    ]);
+    // Document lists
+    // S.documentTypeListItem('record').title('Records').icon(Disc),
+    S.divider(),
+  ]);
 
 export const defaultDocumentNode: DefaultDocumentNodeResolver = (
   S,
