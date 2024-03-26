@@ -39,9 +39,7 @@ export const defaultDocumentNode: DefaultDocumentNodeResolver = (
     .title('OG Preview');
 
   switch (schemaType) {
-    case `home`:
-      return S.document().views([S.view.form()]);
-    case `record`:
+    case `Stock`:
       return S.document().views([S.view.form(), OGPreviewView]);
     default:
       return S.document().views([S.view.form()]);
