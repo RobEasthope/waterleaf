@@ -10,7 +10,7 @@ export const Stock = defineType({
   icon: BsBrush,
   fields: [
     defineField({
-      name: 'name',
+      name: 'title',
       type: 'string',
     }),
     defineField({
