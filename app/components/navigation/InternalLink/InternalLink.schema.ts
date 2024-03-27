@@ -1,7 +1,7 @@
 import { RiLinksLine } from 'react-icons/ri';
 import { defineField, defineType } from 'sanity';
 
-import { ALL_DOC_TYPES } from './ALL_DOC_TYPES';
+import { LINKABLE_DOC_TYPES } from './LINKABLE_DOC_TYPES';
 
 export default defineType({
   name: 'InternalLink',
@@ -14,7 +14,7 @@ export default defineType({
       name: 'internalUID',
       title: 'Page',
       type: 'reference',
-      to: ALL_DOC_TYPES,
+      to: LINKABLE_DOC_TYPES,
 
       validation: (Rule) => Rule.required(),
     }),
