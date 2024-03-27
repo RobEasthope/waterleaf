@@ -17,8 +17,12 @@ export const schemasIndex = [
   ExternalLinkWithTitleSchema,
   InternalLinkSchema,
   InternalLinkWithTitleSchema,
+
+  // Settings
+  AppSettingsSchema,
+
+  // Stock
   StockSchema,
   MakerSchema,
   CollectionSchemas,
-  AppSettingsSchema,
 ];
