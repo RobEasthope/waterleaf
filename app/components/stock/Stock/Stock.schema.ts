@@ -14,11 +14,15 @@ export default defineType({
       title: 'Title',
       type: 'string',
     }),
-
     defineField({
       name: 'shortDescription',
       title: 'Short description',
       type: 'string',
+    }),
+    defineField({
+      name: 'date',
+      title: 'Date',
+      type: 'number',
     }),
     defineField({
       name: 'stockDescription',
@@ -43,11 +47,6 @@ export default defineType({
       name: 'stockId',
       title: 'Stock ID',
       type: 'string',
-    }),
-    defineField({
-      name: 'date',
-      title: 'Date',
-      type: 'number',
     }),
   ],
   preview: {
