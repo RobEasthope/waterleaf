@@ -34,7 +34,7 @@ export const Stock = defineType({
     },
     prepare({ title }: TitleListPreviewProps) {
       return {
-        title,
+        title: title || 'Unnamed Stock',
         subtitle: title && 'Stock',
       };
     },

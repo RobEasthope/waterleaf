@@ -31,8 +31,8 @@ export const Collection = defineType({
     },
     prepare({ title }: TitleListPreviewProps) {
       return {
-        title,
-        subtitle: title || 'Unnamed collection',
+        title: title || 'Unnamed Collection',
+        subtitle: title && 'Collection',
       };
     },
   },

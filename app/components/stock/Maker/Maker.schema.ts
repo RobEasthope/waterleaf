@@ -27,8 +27,8 @@ export const Maker = defineType({
     },
     prepare({ title }: TitleListPreviewProps) {
       return {
-        title,
-        subtitle: title || 'Unnamed maker',
+        title: title || 'Unnamed Cartographer/Author',
+        subtitle: title && 'Cartographer/Author',
       };
     },
   },
