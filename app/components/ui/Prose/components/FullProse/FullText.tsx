@@ -9,9 +9,9 @@ import { ExternalLink } from '~/components/navigation/ExternalLink/ExternalLink'
 import { InternalLink } from '~/components/navigation/InternalLink/InternalLink';
 import { Type } from '~/components/ui/Type/Type';
 
-export type FullTextProps = Array<SanityKeyed<SanityBlock>>;
+export type FullProseProps = Array<SanityKeyed<SanityBlock>>;
 
-export const FullTextComponents: PortableTextComponents = {
+export const FullProseComponents: PortableTextComponents = {
   block: {
     h2: ({ children }) => (
       <Type as="h2" className="mb-1 font-sans text-2xl font-bold">

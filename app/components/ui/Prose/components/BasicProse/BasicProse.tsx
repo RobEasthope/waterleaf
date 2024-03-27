@@ -1,9 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-
 /* eslint-disable react/prop-types */
-
 /* eslint-disable @typescript-eslint/naming-convention */
 import type { PortableTextComponents } from '@portabletext/react';
 
@@ -12,9 +9,9 @@ import { ExternalLink } from '~/components/navigation/ExternalLink/ExternalLink'
 import { InternalLink } from '~/components/navigation/InternalLink/InternalLink';
 import { Type } from '~/components/ui/Type/Type';
 
-export type BasicTextProps = Array<SanityKeyed<SanityBlock>>;
+export type BasicProseProps = Array<SanityKeyed<SanityBlock>>;
 
-export const BasicTextComponents: PortableTextComponents = {
+export const BasicProseComponents: PortableTextComponents = {
   block: {
     h2: ({ children }) => (
       <Type as="h2" className="mb-1 font-sans text-2xl font-bold">
