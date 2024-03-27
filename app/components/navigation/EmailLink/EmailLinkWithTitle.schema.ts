@@ -1,5 +1,5 @@
-import { defineField, defineType } from 'sanity';
 import { MdOutlineEmail } from 'react-icons/md';
+import { defineField, defineType } from 'sanity';
 
 import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
 
@@ -51,8 +51,7 @@ export default defineType({
       title: 'title',
       subtitle: 'email',
     },
-    prepare(selection: BasicSanityListingProps) {
-      const { title, subtitle } = selection;
+    prepare({ title, subtitle }: BasicSanityListingProps) {
       return {
         title: title || 'Email link',
         subtitle: subtitle || '',

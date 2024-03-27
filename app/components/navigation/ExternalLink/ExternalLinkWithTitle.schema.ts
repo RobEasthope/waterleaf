@@ -41,8 +41,7 @@ export default defineType({
     select: {
       title: 'title',
     },
-    prepare(selection: BasicSanityListingProps) {
-      const { title } = selection;
+    prepare({ title }: BasicSanityListingProps) {
       return {
         title: title || 'External link',
         subtitle: 'External link',
