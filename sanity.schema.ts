@@ -10,6 +10,7 @@ import MakerSchema from '~/components/stock/Maker/Maker.schema';
 import StockSchema from '~/components/stock/Stock/Stock.schema';
 import BasicProseSchema from '~/components/ui/Prose/components/BasicProse/BasicProse.schema';
 import FullProseSchema from '~/components/ui/Prose/components/FullProse/FullProse.schema';
+import StockProseSchema from '~/components/ui/Prose/components/StockProse/StockProse.schema';
 
 export const schemasIndex = [
   // Links
@@ -23,6 +24,7 @@ export const schemasIndex = [
   // Prose
   BasicProseSchema,
   FullProseSchema,
+  StockProseSchema,
 
   // Settings
   AppSettingsSchema,
