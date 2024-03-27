@@ -11,7 +11,6 @@ import type { SanityBlock, SanityKeyed } from 'sanity-codegen';
 import { EmailLink } from '~/components/_base/EmailLink/EmailLink';
 import { ExternalLink } from '~/components/_base/ExternalLink/ExternalLink';
 import { InternalLink } from '~/components/_base/InternalLink/InternalLink';
-import { twLinkStyles } from '~/components/_base/Prose/twLinkStyles';
 import { Type } from '~/components/_base/Type/Type';
 
 export type BasicTextProps = Array<SanityKeyed<SanityBlock>>;
@@ -44,23 +43,18 @@ export const BasicTextComponents: PortableTextComponents = {
 
     // Links
     ExternalLink: ({ children, value }) => (
-      <ExternalLink href={value.url} className={twLinkStyles}>
-        {children}
-      </ExternalLink>
+      <ExternalLink href={value.url}>{children}</ExternalLink>
     ),
     InternalLink: ({ children, value }) => (
       <InternalLink
         href={value?.page?.slug?.current}
-        className={twLinkStyles}
         homePageSlug={value?.appSettings?.homePageSlug}
       >
         {children}
       </InternalLink>
     ),
     EmailLink: ({ children, value }) => (
-      <EmailLink email={value?.email} className={twLinkStyles}>
-        {children}
-      </EmailLink>
+      <EmailLink email={value?.email}>{children}</EmailLink>
     ),
   },
 };
