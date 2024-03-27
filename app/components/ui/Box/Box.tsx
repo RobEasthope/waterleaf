@@ -1,7 +1,7 @@
 import { cva, type VariantProps } from 'class-variance-authority';
 import { createElement, forwardRef } from 'react';
 
-import { cn, stylesCheck } from '@/utils/tailwind';
+import { areThereAnyStyles, cn } from '~/utils/tailwind';
 
 const boxVariants = cva(
   // Base styles
@@ -63,7 +63,7 @@ const Box = forwardRef<HTMLDivElement, BoxProps>(
     return createElement(
       as,
       {
-        className: stylesCheck(
+        className: areThereAnyStyles(
           cn(
             boxVariants({ blockSpacing, breakout, columns, maxWidth }),
             className,
