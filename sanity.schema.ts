@@ -9,7 +9,7 @@ import CollectionSchemas from '~/components/stock/Collection/Collection.schemas'
 import MakerSchema from '~/components/stock/Maker/Maker.schema';
 import StockSchema from '~/components/stock/Stock/Stock.schema';
 import BasicProseSchema from '~/components/ui/Prose/components/BasicProse/BasicProse.schema';
-import FullTextSchema from '~/components/ui/Prose/components/FullProse/FullText.schema';
+import FullTextSchema from '~/components/ui/Prose/components/FullProse/FullProse.schema';
 
 export const schemasIndex = [
   // Links
