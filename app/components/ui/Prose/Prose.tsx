@@ -2,7 +2,6 @@ import './prose.css';
 
 import type { PortableTextComponents } from '@portabletext/react';
 import { PortableText } from '@portabletext/react';
-import type { LinksFunction } from '@vercel/remix';
 
 import { Box } from '~/components/ui/Box/Box';
 import { cn } from '~/utils/tailwind';
@@ -13,8 +12,6 @@ export type ProseProps = {
   content: any;
   components: unknown;
 };
-
-export const links: LinksFunction = () => [{ rel: 'stylesheet', href: styles }];
 
 export function Prose({
   as = 'div',
