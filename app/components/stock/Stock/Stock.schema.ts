@@ -1,6 +1,8 @@
 import { BsBrush } from 'react-icons/bs';
 import { defineField, defineType } from 'sanity';
 
+import { TitleListPreviewProps } from '~/types/listPreviews';
+
 export const Stock = defineType({
   name: 'Stock',
   title: 'Stock',
@@ -28,7 +30,7 @@ export const Stock = defineType({
     select: {
       title: 'name',
     },
-    prepare({ title }: { title: string }) {
+    prepare({ title }: TitleListPreviewProps) {
       return {
         title,
         subtitle: title || 'Unnamed stock item',
