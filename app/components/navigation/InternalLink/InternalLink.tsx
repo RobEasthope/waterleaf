@@ -1,5 +1,4 @@
 import { Link } from '@remix-run/react';
-import type { SanityReference } from 'sanity-codegen';
 
 import type { PageProps } from '~/components/generic/Page/Page';
 import { cn } from '~/utils/tailwind';

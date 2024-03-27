@@ -3,7 +3,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable @typescript-eslint/naming-convention */
 import type { PortableTextComponents } from '@portabletext/react';
-import type { SanityBlock, SanityKeyed } from 'sanity-codegen';
 
 import { EmailLink } from '~/components/navigation/EmailLink/EmailLink';
 import { ExternalLink } from '~/components/navigation/ExternalLink/ExternalLink';
