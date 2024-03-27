@@ -3,7 +3,7 @@ import { defineField, defineType } from 'sanity';
 
 import { TitleListPreviewProps } from '~/types/listPreviews';
 
-export const Collection = defineType({
+export default defineType({
   name: 'Collection',
   title: 'Collection',
   type: 'document',

@@ -3,7 +3,7 @@ import { defineField, defineType } from 'sanity';
 
 import { TitleListPreviewProps } from '~/types/listPreviews';
 
-export const Maker = defineType({
+export default defineType({
   name: 'Maker',
   title: 'Naker',
   type: 'document',
