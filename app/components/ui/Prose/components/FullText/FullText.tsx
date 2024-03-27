@@ -13,22 +13,8 @@ import { EmailLink } from '~/components/_base/EmailLink/EmailLink';
 import { ExternalLink } from '~/components/_base/ExternalLink/ExternalLink';
 import { InternalLink } from '~/components/_base/InternalLink/InternalLink';
 import { Type } from '~/components/_base/Type/Type';
-import type { GalleryProps } from '~/components/generic/Gallery/Gallery';
-import { Gallery } from '~/components/generic/Gallery/Gallery';
-import type { ImageProps } from '~/components/generic/Image/Image';
-import { Image } from '~/components/generic/Image/Image';
-import type { MuxVideoProps } from '~/components/generic/MuxVideo/MuxVideo';
-import { MuxVideo } from '~/components/generic/MuxVideo/MuxVideo';
-import type { VimeoVideoProps } from '~/components/generic/VimeoVideo/VimeoVideo';
-import { VimeoVideo } from '~/components/generic/VimeoVideo/VimeoVideo';
-import type { YoutubeVideoProps } from '~/components/generic/YoutubeVideo/YoutubeVideo';
-import { YoutubeVideo } from '~/components/generic/YoutubeVideo/YoutubeVideo';
 
-export type FullTextProps = Array<
-  | SanityKeyed<SanityBlock>
-  | SanityKeyed<ImageProps>
-  | SanityKeyed<YoutubeVideoProps>
->;
+export type FullTextProps = Array<SanityKeyed<SanityBlock>>;
 
 // MARKUP
 export const FullTextComponents: PortableTextComponents = {
@@ -76,81 +62,5 @@ export const FullTextComponents: PortableTextComponents = {
       <EmailLink email={value?.email}>{children}</EmailLink>
     ),
   },
-  types: {
-    Gallery: ({ value }: { value: GalleryProps }) => {
-      const { images, columns, maxWidth, aspectRatio, _type } = value;
-
-      return (
-        <Box as="section" className="py-1">
-          <Gallery
-            images={images}
-            columns={columns}
-            maxWidth={maxWidth}
-            aspectRatio={aspectRatio}
-            _type={_type}
-          />
-        </Box>
-      );
-    },
-    Image: ({ value }: { value: ImageProps }) => {
-      const { image, maxWidth, aspectRatio, _type } = value;
-
-      return (
-        <Box as="section" className="py-1">
-          <Image
-            image={image}
-            maxWidth={maxWidth}
-            aspectRatio={aspectRatio}
-            _type={_type}
-          />
-        </Box>
-      );
-    },
-    MuxVideo: ({ value }: { value: MuxVideoProps }) => {
-      const { muxVideo, caption, maxWidth, loop, muted, autoPlay, _type } =
-        value;
-
-      return (
-        <Box as="section" className="py-1">
-          <MuxVideo
-            muxVideo={muxVideo}
-            caption={caption}
-            maxWidth={maxWidth}
-            _type={_type}
-            autoPlay={autoPlay}
-            loop={loop}
-            muted={muted}
-          />
-        </Box>
-      );
-    },
-    VimeoVideo: ({ value }: { value: VimeoVideoProps }) => {
-      const { url, caption, maxWidth, _type } = value;
-
-      return (
-        <Box as="section" className="py-1">
-          <VimeoVideo
-            url={url}
-            caption={caption}
-            maxWidth={maxWidth}
-            _type={_type}
-          />
-        </Box>
-      );
-    },
-    YoutubeVideo: ({ value }: { value: YoutubeVideoProps }) => {
-      const { url, caption, maxWidth, _type } = value;
-
-      return (
-        <Box as="section" className="py-1">
-          <YoutubeVideo
-            url={url}
-            caption={caption}
-            maxWidth={maxWidth}
-            _type={_type}
-          />
-        </Box>
-      );
-    },
-  },
+  types: {},
 };
