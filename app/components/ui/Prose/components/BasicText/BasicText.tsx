@@ -34,6 +34,7 @@ export const BasicTextComponents: PortableTextComponents = {
     normal: ({ children }) => <Type as="p">{children}</Type>,
   },
   marks: {
+    // Text highlighting
     strong: ({ children }) => (
       <strong className="font-medium text-inherit">{children}</strong>
     ),

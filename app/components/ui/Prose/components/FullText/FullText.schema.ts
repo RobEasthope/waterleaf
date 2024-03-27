@@ -26,7 +26,5 @@ export default defineType({
         ],
       },
     }),
-    defineArrayMember({ type: 'Image' }),
-    defineArrayMember({ type: 'YoutubeVideo' }),
   ],
 });
