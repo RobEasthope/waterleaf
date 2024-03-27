@@ -2,6 +2,7 @@ import type { PortableTextComponents } from '@portabletext/react';
 import { PortableText } from '@portabletext/react';
 import type { LinksFunction } from '@vercel/remix';
 import classNames from 'classnames';
+
 import { Box } from '~/components/_base/Box/Box';
 
 import styles from './prose-overrides.css';
@@ -15,12 +16,12 @@ export type ProseProps = {
 
 export const links: LinksFunction = () => [{ rel: 'stylesheet', href: styles }];
 
-export const Prose = ({
+export function Prose({
   as = 'div',
   content,
   components,
   className,
-}: ProseProps) => {
+}: ProseProps) {
   if (!content) {
     return null;
   }
@@ -34,4 +35,4 @@ export const Prose = ({
       />
     </Box>
   );
-};
+}

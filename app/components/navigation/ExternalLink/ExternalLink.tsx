@@ -22,12 +22,12 @@ export type ExternalLinkProps = React.HTMLAttributes<HTMLAnchorElement> & {
   children: any;
 };
 
-export const ExternalLink = ({
+export function ExternalLink({
   href,
   children,
   className,
   ...rest
-}: ExternalLinkProps) => {
+}: ExternalLinkProps) {
   if (!href && !children) {
     return null;
   }
@@ -47,4 +47,4 @@ export const ExternalLink = ({
       {children || null}
     </a>
   );
-};
+}

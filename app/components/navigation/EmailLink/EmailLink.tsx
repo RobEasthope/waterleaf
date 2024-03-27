@@ -22,12 +22,12 @@ export type EmailLinkProps = React.HTMLAttributes<HTMLAnchorElement> & {
   children: any;
 };
 
-export const EmailLink = ({
+export function EmailLink({
   email,
   children,
   className,
   ...rest
-}: EmailLinkProps) => {
+}: EmailLinkProps) {
   if (!email && !children) {
     return null;
   }
@@ -47,4 +47,4 @@ export const EmailLink = ({
       {children || null}
     </a>
   );
-};
+}

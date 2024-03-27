@@ -1,6 +1,7 @@
 import { Link } from '@remix-run/react';
 import classNames from 'classnames';
 import type { SanityReference } from 'sanity-codegen';
+
 import type { PageProps } from '~/components/generic/Page/Page';
 
 // Schema props
@@ -27,13 +28,13 @@ export type InternalLinkProps = React.HTMLAttributes<HTMLAnchorElement> & {
   homePageSlug?: string;
 };
 
-export const InternalLink = ({
+export function InternalLink({
   href,
   children,
   className,
   homePageSlug,
   ...rest
-}: InternalLinkProps) => {
+}: InternalLinkProps) {
   if (!href && !children) {
     return null;
   }
@@ -53,4 +54,4 @@ export const InternalLink = ({
       {children || null}
     </Link>
   );
-};
+}

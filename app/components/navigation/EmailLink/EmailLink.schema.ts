@@ -1,5 +1,5 @@
-import { MdOutlineEmail } from 'react-icons/md';
 import { defineField, defineType } from '@sanity-typed/types';
+import { MdOutlineEmail } from 'react-icons/md';
 
 // const EmailLinkRender = ({ children }) => (
 //   <span>
