@@ -8,19 +8,8 @@ const boxVariants = cva(
   null,
   {
     variants: {
-      blockSpacing: {
-        true: 'px-1 md:px-2 print:px-0 print:md:px-0',
-      },
       breakout: {
         true: 'max-w-screen relative left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] w-screen',
-      },
-      columns: {
-        null: '',
-        '1': 'grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1',
-        '2': 'grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2',
-        '3': 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3',
-        '4': 'grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4',
-        '5': 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5',
       },
       maxWidth: {
         none: '',
@@ -45,29 +34,14 @@ export interface BoxProps
 }
 
 const Box = forwardRef<HTMLDivElement, BoxProps>(
-  (
-    {
-      as = 'div',
-      className,
-      blockSpacing,
-      breakout,
-      columns,
-      maxWidth,
-      children,
-      ...props
-    },
-    ref,
-  ) => {
+  ({ as = 'div', className, breakout, maxWidth, children, ...props }, ref) => {
     if (!children) return null;
 
     return createElement(
       as,
       {
         className: areThereAnyStyles(
-          cn(
-            boxVariants({ blockSpacing, breakout, columns, maxWidth }),
-            className,
-          ),
+          cn(boxVariants({ breakout, maxWidth }), className),
         ),
         ref,
         ...props,
