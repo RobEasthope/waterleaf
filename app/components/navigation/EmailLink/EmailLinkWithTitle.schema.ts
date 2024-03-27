@@ -1,7 +1,7 @@
 import { MdOutlineEmail } from 'react-icons/md';
 import { defineField, defineType } from 'sanity';
 
-import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
+import type { TitleAndSubTitleListPreviewProps } from '~/types/listPreviews';
 
 // const EmailLinkRender = ({ children }) => (
 //   <span>
@@ -51,7 +51,7 @@ export default defineType({
       title: 'title',
       subtitle: 'email',
     },
-    prepare({ title, subtitle }: BasicSanityListingProps) {
+    prepare({ title, subtitle }: TitleAndSubTitleListPreviewProps) {
       return {
         title: title || 'Email link',
         subtitle: subtitle || '',

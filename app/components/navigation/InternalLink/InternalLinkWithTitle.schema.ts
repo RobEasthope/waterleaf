@@ -1,7 +1,7 @@
 import { RiLinksLine } from 'react-icons/ri';
 import { defineField, defineType } from 'sanity';
 
-import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
+import type { TitleAndSubTitleListPreviewProps } from '~/types/listPreviews';
 
 import { ALL_PAGE_TYPES } from './ALL_PAGE_TYPES';
 
@@ -42,10 +42,10 @@ export default defineType({
     select: {
       title: 'title',
     },
-    prepare({ title }: BasicSanityListingProps) {
+    prepare({ title }: TitleAndSubTitleListPreviewProps) {
       return {
-        title,
-        subtitle: 'Internal link',
+        title: title || 'Internal link',
+        subtitle: 'Internal link' || '',
       };
     },
   },

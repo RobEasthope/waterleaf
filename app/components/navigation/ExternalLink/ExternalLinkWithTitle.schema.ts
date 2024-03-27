@@ -1,7 +1,7 @@
 import { RiExternalLinkLine } from 'react-icons/ri';
 import { defineField, defineType } from 'sanity';
 
-import type { BasicSanityListingProps } from '~/types/BasicSanityListing';
+import type { TitleListPreviewProps } from '~/types/listPreviews';
 
 // const ExternalLinkRender = ({ children }) => (
 //   <span>
@@ -41,10 +41,10 @@ export default defineType({
     select: {
       title: 'title',
     },
-    prepare({ title }: BasicSanityListingProps) {
+    prepare({ title }: TitleListPreviewProps) {
       return {
         title: title || 'External link',
-        subtitle: 'External link',
+        subtitle: 'External link' || '',
       };
     },
   },
