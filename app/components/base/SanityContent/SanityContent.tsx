@@ -1,6 +1,6 @@
 import { PortableText } from '@portabletext/react';
 
-import { SanityImage } from '~/components/decommisioning/SanityImage/SanityImage';
+import { SanityImage } from '~/components/base/SanityImage/SanityImage';
 
 type ContentProps = {
   value: any[];
