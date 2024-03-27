@@ -13,21 +13,6 @@ export type BasicProseProps = Array<SanityKeyed<SanityBlock>>;
 
 export const BasicProseComponents: PortableTextComponents = {
   block: {
-    h2: ({ children }) => (
-      <Type as="h2" className="mb-1 font-sans text-2xl font-bold">
-        {children}
-      </Type>
-    ),
-    h3: ({ children }) => (
-      <Type as="h3" className="mb-1 font-sans text-xl font-bold">
-        {children}
-      </Type>
-    ),
-    h4: ({ children }) => (
-      <Type as="h4" className="mb-1 font-sans text-lg font-bold">
-        {children}
-      </Type>
-    ),
     normal: ({ children }) => <Type as="p">{children}</Type>,
   },
   marks: {
