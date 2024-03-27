@@ -1,6 +1,8 @@
 import { RxAvatar } from 'react-icons/rx';
 import { defineField, defineType } from 'sanity';
 
+import { TitleListPreviewProps } from '~/types/listPreviews';
+
 export const Maker = defineType({
   name: 'Maker',
   title: 'Naker',
@@ -23,7 +25,7 @@ export const Maker = defineType({
     select: {
       title: 'name',
     },
-    prepare({ title }: { title: string }) {
+    prepare({ title }: TitleListPreviewProps) {
       return {
         title,
         subtitle: title || 'Unnamed maker',

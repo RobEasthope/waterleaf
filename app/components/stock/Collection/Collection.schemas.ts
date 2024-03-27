@@ -1,6 +1,8 @@
 import { RxLayers } from 'react-icons/rx';
 import { defineField, defineType } from 'sanity';
 
+import { TitleListPreviewProps } from '~/types/listPreviews';
+
 export const Collection = defineType({
   name: 'Collection',
   title: 'Collection',
@@ -27,7 +29,7 @@ export const Collection = defineType({
     select: {
       title: 'name',
     },
-    prepare({ title }: { title: string }) {
+    prepare({ title }: TitleListPreviewProps) {
       return {
         title,
         subtitle: title || 'Unnamed collection',
