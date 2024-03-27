@@ -1,15 +1,4 @@
 import { defineArrayMember, defineType } from 'sanity';
-import { createBlockValidator } from 'sanity-pills';
-
-const articleTextValidator = createBlockValidator({
-  required: false,
-  noEmptyBlocks: true,
-  validateLinks: true,
-  styleRequired: true,
-  noStackedMarks: true,
-  noNewlines: true,
-  noTerminatingWhitespace: true,
-});
 
 export default defineType({
   name: 'FullText',
@@ -40,5 +29,4 @@ export default defineType({
     defineArrayMember({ type: 'Image' }),
     defineArrayMember({ type: 'YoutubeVideo' }),
   ],
-  validation: articleTextValidator,
 });

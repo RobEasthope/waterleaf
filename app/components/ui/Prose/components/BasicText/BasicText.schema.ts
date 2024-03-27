@@ -1,15 +1,4 @@
 import { defineArrayMember, defineType } from 'sanity';
-import { createBlockValidator } from 'sanity-pills';
-
-const basicTextValidator = createBlockValidator({
-  required: false,
-  noEmptyBlocks: true,
-  validateLinks: true,
-  styleRequired: true,
-  noStackedMarks: true,
-  noNewlines: true,
-  noTerminatingWhitespace: true,
-});
 
 export default defineType({
   name: 'BasicText',
@@ -32,5 +21,4 @@ export default defineType({
       },
     }),
   ],
-  validation: basicTextValidator,
 });
