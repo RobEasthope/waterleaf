@@ -8,6 +8,8 @@ import AppSettingsSchema from '~/components/settings/AppSettings/AppSettings.sch
 import CollectionSchemas from '~/components/stock/Collection/Collection.schemas';
 import MakerSchema from '~/components/stock/Maker/Maker.schema';
 import StockSchema from '~/components/stock/Stock/Stock.schema';
+import BasicProseSchema from '~/components/ui/Prose/components/BasicProse/BasicProse.schema';
+import FullTextSchema from '~/components/ui/Prose/components/FullProse/FullText.schema';
 
 export const schemasIndex = [
   // Links
@@ -17,6 +19,10 @@ export const schemasIndex = [
   ExternalLinkWithTitleSchema,
   InternalLinkSchema,
   InternalLinkWithTitleSchema,
+
+  // Prose
+  BasicProseSchema,
+  FullTextSchema,
 
   // Settings
   AppSettingsSchema,

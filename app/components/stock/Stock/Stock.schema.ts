@@ -28,6 +28,12 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'stockDescription',
+      title: 'Stock Description',
+      type: 'FullProse',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: 'image',
       type: 'image',
       options: { hotspot: true },
