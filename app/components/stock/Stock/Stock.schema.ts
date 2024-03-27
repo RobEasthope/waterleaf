@@ -30,12 +30,12 @@ export const Stock = defineType({
   ],
   preview: {
     select: {
-      title: 'name',
+      title: 'title',
     },
     prepare({ title }: TitleListPreviewProps) {
       return {
         title,
-        subtitle: title || 'Unnamed stock item',
+        subtitle: title && 'Stock',
       };
     },
   },
