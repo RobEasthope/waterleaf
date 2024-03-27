@@ -1,22 +1,17 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-
 /* eslint-disable react/prop-types */
-
 /* eslint-disable @typescript-eslint/naming-convention */
 import type { PortableTextComponents } from '@portabletext/react';
 import type { SanityBlock, SanityKeyed } from 'sanity-codegen';
 
-import { Box } from '~/components/_base/Box/Box';
-import { EmailLink } from '~/components/_base/EmailLink/EmailLink';
-import { ExternalLink } from '~/components/_base/ExternalLink/ExternalLink';
-import { InternalLink } from '~/components/_base/InternalLink/InternalLink';
-import { Type } from '~/components/_base/Type/Type';
+import { EmailLink } from '~/components/navigation/EmailLink/EmailLink';
+import { ExternalLink } from '~/components/navigation/ExternalLink/ExternalLink';
+import { InternalLink } from '~/components/navigation/InternalLink/InternalLink';
+import { Type } from '~/components/ui/Type/Type';
 
 export type FullTextProps = Array<SanityKeyed<SanityBlock>>;
 
-// MARKUP
 export const FullTextComponents: PortableTextComponents = {
   block: {
     h2: ({ children }) => (
@@ -62,5 +57,7 @@ export const FullTextComponents: PortableTextComponents = {
       <EmailLink email={value?.email}>{children}</EmailLink>
     ),
   },
-  types: {},
+  types: {
+    // Custom component go here
+  },
 };
