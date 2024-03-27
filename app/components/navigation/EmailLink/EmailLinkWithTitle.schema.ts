@@ -3,12 +3,6 @@ import { defineField, defineType } from 'sanity';
 
 import type { TitleAndSubTitleListPreviewProps } from '~/types/listPreviews';
 
-// const EmailLinkRender = ({ children }) => (
-//   <span>
-//     {children} <MdOutlineEmail />
-//   </span>
-// );
-
 export default defineType({
   name: 'EmailLinkWithTitle',
   title: 'Email link',
@@ -42,10 +36,6 @@ export default defineType({
         }),
     }),
   ],
-  // blockEditor: {
-  //   icon: () => "🔗",
-  //   render: EmailLinkRender,
-  // },
   preview: {
     select: {
       title: 'title',

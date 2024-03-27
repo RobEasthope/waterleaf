@@ -3,12 +3,6 @@ import { defineField, defineType } from 'sanity';
 
 import type { TitleListPreviewProps } from '~/types/listPreviews';
 
-// const ExternalLinkRender = ({ children }) => (
-//   <span>
-//     {children} <RiExternalLinkLine />
-//   </span>
-// );
-
 export default defineType({
   name: 'ExternalLinkWithTitle',
   title: 'External link',
@@ -33,10 +27,6 @@ export default defineType({
         }),
     }),
   ],
-  // blockEditor: {
-  //   icon: () => "🔗",
-  //   render: ExternalLinkRender,
-  // },
   preview: {
     select: {
       title: 'title',

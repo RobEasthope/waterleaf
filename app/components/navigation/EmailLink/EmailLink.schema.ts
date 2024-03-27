@@ -1,12 +1,6 @@
 import { MdOutlineEmail } from 'react-icons/md';
 import { defineField, defineType } from 'sanity';
 
-// const EmailLinkRender = ({ children }) => (
-//   <span>
-//     {children} <MdOutlineEmail />
-//   </span>
-// );
-
 export default defineType({
   name: 'EmailLink',
   title: 'Email link',
@@ -34,10 +28,6 @@ export default defineType({
         }),
     }),
   ],
-  // blockEditor: {
-  //   icon: () => "🔗",
-  //   render: EmailLinkRender,
-  // },
   preview: {
     prepare() {
       return {
@@ -45,5 +35,4 @@ export default defineType({
       };
     },
   },
-  // displayName: "EmailLink",
 });

@@ -3,12 +3,6 @@ import { defineField, defineType } from 'sanity';
 
 import { ALL_PAGE_TYPES } from './ALL_PAGE_TYPES';
 
-// const InternalLinkRender = ({ children }) => (
-//   <span>
-//     {children} <RiLinksLine />
-//   </span>
-// );
-
 export default defineType({
   name: 'InternalLink',
   title: 'Internal link',
@@ -25,10 +19,6 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
   ],
-  // blockEditor: {
-  //   icon: () => "🔗",
-  //   render: InternalLinkRender,
-  // },
   preview: {
     prepare() {
       return {
@@ -36,5 +26,4 @@ export default defineType({
       };
     },
   },
-  // displayName: "InternalLink",
 });

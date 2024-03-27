@@ -5,12 +5,6 @@ import type { TitleAndSubTitleListPreviewProps } from '~/types/listPreviews';
 
 import { ALL_PAGE_TYPES } from './ALL_PAGE_TYPES';
 
-// const InternalLinkRender = ({ children }) => (
-//   <span>
-//     {children} <RiLinksLine />
-//   </span>
-// );
-
 export default defineType({
   name: 'InternalLinkWithTitle',
   title: 'Internal link',
@@ -34,10 +28,6 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
   ],
-  // blockEditor: {
-  //   icon: () => "🔗",
-  //   render: InternalLinkRender,
-  // },
   preview: {
     select: {
       title: 'title',

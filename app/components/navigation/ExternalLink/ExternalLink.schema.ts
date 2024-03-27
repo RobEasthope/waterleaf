@@ -1,12 +1,6 @@
 import { RiExternalLinkLine } from 'react-icons/ri';
 import { defineField, defineType } from 'sanity';
 
-// const ExternalLinkRender = ({ children }) => (
-//   <span>
-//     {children} <RiExternalLinkLine />
-//   </span>
-// );
-
 export default defineType({
   name: 'ExternalLink',
   title: 'External link',
@@ -25,10 +19,6 @@ export default defineType({
         }),
     }),
   ],
-  // blockEditor: {
-  //   icon: () => "🔗",
-  //   render: ExternalLinkRender,
-  // },
   preview: {
     prepare() {
       return {
@@ -36,5 +26,4 @@ export default defineType({
       };
     },
   },
-  // displayName: "ExternalLink",
 });
