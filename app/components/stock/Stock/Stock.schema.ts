@@ -30,7 +30,7 @@ export default defineType({
     defineField({
       name: 'stockDescription',
       title: 'Stock Description',
-      type: 'FullProse',
+      type: 'StockProse',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
