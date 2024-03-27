@@ -23,9 +23,24 @@ export const Stock = defineType({
       },
     }),
     defineField({
+      name: 'description',
+      title: 'Description',
+      type: 'string',
+    }),
+    defineField({
       name: 'image',
       type: 'image',
       options: { hotspot: true },
+    }),
+    defineField({
+      name: 'stockId',
+      title: 'Stock ID',
+      type: 'string',
+    }),
+    defineField({
+      name: 'date',
+      title: 'Date',
+      type: 'number',
     }),
   ],
   preview: {
