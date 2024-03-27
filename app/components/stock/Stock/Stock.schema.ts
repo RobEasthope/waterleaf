@@ -14,14 +14,7 @@ export default defineType({
       title: 'Title',
       type: 'string',
     }),
-    defineField({
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      options: {
-        source: 'title',
-      },
-    }),
+
     defineField({
       name: 'shortDescription',
       title: 'Short description',
@@ -37,6 +30,14 @@ export default defineType({
       name: 'image',
       type: 'image',
       options: { hotspot: true },
+    }),
+    defineField({
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+      },
     }),
     defineField({
       name: 'stockId',
