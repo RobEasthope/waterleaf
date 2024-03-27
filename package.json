@@ -43,7 +43,7 @@
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
     "rxjs": "^7.8.1",
-    "sanity": "^3.30.1",
+    "sanity": "^3.36.0",
     "sanity-plugin-iframe-pane": "^2.6.1",
     "satori": "^0.10.13",
     "styled-components": "^6.1.8",
