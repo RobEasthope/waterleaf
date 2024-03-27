@@ -24,7 +24,7 @@ import { themePreference } from '~/types/themePreference';
 import { getBodyClassNames } from '~/utils/getBodyClassNames';
 
 const LiveVisualEditing = lazy(
-  () => import('~/components/base/LiveVisualEditing/LiveVisualEditing'),
+  () => import('~/components/support/LiveVisualEditing/LiveVisualEditing'),
 );
 
 export type Loader = typeof loader;

@@ -104,6 +104,9 @@ dependencies:
   sanity:
     specifier: ^3.36.0
     version: 3.36.0(@types/react@18.2.61)(react-dom@18.2.0)(react@18.2.0)(styled-components@6.1.8)
+  sanity-pills:
+    specifier: ^2.0.0
+    version: 2.0.0
   sanity-plugin-iframe-pane:
     specifier: ^2.6.1
     version: 2.6.1(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(sanity@3.36.0)(styled-components@6.1.8)
@@ -9247,7 +9250,7 @@ packages:
       debug: 4.3.4
       enhanced-resolve: 5.15.1
       eslint: 8.57.0
-      eslint-module-utils: 2.8.1(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0)
+      eslint-module-utils: 2.8.1(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0)
       eslint-plugin-import: 2.29.1(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0)
       fast-glob: 3.3.2
       get-tsconfig: 4.7.2
@@ -9315,35 +9318,6 @@ packages:
       debug: 3.2.7
       eslint: 8.57.0
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-node@0.3.7)(eslint-plugin-import@2.29.1)(eslint@8.57.0)
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
-  /eslint-module-utils@2.8.1(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0):
-    resolution: {integrity: sha512-rXDXR3h7cs7dy9RNpUlQf80nX31XWJEyGq1tRMo+6GsO5VmTe4UTwtmonAD4ZkAsrfMVDA2wlGJ3790Ys+D49Q==}
-    engines: {node: '>=4'}
-    peerDependencies:
-      '@typescript-eslint/parser': '*'
-      eslint: '*'
-      eslint-import-resolver-node: '*'
-      eslint-import-resolver-typescript: '*'
-      eslint-import-resolver-webpack: '*'
-    peerDependenciesMeta:
-      '@typescript-eslint/parser':
-        optional: true
-      eslint:
-        optional: true
-      eslint-import-resolver-node:
-        optional: true
-      eslint-import-resolver-typescript:
-        optional: true
-      eslint-import-resolver-webpack:
-        optional: true
-    dependencies:
-      '@typescript-eslint/parser': 5.62.0(eslint@8.57.0)(typescript@5.3.3)
-      debug: 3.2.7
-      eslint: 8.57.0
       eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@5.62.0)(eslint-plugin-import@2.29.1)(eslint@8.57.0)
     transitivePeerDependencies:
       - supports-color
@@ -14618,6 +14592,15 @@ packages:
       '@sanity/diff-match-patch': 3.1.1
     dev: false
 
+  /sanity-pills@2.0.0:
+    resolution: {integrity: sha512-VnEzzZ08KXV+i7vMiZmiVXVxvDby9Hip7GME1VPzKD3eTd+tZZ9IgrN0gBRVKfPCdm9kBOwoNnJUr0w3uwreSQ==}
+    dependencies:
+      '@sanity/types': 3.36.0
+      slugify: 1.6.6
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
   /sanity-plugin-iframe-pane@2.6.1(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(sanity@3.36.0)(styled-components@6.1.8):
     resolution: {integrity: sha512-FuPZ0LZILlOFNyJFhRCdo53TtoSul8epVGAggt0DCQPkBQuvumQ+3Lod43CQFgUvmehYnQH3k1QpC0xl0qsUAg==}
     engines: {node: '>=14'}
@@ -14973,6 +14956,11 @@ packages:
       immer: 10.0.4
       is-plain-object: 5.0.0
       tiny-warning: 1.0.3
+    dev: false
+
+  /slugify@1.6.6:
+    resolution: {integrity: sha512-h+z7HKHYXj6wJU+AnS/+IH8Uh9fdcX1Lrhg1/VMdf9PwoBQXFcXiAdsy2tSK0P6gKwJLXp02r90ahUCqHk9rrw==}
+    engines: {node: '>=8.0.0'}
     dev: false
 
   /source-map-js@1.0.2:

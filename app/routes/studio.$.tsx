@@ -3,7 +3,7 @@ import '~/sanity/studio.css';
 import type { MetaFunction } from '@remix-run/node';
 import { Studio } from 'sanity';
 
-import { Hydrated } from '~/components/base/Hydrated/Hydrated';
+import { Hydrated } from '~/components/support/Hydrated/Hydrated';
 
 import { config } from '../../sanity.config';
 
