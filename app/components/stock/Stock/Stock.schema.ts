@@ -23,8 +23,8 @@ export default defineType({
       },
     }),
     defineField({
-      name: 'description',
-      title: 'Description',
+      name: 'shortDescription',
+      title: 'Short description',
       type: 'string',
     }),
     defineField({
