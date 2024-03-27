@@ -1,8 +1,8 @@
 import { Link } from '@remix-run/react';
-import classNames from 'classnames';
 import type { SanityReference } from 'sanity-codegen';
 
 import type { PageProps } from '~/components/generic/Page/Page';
+import { cn } from '~/utils/tailwind';
 
 // Schema props
 export type InternalLinkWithTitleSchemaProps = {
@@ -48,7 +48,7 @@ export function InternalLink({
       to={href === homePageSlug ? '/' : `/${href}`}
       role="link"
       tabIndex={0}
-      className={classNames(className, 'hover:text-saffron duration-300')}
+      className={cn(className, 'hover:text-saffron duration-300')}
       {...rest}
     >
       {children || null}

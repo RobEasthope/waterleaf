@@ -6,7 +6,6 @@
 
 /* eslint-disable @typescript-eslint/naming-convention */
 import type { PortableTextComponents } from '@portabletext/react';
-import classNames from 'classnames';
 import type { SanityBlock, SanityKeyed } from 'sanity-codegen';
 
 import { Box } from '~/components/_base/Box/Box';

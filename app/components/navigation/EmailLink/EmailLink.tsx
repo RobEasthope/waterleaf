@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import { cn } from '~/utils/tailwind';
 
 // Schema props
 export type EmailLinkWithTitleSchemaProps = {
@@ -41,7 +41,7 @@ export function EmailLink({
       href={`mailto:${email}`}
       target="_blank"
       rel="noopener noreferrer"
-      className={classNames(className, 'hover:text-saffron duration-300')}
+      className={cn(className, 'hover:text-saffron duration-300')}
       {...rest}
     >
       {children || null}
