@@ -20,6 +20,11 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'price',
+      title: 'Price',
+      type: 'number',
+    }),
+    defineField({
       name: 'date',
       title: 'Date',
       type: 'number',
