@@ -8,6 +8,9 @@ export default defineType({
   title: 'Stock',
   type: 'document',
   icon: BsBrush,
+  fieldsets: [
+    { name: 'dimensions', title: 'Dimensions', options: { columns: 2 } },
+  ],
   fields: [
     defineField({
       name: 'title',
@@ -96,17 +99,16 @@ export default defineType({
       options: { hotspot: true },
     }),
     defineField({
-      name: 'dimensions',
-      title: 'Dimensions',
-      description: 'Width and height of the image in cm',
-      type: 'object',
-      options: {
-        columns: 2,
-      },
-      fields: [
-        { name: 'width', title: 'Width', type: 'number' },
-        { name: 'height', title: 'Hight', type: 'number' },
-      ],
+      name: 'width',
+      title: 'Width',
+      type: 'number',
+      fieldset: 'dimensions',
+    }),
+    defineField({
+      name: 'height',
+      title: 'Hight',
+      type: 'number',
+      fieldset: 'dimensions',
     }),
     defineField({
       name: 'slug',
