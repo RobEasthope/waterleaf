@@ -102,7 +102,7 @@ export default defineType({
       name: 'images',
       title: 'Images',
       type: 'array',
-      of: [defineArrayMember({ type: 'ProductImage' })],
+      of: [defineArrayMember({ type: 'StockImage' })],
       validation: (Rule) => Rule.required(),
     }),
     defineField({

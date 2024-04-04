@@ -4,8 +4,8 @@ import { defineField, defineType } from 'sanity';
 import { TitleListPreviewProps } from '~/types/listPreviews';
 
 export default defineType({
-  name: 'ProductImage',
-  title: 'Product Image',
+  name: 'StockImage',
+  title: 'Image',
   type: 'document',
   icon: RxImage,
 
@@ -28,8 +28,8 @@ export default defineType({
     },
     prepare({ title }: TitleListPreviewProps) {
       return {
-        title: title || 'Product image',
-        subtitle: title && 'Product image',
+        title: title || 'Image',
+        subtitle: title && 'Image',
       };
     },
   },
