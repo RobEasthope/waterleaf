@@ -22,6 +22,7 @@ export default defineType({
       name: 'shortDescription',
       title: 'Short description',
       type: 'string',
+      validation: (Rule) => Rule.required().error(),
     }),
     defineField({
       name: 'price',
@@ -44,6 +45,7 @@ export default defineType({
       title: 'Single item',
       type: 'boolean',
       initialValue: true,
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'quantity',
@@ -70,6 +72,7 @@ export default defineType({
       title: 'Cartographer/Author',
       type: 'reference',
       to: [{ type: 'Maker' }],
+      validation: (Rule) => Rule.required().error(),
     }),
     defineField({
       name: 'collections',
@@ -81,17 +84,19 @@ export default defineType({
           to: [{ type: 'Collection' }],
         },
       ],
+      validation: (Rule) => Rule.required().error(),
     }),
     defineField({
       name: 'date',
       title: 'Date',
       type: 'number',
+      validation: (Rule) => Rule.required().error(),
     }),
     defineField({
       name: 'description',
       title: 'Full stock description',
       type: 'StockProse',
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error(),
     }),
     defineField({
       name: 'image',
@@ -123,6 +128,7 @@ export default defineType({
       name: 'stockId',
       title: 'Stock ID',
       type: 'string',
+      validation: (Rule) => Rule.required().error(),
     }),
   ],
   preview: {
