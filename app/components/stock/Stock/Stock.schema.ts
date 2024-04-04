@@ -106,7 +106,7 @@ export default defineType({
     }),
     defineField({
       name: 'height',
-      title: 'Hight',
+      title: 'Height',
       type: 'number',
       fieldset: 'dimensions',
     }),
