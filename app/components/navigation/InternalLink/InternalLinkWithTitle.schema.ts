@@ -3,7 +3,7 @@ import { defineField, defineType } from 'sanity';
 
 import type { TitleAndSubTitleListPreviewProps } from '~/types/listPreviews';
 
-import { ALL_PAGE_TYPES } from './ALL_PAGE_TYPES';
+import { LINKABLE_DOC_TYPES } from './LINKABLE_DOC_TYPES';
 
 export default defineType({
   name: 'InternalLinkWithTitle',
@@ -23,7 +23,7 @@ export default defineType({
       name: 'internalUID',
       title: 'Page',
       type: 'reference',
-      to: ALL_PAGE_TYPES,
+      to: LINKABLE_DOC_TYPES,
 
       validation: (Rule) => Rule.required(),
     }),

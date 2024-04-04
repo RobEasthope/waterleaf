@@ -3,7 +3,7 @@ import { defineField, defineType } from 'sanity';
 
 import { TitleListPreviewProps } from '~/types/listPreviews';
 
-export const Maker = defineType({
+export default defineType({
   name: 'Maker',
   title: 'Naker',
   type: 'document',
@@ -12,6 +12,7 @@ export const Maker = defineType({
     defineField({
       name: 'name',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'slug',
@@ -19,6 +20,7 @@ export const Maker = defineType({
       options: {
         source: 'title',
       },
+      validation: (Rule) => Rule.required(),
     }),
   ],
   preview: {
@@ -27,8 +29,8 @@ export const Maker = defineType({
     },
     prepare({ title }: TitleListPreviewProps) {
       return {
-        title,
-        subtitle: title || 'Unnamed maker',
+        title: title || 'Unnamed Cartographer/Author',
+        subtitle: title && 'Cartographer/Author',
       };
     },
   },

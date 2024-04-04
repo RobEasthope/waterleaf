@@ -3,7 +3,7 @@ import { defineField, defineType } from 'sanity';
 
 import { TitleListPreviewProps } from '~/types/listPreviews';
 
-export const Collection = defineType({
+export default defineType({
   name: 'Collection',
   title: 'Collection',
   type: 'document',
@@ -12,6 +12,7 @@ export const Collection = defineType({
     defineField({
       name: 'name',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'description',
@@ -23,6 +24,7 @@ export const Collection = defineType({
       options: {
         source: 'title',
       },
+      validation: (Rule) => Rule.required(),
     }),
   ],
   preview: {
@@ -31,8 +33,8 @@ export const Collection = defineType({
     },
     prepare({ title }: TitleListPreviewProps) {
       return {
-        title,
-        subtitle: title || 'Unnamed collection',
+        title: title || 'Unnamed Collection',
+        subtitle: title && 'Collection',
       };
     },
   },

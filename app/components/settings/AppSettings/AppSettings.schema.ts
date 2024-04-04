@@ -1,7 +1,7 @@
 import { RxInfoCircled } from 'react-icons/rx';
 import { defineField, defineType } from 'sanity';
 
-export const AppSettings = defineType({
+export default defineType({
   name: 'AppSettings',
   title: 'AppSettings',
   type: 'document',
