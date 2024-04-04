@@ -1,5 +1,5 @@
 import { BsBrush } from 'react-icons/bs';
-import { defineField, defineType } from 'sanity';
+import { defineArrayMember, defineField, defineType } from 'sanity';
 
 import { TitleListPreviewProps } from '~/types/listPreviews';
 
@@ -99,9 +99,11 @@ export default defineType({
       validation: (Rule) => Rule.required().error(),
     }),
     defineField({
-      name: 'image',
-      type: 'image',
-      options: { hotspot: true },
+      name: 'images',
+      title: 'Images',
+      type: 'array',
+      of: [defineArrayMember({ type: 'image' })],
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'width',
