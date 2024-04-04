@@ -13,6 +13,7 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'shortDescription',
@@ -23,6 +24,7 @@ export default defineType({
       name: 'price',
       title: 'Price',
       type: 'number',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       title: 'stockType',
@@ -32,6 +34,7 @@ export default defineType({
         list: [{ title: 'Map', value: 'map' }],
       },
       initialValue: 'map',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'singleItem',
@@ -49,13 +52,14 @@ export default defineType({
       title: 'Active',
       type: 'boolean',
       initialValue: false,
+      validation: (Rule) => Rule.required(),
     }),
-
     defineField({
       name: 'sold',
       title: 'Sold',
       type: 'boolean',
       initialValue: false,
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       title: 'maker',
@@ -107,6 +111,7 @@ export default defineType({
       options: {
         source: 'title',
       },
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'stockId',
