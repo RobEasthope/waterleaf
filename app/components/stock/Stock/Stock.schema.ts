@@ -25,6 +25,17 @@ export default defineType({
       type: 'number',
     }),
     defineField({
+      title: 'collections',
+      name: 'Collection(s)',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'Collection' }],
+        },
+      ],
+    }),
+    defineField({
       name: 'date',
       title: 'Date',
       type: 'number',
