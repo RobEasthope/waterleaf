@@ -88,7 +88,7 @@ export default defineType({
       type: 'number',
     }),
     defineField({
-      name: 'bodyText',
+      name: 'description',
       title: 'Full stock description',
       type: 'StockProse',
       validation: (Rule) => Rule.required(),
