@@ -25,6 +25,15 @@ export default defineType({
       type: 'number',
     }),
     defineField({
+      title: 'stockType',
+      name: 'Stock type',
+      type: 'string',
+      options: {
+        list: [{ title: 'Map', value: 'map' }],
+      },
+      initialValue: 'map',
+    }),
+    defineField({
       name: 'quantity',
       title: 'Quantity',
       type: 'number',
