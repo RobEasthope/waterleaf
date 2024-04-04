@@ -31,6 +31,12 @@ export default defineType({
       initialValue: false,
     }),
     defineField({
+      name: 'sold',
+      title: 'Sold',
+      type: 'boolean',
+      initialValue: false,
+    }),
+    defineField({
       title: 'maker',
       name: 'Cartographer/Author',
       type: 'reference',
