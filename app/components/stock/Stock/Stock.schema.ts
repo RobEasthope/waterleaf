@@ -27,8 +27,8 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      title: 'stockType',
-      name: 'Stock type',
+      name: 'stockType',
+      title: 'Stock type',
       type: 'string',
       options: {
         list: [{ title: 'Map', value: 'map' }],
@@ -38,7 +38,7 @@ export default defineType({
     }),
     defineField({
       name: 'singleItem',
-      title: 'singleItem',
+      title: 'Single item',
       type: 'boolean',
       initialValue: true,
     }),
@@ -62,14 +62,14 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      title: 'maker',
-      name: 'Cartographer/Author',
+      name: 'maker',
+      title: 'Cartographer/Author',
       type: 'reference',
       to: [{ type: 'Maker' }],
     }),
     defineField({
-      title: 'collections',
-      name: 'Collection(s)',
+      name: 'collections',
+      title: 'Collection(s)',
       type: 'array',
       of: [
         {
@@ -95,8 +95,8 @@ export default defineType({
       options: { hotspot: true },
     }),
     defineField({
-      title: 'dimensions',
-      name: 'Dimensions',
+      name: 'dimensions',
+      title: 'Dimensions',
       description: 'Width and height of the image in cm',
       type: 'object',
       fields: [
