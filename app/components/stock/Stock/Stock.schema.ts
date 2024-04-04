@@ -36,6 +36,16 @@ export default defineType({
       options: { hotspot: true },
     }),
     defineField({
+      title: 'dimensions',
+      name: 'Dimensions',
+      description: 'Width and height of the image in cm',
+      type: 'object',
+      fields: [
+        { name: 'width', title: 'Width', type: 'number' },
+        { name: 'height', title: 'Hight', type: 'number' },
+      ],
+    }),
+    defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
