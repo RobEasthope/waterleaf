@@ -34,6 +34,12 @@ export default defineType({
       initialValue: 'map',
     }),
     defineField({
+      name: 'singleItem',
+      title: 'singleItem',
+      type: 'boolean',
+      initialValue: true,
+    }),
+    defineField({
       name: 'quantity',
       title: 'Quantity',
       type: 'number',
@@ -44,6 +50,7 @@ export default defineType({
       type: 'boolean',
       initialValue: false,
     }),
+
     defineField({
       name: 'sold',
       title: 'Sold',
