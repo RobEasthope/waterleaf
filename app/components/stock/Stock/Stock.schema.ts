@@ -25,6 +25,11 @@ export default defineType({
       type: 'number',
     }),
     defineField({
+      name: 'quantity',
+      title: 'Quantity',
+      type: 'number',
+    }),
+    defineField({
       name: 'active',
       title: 'Active',
       type: 'boolean',
