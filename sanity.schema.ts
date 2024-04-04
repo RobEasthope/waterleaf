@@ -7,6 +7,7 @@ import InternalLinkWithTitleSchema from '~/components/navigation/InternalLink/In
 import AppSettingsSchema from '~/components/settings/AppSettings/AppSettings.schema';
 import CollectionSchemas from '~/components/stock/Collection/Collection.schemas';
 import MakerSchema from '~/components/stock/Maker/Maker.schema';
+import ProductImageSchema from '~/components/stock/Stock/ProductImage.schema';
 import StockSchema from '~/components/stock/Stock/Stock.schema';
 import BasicProseSchema from '~/components/ui/Prose/components/BasicProse/BasicProse.schema';
 import FullProseSchema from '~/components/ui/Prose/components/FullProse/FullProse.schema';
@@ -30,6 +31,7 @@ export const schemasIndex = [
   AppSettingsSchema,
 
   // Stock
+  ProductImageSchema,
   StockSchema,
   MakerSchema,
   CollectionSchemas,
