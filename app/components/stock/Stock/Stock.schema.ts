@@ -100,6 +100,9 @@ export default defineType({
       title: 'Dimensions',
       description: 'Width and height of the image in cm',
       type: 'object',
+      options: {
+        columns: 2,
+      },
       fields: [
         { name: 'width', title: 'Width', type: 'number' },
         { name: 'height', title: 'Hight', type: 'number' },
