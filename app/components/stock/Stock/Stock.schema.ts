@@ -25,6 +25,12 @@ export default defineType({
       type: 'number',
     }),
     defineField({
+      title: 'maker',
+      name: 'Cartographer/Author',
+      type: 'reference',
+      to: [{ type: 'Maker' }],
+    }),
+    defineField({
       title: 'collections',
       name: 'Collection(s)',
       type: 'array',
