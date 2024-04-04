@@ -25,6 +25,12 @@ export default defineType({
       type: 'number',
     }),
     defineField({
+      name: 'active',
+      title: 'Active',
+      type: 'boolean',
+      initialValue: false,
+    }),
+    defineField({
       title: 'maker',
       name: 'Cartographer/Author',
       type: 'reference',
