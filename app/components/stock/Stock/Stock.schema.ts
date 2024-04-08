@@ -170,6 +170,7 @@ export default defineType({
       title: 'Stripe ID',
       type: 'string',
       readOnly: true,
+      group: 'config',
     }),
   ],
   preview: {
