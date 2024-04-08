@@ -22,7 +22,7 @@ export default defineType({
       name: 'slug',
       type: 'slug',
       options: {
-        source: 'title',
+        source: 'name',
       },
       validation: (Rule) => Rule.required(),
     }),
