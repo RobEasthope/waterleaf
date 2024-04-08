@@ -3,13 +3,11 @@ import { defineField, defineType } from 'sanity';
 
 import type { TitleAndSubTitleListPreviewProps } from '~/types/listPreviews';
 
-import { LINKABLE_DOC_TYPES } from './LINKABLE_DOC_TYPES';
-
 export default defineType({
-  name: 'InternalLinkWithTitle',
-  title: 'Internal link',
-  type: 'object',
-  description: 'Link to a document on the site',
+  name: 'HardcodedInternalLink',
+  title: 'Hardcoded internal link',
+  type: 'document',
+  description: 'Link to a hardcoded section on the site',
   icon: RiLinksLine,
   fields: [
     defineField({
@@ -20,22 +18,21 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'internalUID',
-      title: 'Page',
-      type: 'reference',
-      to: LINKABLE_DOC_TYPES,
-
+      name: 'url',
+      title: 'URL',
+      type: 'string',
       validation: (Rule) => Rule.required(),
     }),
   ],
   preview: {
     select: {
       title: 'title',
+      subtitle: 'url',
     },
-    prepare({ title }: TitleAndSubTitleListPreviewProps) {
+    prepare({ title, subtitle }: TitleAndSubTitleListPreviewProps) {
       return {
-        title: title || 'Internal link',
-        subtitle: title && 'Internal link',
+        title: title || 'Hardcoded internal link',
+        subtitle: subtitle || 'Hardcoded internal link',
       };
     },
   },
