@@ -4,10 +4,10 @@ import { defineField, defineType } from 'sanity';
 import type { TitleAndSubTitleListPreviewProps } from '~/types/listPreviews';
 
 export default defineType({
-  name: 'StructuralInternalLink',
-  title: 'Structual internal link',
+  name: 'HardcodedInternalLink',
+  title: 'Hardcoded internal link',
   type: 'document',
-  description: 'Link to a document on the site',
+  description: 'Link to a hardcoded section on the site',
   icon: RiLinksLine,
   fields: [
     defineField({
@@ -30,8 +30,8 @@ export default defineType({
     },
     prepare({ title }: TitleAndSubTitleListPreviewProps) {
       return {
-        title: title || 'Structural internal link',
-        subtitle: 'Structural internal link' || '',
+        title: title || 'Hardcoded internal link',
+        subtitle: 'Hardcoded internal link' || '',
       };
     },
   },
