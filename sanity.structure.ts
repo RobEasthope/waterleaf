@@ -1,4 +1,5 @@
 import { BsBrush } from 'react-icons/bs';
+import { RiCompasses2Line } from 'react-icons/ri';
 import { RxAvatar, RxInfoCircled, RxLayers } from 'react-icons/rx';
 import type {
   DefaultDocumentNodeResolver,
@@ -19,6 +20,20 @@ export const structure: StructureResolver = (S) =>
       S.documentTypeListItem('Maker')
         .title('Cartographers/Authors')
         .icon(RxAvatar),
+      S.divider(),
+      S.listItem()
+        .title('Navigation')
+        .icon(RiCompasses2Line)
+        .child(
+          S.list()
+            .title('Navigation')
+            .showIcons(false)
+            .items([
+              S.listItem()
+                .title('Header')
+                .child(S.document().schemaType('Header').documentId('Header')),
+            ]),
+        ),
       S.divider(),
       S.documentListItem()
         .schemaType('AppSettings')
