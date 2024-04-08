@@ -38,7 +38,7 @@ export default defineType({
       title: 'Short description',
       type: 'string',
       group: 'description',
-      validation: (Rule) => Rule.required().error(),
+      validation: (Rule) => Rule.required().warning(),
     }),
     defineField({
       name: 'price',
@@ -94,7 +94,7 @@ export default defineType({
       type: 'reference',
       to: [{ type: 'Maker' }],
       group: 'description',
-      validation: (Rule) => Rule.required().error(),
+      validation: (Rule) => Rule.required().warning(),
     }),
     defineField({
       name: 'collections',
@@ -106,21 +106,21 @@ export default defineType({
           to: [{ type: 'Collection' }],
         },
       ],
-      validation: (Rule) => Rule.required().error(),
+      validation: (Rule) => Rule.required().warning(),
     }),
     defineField({
       name: 'date',
       title: 'Date',
       type: 'number',
       group: 'description',
-      validation: (Rule) => Rule.required().error(),
+      validation: (Rule) => Rule.required().warning(),
     }),
     defineField({
       name: 'description',
       title: 'Full stock description',
       type: 'StockProse',
       group: 'description',
-      validation: (Rule) => Rule.required().error(),
+      validation: (Rule) => Rule.required().warning(),
     }),
     defineField({
       name: 'images',
@@ -159,7 +159,7 @@ export default defineType({
       title: 'Stock ID',
       type: 'string',
       group: 'config',
-      validation: (Rule) => Rule.required().error(),
+      validation: (Rule) => Rule.required().warning(),
     }),
   ],
   preview: {
