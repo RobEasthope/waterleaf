@@ -2,6 +2,7 @@ import EmailLinkSchema from '~/components/navigation/EmailLink/EmailLink.schema'
 import EmailLinkWithTitleSchema from '~/components/navigation/EmailLink/EmailLinkWithTitle.schema';
 import ExternalLinkSchema from '~/components/navigation/ExternalLink/ExternalLink.schema';
 import ExternalLinkWithTitleSchema from '~/components/navigation/ExternalLink/ExternalLinkWithTitle.schema';
+import HeaderSchema from '~/components/navigation/Header/Header.schema';
 import InternalLinkSchema from '~/components/navigation/InternalLink/InternalLink.schema';
 import InternalLinkWithTitleSchema from '~/components/navigation/InternalLink/InternalLinkWithTitle.schema';
 import AppSettingsSchema from '~/components/settings/AppSettings/AppSettings.schema';
@@ -26,6 +27,9 @@ export const schemasIndex = [
   BasicProseSchema,
   FullProseSchema,
   StockProseSchema,
+
+  // Navigation
+  HeaderSchema,
 
   // Settings
   AppSettingsSchema,
