@@ -108,7 +108,11 @@ export default defineType({
       title: 'Stock type',
       type: 'string',
       options: {
-        list: [{ title: 'Map', value: 'map' }],
+        list: [
+          { value: 'map', title: 'Map' },
+          { value: 'print', title: 'Print' },
+          { value: 'book', title: 'Book' },
+        ],
       },
       initialValue: 'map',
       group: 'config',
