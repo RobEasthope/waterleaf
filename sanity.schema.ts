@@ -3,6 +3,8 @@ import EmailLinkSchema from '~/components/navigation/EmailLink/EmailLink.schema'
 import EmailLinkWithTitleSchema from '~/components/navigation/EmailLink/EmailLinkWithTitle.schema';
 import ExternalLinkSchema from '~/components/navigation/ExternalLink/ExternalLink.schema';
 import ExternalLinkWithTitleSchema from '~/components/navigation/ExternalLink/ExternalLinkWithTitle.schema';
+import HardcodedInternalLinkSchema from '~/components/navigation/HardcodedInternalLink/HardcodedInternalLink.schema';
+import HeaderSchema from '~/components/navigation/Header/Header.schema';
 import InternalLinkSchema from '~/components/navigation/InternalLink/InternalLink.schema';
 import InternalLinkWithTitleSchema from '~/components/navigation/InternalLink/InternalLinkWithTitle.schema';
 import PageSchema from '~/components/pages/Page/Page.schema';
@@ -23,11 +25,15 @@ export const schemasIndex = [
   ExternalLinkWithTitleSchema,
   InternalLinkSchema,
   InternalLinkWithTitleSchema,
+  HardcodedInternalLinkSchema,
 
   // Prose
   BasicProseSchema,
   FullProseSchema,
   StockProseSchema,
+
+  // Navigation
+  HeaderSchema,
 
   // Settings
   AppSettingsSchema,

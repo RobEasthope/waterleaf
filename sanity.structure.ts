@@ -1,5 +1,5 @@
 import { BsBrush } from 'react-icons/bs';
-import { RiQuillPenLine } from 'react-icons/ri';
+import { RiCompasses2Line, RiQuillPenLine } from 'react-icons/ri';
 import { RxAvatar, RxGear, RxLayers } from 'react-icons/rx';
 import type {
   DefaultDocumentNodeResolver,
@@ -24,7 +24,21 @@ export const structure: StructureResolver = (S) =>
       S.documentTypeListItem('Page').title('Pages').icon(RiQuillPenLine),
       S.divider(),
       S.listItem()
+        .title('Navigation')
+        .icon(RiCompasses2Line)
+        .child(
+          S.list()
+            .title('Navigation')
+            .showIcons(false)
+            .items([
+              S.listItem()
+                .title('Header')
+                .child(S.document().schemaType('Header').documentId('Header')),
+            ]),
+        ),
+      S.listItem()
         .title('Settings')
+
         .icon(RxGear)
         .child(
           S.list()

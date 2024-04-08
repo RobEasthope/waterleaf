@@ -34,7 +34,7 @@ export default defineType({
     prepare({ title }: TitleListPreviewProps) {
       return {
         title: title || 'External link',
-        subtitle: 'External link' || '',
+        subtitle: title && 'External link',
       };
     },
   },
