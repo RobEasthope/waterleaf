@@ -9,7 +9,6 @@ export default defineType({
       name: 'rawHeaderNavigation',
       title: 'Header navigation',
       type: 'array',
-      description: 'Displayed on the left at larger sizes',
       of: [
         defineArrayMember({ type: 'InternalLinkWithTitle' }),
         defineArrayMember({ type: 'ExternalLinkWithTitle' }),
