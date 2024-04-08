@@ -10,9 +10,10 @@ export default defineType({
   icon: RiQuillPenLine,
   fields: [
     defineField({
-      name: 'title',
-      title: 'Page title',
+      name: 'name',
+      title: 'Page name',
       type: 'string',
+      description: 'Used for internal descriptive purposes only',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
@@ -34,21 +35,27 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'metadataTitle',
+      title: 'Page title',
+      description: 'Used in social media and search engine listings',
+      type: 'text',
+    }),
+    defineField({
       name: 'metadataDescription',
-      title: 'Metadata description',
+      title: 'Page description',
       description: 'Used in social media and search engine listings',
       type: 'text',
     }),
     defineField({
       name: 'metadataImage',
-      title: 'Metadata image',
+      title: 'Page thumbnail',
       description: 'Used in social media and search engine listings.',
       type: 'image',
     }),
   ],
   preview: {
     select: {
-      title: 'title',
+      title: 'name',
     },
     prepare({ title }: TitleAndSubTitleListPreviewProps) {
       return {
