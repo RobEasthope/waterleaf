@@ -8,7 +8,7 @@ import { structureTool } from 'sanity/structure';
 import { locate } from '~/sanity/presentation/locate';
 import { frontendUrl, projectDetails } from '~/sanity/projectDetails';
 
-export const config = defineConfig({
+export default defineConfig({
   ...projectDetails(),
   name: 'waterleaf',
   title: 'Waterleaf',
