@@ -5,7 +5,7 @@ import { TitleListPreviewProps } from '~/types/listPreviews';
 
 export default defineType({
   name: 'Maker',
-  title: 'Naker',
+  title: 'Cartographer/Author',
   type: 'document',
   icon: RxAvatar,
   fields: [
