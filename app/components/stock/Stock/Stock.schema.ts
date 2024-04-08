@@ -130,7 +130,12 @@ export default defineType({
       name: 'stockId',
       title: 'Stock ID',
       type: 'string',
-      validation: (Rule) => Rule.required().error(),
+    }),
+    defineField({
+      name: 'stripeId',
+      title: 'Stripe ID',
+      type: 'string',
+      readOnly: true,
     }),
   ],
   preview: {
