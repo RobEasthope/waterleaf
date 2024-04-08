@@ -54,6 +54,8 @@ export const defaultDocumentNode: DefaultDocumentNodeResolver = (
   switch (schemaType) {
     case `Stock`:
       return S.document().views([S.view.form(), OGPreviewView]);
+    case `Page`:
+      return S.document().views([S.view.form(), OGPreviewView]);
     default:
       return S.document().views([S.view.form()]);
   }
