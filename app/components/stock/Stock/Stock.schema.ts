@@ -165,6 +165,12 @@ export default defineType({
       group: 'config',
       validation: (Rule) => Rule.required().warning(),
     }),
+    defineField({
+      name: 'stripeId',
+      title: 'Stripe ID',
+      type: 'string',
+      readOnly: true,
+    }),
   ],
   preview: {
     select: {
