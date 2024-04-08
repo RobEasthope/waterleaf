@@ -27,11 +27,12 @@ export default defineType({
   preview: {
     select: {
       title: 'title',
+      subtitle: 'url',
     },
-    prepare({ title }: TitleAndSubTitleListPreviewProps) {
+    prepare({ title, subtitle }: TitleAndSubTitleListPreviewProps) {
       return {
         title: title || 'Hardcoded internal link',
-        subtitle: 'Hardcoded internal link' || '',
+        subtitle: subtitle || 'Hardcoded internal link',
       };
     },
   },
