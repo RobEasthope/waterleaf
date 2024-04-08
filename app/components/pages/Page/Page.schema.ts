@@ -10,7 +10,7 @@ export default defineType({
   icon: RiQuillPenLine,
   fields: [
     defineField({
-      name: 'name',
+      name: 'title',
       title: 'Page name',
       type: 'string',
       description: 'Used for internal descriptive purposes only',
@@ -55,12 +55,12 @@ export default defineType({
   ],
   preview: {
     select: {
-      title: 'name',
+      title: 'title',
     },
     prepare({ title }: TitleAndSubTitleListPreviewProps) {
       return {
         title: title || 'Page',
-        subtitle: title ? 'Page' : '',
+        subtitle: title && 'Page',
       };
     },
   },
