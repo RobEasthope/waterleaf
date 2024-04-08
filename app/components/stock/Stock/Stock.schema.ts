@@ -112,6 +112,7 @@ export default defineType({
       name: 'date',
       title: 'Date',
       type: 'number',
+      group: 'description',
       validation: (Rule) => Rule.required().error(),
     }),
     defineField({
