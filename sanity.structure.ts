@@ -34,7 +34,6 @@ export const structure: StructureResolver = (S) =>
                 .child(S.document().schemaType('Header').documentId('Header')),
             ]),
         ),
-      S.divider(),
       S.listItem()
         .title('Settings')
 
