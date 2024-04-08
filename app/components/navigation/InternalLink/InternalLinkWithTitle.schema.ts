@@ -35,7 +35,7 @@ export default defineType({
     prepare({ title }: TitleAndSubTitleListPreviewProps) {
       return {
         title: title || 'Internal link',
-        subtitle: 'Internal link' || '',
+        subtitle: title && 'Internal link',
       };
     },
   },
