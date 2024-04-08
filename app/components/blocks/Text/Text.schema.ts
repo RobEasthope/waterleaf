@@ -10,7 +10,7 @@ export default defineType({
     defineField({
       name: 'text',
       title: 'Text',
-      type: 'FullText',
+      type: 'FullProse',
       validation: (Rule) => Rule.required().warning('Text: Text is missing'),
     }),
   ],
