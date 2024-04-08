@@ -1,5 +1,5 @@
 import { BsBrush } from 'react-icons/bs';
-import { RxAvatar, RxInfoCircled, RxLayers } from 'react-icons/rx';
+import { RxAvatar, RxGear, RxLayers } from 'react-icons/rx';
 import type {
   DefaultDocumentNodeResolver,
   StructureResolver,
@@ -20,11 +20,21 @@ export const structure: StructureResolver = (S) =>
         .title('Cartographers/Authors')
         .icon(RxAvatar),
       S.divider(),
-      S.documentListItem()
-        .schemaType('AppSettings')
-        .icon(RxInfoCircled)
-        .id('AppSettings')
-        .title('App settings'),
+      S.listItem()
+        .title('Settings')
+        .icon(RxGear)
+        .child(
+          S.list()
+            .title('Settings')
+            .showIcons(false)
+            .items([
+              S.documentListItem()
+                .schemaType('AppSettings')
+                .icon(RxGear)
+                .id('AppSettings')
+                .title('App settings'),
+            ]),
+        ),
     ]);
 
 export const defaultDocumentNode: DefaultDocumentNodeResolver = (
