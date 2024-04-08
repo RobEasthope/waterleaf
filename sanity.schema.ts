@@ -1,3 +1,4 @@
+import TextSchema from '~/components/blocks/Text/Text.schema';
 import EmailLinkSchema from '~/components/navigation/EmailLink/EmailLink.schema';
 import EmailLinkWithTitleSchema from '~/components/navigation/EmailLink/EmailLinkWithTitle.schema';
 import ExternalLinkSchema from '~/components/navigation/ExternalLink/ExternalLink.schema';
@@ -6,6 +7,7 @@ import HardcodedInternalLinkSchema from '~/components/navigation/HardcodedIntern
 import HeaderSchema from '~/components/navigation/Header/Header.schema';
 import InternalLinkSchema from '~/components/navigation/InternalLink/InternalLink.schema';
 import InternalLinkWithTitleSchema from '~/components/navigation/InternalLink/InternalLinkWithTitle.schema';
+import PageSchema from '~/components/pages/Page/Page.schema';
 import AppSettingsSchema from '~/components/settings/AppSettings/AppSettings.schema';
 import CollectionSchemas from '~/components/stock/Collection/Collection.schemas';
 import MakerSchema from '~/components/stock/Maker/Maker.schema';
@@ -35,6 +37,12 @@ export const schemasIndex = [
 
   // Settings
   AppSettingsSchema,
+
+  // Blocks
+  TextSchema,
+
+  // Pages
+  PageSchema,
 
   // Stock
   StockImageSchema,

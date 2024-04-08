@@ -1,5 +1,5 @@
 import { BsBrush } from 'react-icons/bs';
-import { RiCompasses2Line } from 'react-icons/ri';
+import { RiCompasses2Line, RiQuillPenLine } from 'react-icons/ri';
 import { RxAvatar, RxGear, RxLayers } from 'react-icons/rx';
 import type {
   DefaultDocumentNodeResolver,
@@ -20,6 +20,8 @@ export const structure: StructureResolver = (S) =>
       S.documentTypeListItem('Maker')
         .title('Cartographers/Authors')
         .icon(RxAvatar),
+      S.divider(),
+      S.documentTypeListItem('Page').title('Pages').icon(RiQuillPenLine),
       S.divider(),
       S.listItem()
         .title('Navigation')
@@ -65,6 +67,8 @@ export const defaultDocumentNode: DefaultDocumentNodeResolver = (
 
   switch (schemaType) {
     case `Stock`:
+      return S.document().views([S.view.form(), OGPreviewView]);
+    case `Page`:
       return S.document().views([S.view.form(), OGPreviewView]);
     default:
       return S.document().views([S.view.form()]);
