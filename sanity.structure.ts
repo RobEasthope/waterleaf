@@ -1,4 +1,5 @@
 import { BsBrush } from 'react-icons/bs';
+import { RiQuillPenLine } from 'react-icons/ri';
 import { RxAvatar, RxGear, RxLayers } from 'react-icons/rx';
 import type {
   DefaultDocumentNodeResolver,
@@ -19,6 +20,8 @@ export const structure: StructureResolver = (S) =>
       S.documentTypeListItem('Maker')
         .title('Cartographers/Authors')
         .icon(RxAvatar),
+      S.divider(),
+      S.documentTypeListItem('Page').title('Pages').icon(RiQuillPenLine),
       S.divider(),
       S.listItem()
         .title('Settings')
