@@ -20,11 +20,21 @@ export const structure: StructureResolver = (S) =>
         .title('Cartographers/Authors')
         .icon(RxAvatar),
       S.divider(),
-      S.documentListItem()
-        .schemaType('AppSettings')
+      S.listItem()
+        .title('Settings')
         .icon(RxInfoCircled)
-        .id('AppSettings')
-        .title('App settings'),
+        .child(
+          S.list()
+            .title('Settings')
+            .showIcons(false)
+            .items([
+              S.documentListItem()
+                .schemaType('AppSettings')
+                .icon(RxInfoCircled)
+                .id('AppSettings')
+                .title('App settings'),
+            ]),
+        ),
     ]);
 
 export const defaultDocumentNode: DefaultDocumentNodeResolver = (
