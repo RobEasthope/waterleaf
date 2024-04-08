@@ -130,7 +130,6 @@ export default defineType({
       name: 'stockId',
       title: 'Stock ID',
       type: 'string',
-      validation: (Rule) => Rule.required().error(),
     }),
   ],
   preview: {
