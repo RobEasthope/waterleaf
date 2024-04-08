@@ -131,6 +131,12 @@ export default defineType({
       title: 'Stock ID',
       type: 'string',
     }),
+    defineField({
+      name: 'stripeId',
+      title: 'Stripe ID',
+      type: 'string',
+      readOnly: true,
+    }),
   ],
   preview: {
     select: {
