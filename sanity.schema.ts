@@ -4,6 +4,7 @@ import ExternalLinkSchema from '~/components/navigation/ExternalLink/ExternalLin
 import ExternalLinkWithTitleSchema from '~/components/navigation/ExternalLink/ExternalLinkWithTitle.schema';
 import InternalLinkSchema from '~/components/navigation/InternalLink/InternalLink.schema';
 import InternalLinkWithTitleSchema from '~/components/navigation/InternalLink/InternalLinkWithTitle.schema';
+import PageSchema from '~/components/pages/Page/Page.schema';
 import AppSettingsSchema from '~/components/settings/AppSettings/AppSettings.schema';
 import CollectionSchemas from '~/components/stock/Collection/Collection.schemas';
 import MakerSchema from '~/components/stock/Maker/Maker.schema';
@@ -29,6 +30,9 @@ export const schemasIndex = [
 
   // Settings
   AppSettingsSchema,
+
+  // Pages
+  PageSchema,
 
   // Stock
   StockImageSchema,
