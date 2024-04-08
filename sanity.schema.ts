@@ -1,3 +1,4 @@
+import TextSchema from '~/components/blocks/Text/Text.schema';
 import EmailLinkSchema from '~/components/navigation/EmailLink/EmailLink.schema';
 import EmailLinkWithTitleSchema from '~/components/navigation/EmailLink/EmailLinkWithTitle.schema';
 import ExternalLinkSchema from '~/components/navigation/ExternalLink/ExternalLink.schema';
@@ -30,6 +31,9 @@ export const schemasIndex = [
 
   // Settings
   AppSettingsSchema,
+
+  // Blocks
+  TextSchema,
 
   // Pages
   PageSchema,
