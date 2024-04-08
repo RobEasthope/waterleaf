@@ -9,3 +9,5 @@ node_modules
 
 *storybook.log
 vite.config.*.timestamp-*
+
+sanity.types.ts
