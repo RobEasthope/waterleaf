@@ -1,30 +1,25 @@
-import type {
-  ActionFunction,
-  LoaderFunctionArgs,
-  MetaFunction,
-} from '@remix-run/node';
-import { json } from '@remix-run/node';
+import type { LoaderFunctionArgs, MetaFunction } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
+import { useQuery } from '@sanity/react-loader';
 
-import { Record } from '~/components/decommisioning/Record/Record';
-import type { Loader as RootLoader } from '~/root';
+import { Loading } from '~/components/support/Loading/Loading';
+import type { loader as layoutLoader } from '~/routes/_app';
 import { OG_IMAGE_HEIGHT, OG_IMAGE_WIDTH } from '~/routes/resource.og';
-import { client } from '~/sanity/client';
-import { isStegaEnabled } from '~/sanity/isStegaEnabled.server';
-import { useQuery } from '~/sanity/loader';
 import { loadQuery } from '~/sanity/loader.server';
+import { loadQueryOptions } from '~/sanity/loadQueryOptions.server';
 import { RECORD_QUERY } from '~/sanity/queries';
-import type { RecordDocument } from '~/types/record';
-import { recordZ } from '~/types/record';
+import { type RecordDocument, recordZ } from '~/types/record';
 
 export const meta: MetaFunction<
   typeof loader,
   {
-    root: RootLoader;
+    'routes/_website': typeof layoutLoader;
   }
 > = ({ data, matches }) => {
-  const rootData = matches.find((match) => match.id === `root`)?.data;
-  const home = rootData ? rootData.initial.data : null;
+  const layoutData = matches.find(
+    (match) => match.id === `routes/_website`,
+  )?.data;
+  const home = layoutData ? layoutData.initial.data : null;
   const title = [data?.initial?.data?.title, home?.siteTitle]
     .filter(Boolean)
     .join(' | ');
@@ -43,15 +38,15 @@ export const meta: MetaFunction<
 
 // Load the `record` document with this slug
 export const loader = async ({ params, request }: LoaderFunctionArgs) => {
-  const stegaEnabled = isStegaEnabled(request.url);
+  const { options } = await loadQueryOptions(request.headers);
 
   const query = RECORD_QUERY;
-  // Params from the loader uses the filename
-  // $slug.tsx has the params { slug: 'hello-world' }
-  const queryParams = params;
-  const initial = await loadQuery<RecordDocument>(query, queryParams, {
-    perspective: stegaEnabled ? 'previewDrafts' : 'published',
-  }).then((res) => ({
+  const initial = await loadQuery<RecordDocument>(
+    query,
+    // $slug.tsx has the params { slug: 'hello-world' }
+    params,
+    options,
+  ).then((res) => ({
     ...res,
     data: res.data ? recordZ.parse(res.data) : null,
   }));
@@ -64,12 +59,12 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
   const { origin } = new URL(request.url);
   const ogImageUrl = `${origin}/resource/og?id=${initial.data._id}`;
 
-  return json({
+  return {
     initial,
     query,
-    params: queryParams,
+    params,
     ogImageUrl,
-  });
+  };
 };
 
 export default function RecordPage() {
@@ -78,14 +73,18 @@ export default function RecordPage() {
     query,
     params,
     {
+      // There's a TS issue with how initial comes over the wire
       // @ts-expect-error
       initial,
     },
   );
 
-  if (loading || !data) {
-    return <div>Loading...</div>;
+  if (loading && !data) {
+    return <Loading />;
+  }
+  if (!data || !initial.data) {
+    return <div>Not found</div>;
   }
 
-  return <div>Slug route</div>;
+  return <div>Page route</div>;
 }

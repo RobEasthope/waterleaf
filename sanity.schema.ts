@@ -17,7 +17,7 @@ import BasicProseSchema from '~/components/ui/Prose/components/BasicProse/BasicP
 import FullProseSchema from '~/components/ui/Prose/components/FullProse/FullProse.schema';
 import StockProseSchema from '~/components/ui/Prose/components/StockProse/StockProse.schema';
 
-export const schemasIndex = [
+export default [
   // Links
   EmailLinkSchema,
   EmailLinkWithTitleSchema,
