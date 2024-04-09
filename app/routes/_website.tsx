@@ -1,3 +1,5 @@
+import '~/app.css';
+
 import type { LoaderFunctionArgs } from '@remix-run/node';
 import { json, Outlet, useLoaderData, useLocation } from '@remix-run/react';
 import { useQuery } from '@sanity/react-loader';
