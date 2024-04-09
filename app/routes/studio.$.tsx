@@ -5,7 +5,7 @@ import { Studio } from 'sanity';
 
 import { Hydrated } from '~/components/support/Hydrated/Hydrated';
 
-import { config } from '../../sanity.config';
+import config from '../../sanity.config';
 
 export const meta: MetaFunction = () => [
   { title: 'Sanity Studio' },

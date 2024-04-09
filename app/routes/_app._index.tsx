@@ -1,11 +1,12 @@
 import type { LoaderFunctionArgs, MetaFunction } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
+import { useQuery } from '@sanity/react-loader';
 
-import type { Loader as RootLoader } from '~/root';
-import { isStegaEnabled } from '~/sanity/isStegaEnabled.server';
-import { useQuery } from '~/sanity/loader';
+import { Loading } from '~/components/support/Loading/Loading';
+import type { loader as layoutLoader } from '~/routes/_app';
 import { loadQuery } from '~/sanity/loader.server';
+import { loadQueryOptions } from '~/sanity/loadQueryOptions.server';
 import { RECORDS_QUERY } from '~/sanity/queries';
 import type { RecordStub } from '~/types/record';
 import { recordStubsZ } from '~/types/record';
@@ -13,23 +14,27 @@ import { recordStubsZ } from '~/types/record';
 export const meta: MetaFunction<
   typeof loader,
   {
-    root: RootLoader;
+    'routes/_website': typeof layoutLoader;
   }
 > = ({ matches }) => {
-  const rootData = matches.find((match) => match.id === `root`)?.data;
-  const home = rootData ? rootData.initial.data : null;
+  const layoutData = matches.find(
+    (match) => match.id === `routes/_website`,
+  )?.data;
+  const home = layoutData ? layoutData.initial.data : null;
   const title = [home?.title, home?.siteTitle].filter(Boolean).join(' | ');
 
   return [{ title }];
 };
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
-  const stegaEnabled = isStegaEnabled(request.url);
+  const { options } = await loadQueryOptions(request.headers);
   const query = RECORDS_QUERY;
   const queryParams = {};
-  const initial = await loadQuery<RecordStub[]>(query, queryParams, {
-    perspective: stegaEnabled ? 'previewDrafts' : 'published',
-  }).then((res) => ({
+  const initial = await loadQuery<RecordStub[]>(
+    query,
+    queryParams,
+    options,
+  ).then((res) => ({
     ...res,
     data: res.data ? recordStubsZ.parse(res.data) : null,
   }));
@@ -47,13 +52,21 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 
 export default function Index() {
   const { initial, query, params } = useLoaderData<typeof loader>();
-  const { data, loading } = useQuery<typeof initial.data>(query, params, {
-    // @ts-expect-error Sanity says to just expect the error due the problems of handling types in Sanity datasets after a certain point
-    initial,
-  });
+  const { data, loading, encodeDataAttribute } = useQuery<typeof initial.data>(
+    query,
+    params,
+    {
+      // There's a TS issue with how initial comes over the wire
+      // @ts-expect-error
+      initial,
+    },
+  );
 
-  if (loading || !data) {
-    return <div>Loading...</div>;
+  if (loading && !data) {
+    return <Loading />;
+  }
+  if (!data || !initial.data) {
+    return <div>Not found</div>;
   }
 
   return <div>Home</div>;
