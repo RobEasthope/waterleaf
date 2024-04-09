@@ -12,3 +12,4 @@ node_modules
 vite.config.*.timestamp-*
 
 sanity.types.ts
+schema.json
