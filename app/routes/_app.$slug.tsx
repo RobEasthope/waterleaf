@@ -3,7 +3,7 @@ import { useLoaderData } from '@remix-run/react';
 import { useQuery } from '@sanity/react-loader';
 
 import { Loading } from '~/components/support/Loading/Loading';
-import type { loader as layoutLoader } from '~/routes/_website';
+import type { loader as layoutLoader } from '~/routes/_app';
 import { OG_IMAGE_HEIGHT, OG_IMAGE_WIDTH } from '~/routes/resource.og';
 import { loadQuery } from '~/sanity/loader.server';
 import { loadQueryOptions } from '~/sanity/loadQueryOptions.server';

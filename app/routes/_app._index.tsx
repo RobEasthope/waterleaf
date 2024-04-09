@@ -4,7 +4,7 @@ import { useLoaderData } from '@remix-run/react';
 import { useQuery } from '@sanity/react-loader';
 
 import { Loading } from '~/components/support/Loading/Loading';
-import type { loader as layoutLoader } from '~/routes/_website';
+import type { loader as layoutLoader } from '~/routes/_app';
 import { loadQuery } from '~/sanity/loader.server';
 import { loadQueryOptions } from '~/sanity/loadQueryOptions.server';
 import { RECORDS_QUERY } from '~/sanity/queries';
