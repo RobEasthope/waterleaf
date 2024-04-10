@@ -8,7 +8,8 @@
     "lint": "eslint . --fix",
     "typecheck": "tsc --noEmit",
     "storybook": "storybook dev -p 6006 --no-open",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "sanity-typegen": "sanity schema extract && sanity typegen generate"
   },
   "dependencies": {
     "@faker-js/faker": "^8.4.1",
