@@ -10,7 +10,8 @@
     "storybook": "storybook dev -p 6006 --no-open",
     "build-storybook": "storybook build",
     "sanity-typegen": "sanity schema extract && sanity typegen generate",
-    "sanity-typegen:watch": "npm-watch sanity-typegen"
+    "sanity-typegen:watch": "npm-watch sanity-typegen",
+    "prebuild": "npm run sanity-typegen"
   },
   "watch": {
     "sanity-typegen": {
