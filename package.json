@@ -12,6 +12,16 @@
     "sanity-typegen": "sanity schema extract && sanity typegen generate",
     "sanity-typegen:watch": "npm-watch sanity-typegen"
   },
+  "watch": {
+    "sanity-typegen": {
+      "patterns": [
+        "./"
+      ],
+      "extensions": "schema.ts",
+      "quiet": true,
+      "runOnChangeOnly": true
+    }
+  },
   "dependencies": {
     "@faker-js/faker": "^8.4.1",
     "@portabletext/react": "^3.0.15",
