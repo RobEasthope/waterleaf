@@ -4,9 +4,12 @@ node_modules
 /build
 /public/build
 .env
+.env*.local
 !.env.template
 .vercel
 
 *storybook.log
 vite.config.*.timestamp-*
-.env*.local
+
+sanity.types.ts
+schema.json
