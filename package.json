@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "remix vite:build",
-    "dev": "concurrently \"pnpm:remix\" \"pnpm:sanity-typegen:watch\"",
+    "dev": "pnpm install && concurrently \"pnpm:remix\" \"pnpm:sanity-typegen:watch\"",
     "remix": "remix vite:dev",
     "lint": "eslint . --fix",
     "typecheck": "tsc --noEmit",
