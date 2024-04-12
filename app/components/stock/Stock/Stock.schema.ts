@@ -51,6 +51,15 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'officialTitle',
+      title: 'Official title',
+      description:
+        'Official title for the item as referenced in the literature',
+      type: 'string',
+      group: 'description',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: 'shortDescription',
       title: 'Short description',
       type: 'string',
