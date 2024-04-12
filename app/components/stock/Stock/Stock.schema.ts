@@ -103,7 +103,8 @@ export default defineType({
           to: [{ type: 'Collection' }],
         },
       ],
-      validation: (Rule) => Rule.required().warning(),
+      validation: (Rule) =>
+        Rule.required().warning('Please add to a collection '),
     }),
     defineField({
       name: 'stockType',
