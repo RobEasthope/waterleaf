@@ -37,6 +37,7 @@ export default defineType({
       name: 'description',
       title: 'Full stock description',
       type: 'StockProse',
+      description: 'Full description of the stock item',
       group: 'description',
       validation: (Rule) => Rule.required().warning(),
     }),
@@ -44,8 +45,18 @@ export default defineType({
       name: 'images',
       title: 'Images',
       type: 'array',
+      description: 'Stock imagery',
       of: [defineArrayMember({ type: 'StockImage' })],
       group: 'imagery',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'officialTitle',
+      title: 'Official title',
+      description:
+        'Official title for the item as referenced in the literature',
+      type: 'string',
+      group: 'description',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
@@ -101,7 +112,8 @@ export default defineType({
           to: [{ type: 'Collection' }],
         },
       ],
-      validation: (Rule) => Rule.required().warning(),
+      validation: (Rule) =>
+        Rule.required().warning('Please add to a collection '),
     }),
     defineField({
       name: 'stockType',

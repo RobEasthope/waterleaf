@@ -28,11 +28,13 @@ export default defineType({
   preview: {
     select: {
       title: 'title',
+      media: 'image',
     },
-    prepare({ title }: TitleListPreviewProps) {
+    prepare({ title, media }: TitleListPreviewProps) {
       return {
         title: title || 'Image',
         subtitle: title && 'Image',
+        media,
       };
     },
   },
