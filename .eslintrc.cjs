@@ -4,7 +4,6 @@ module.exports = {
     '@thoughtbot/eslint-config/typescript',
     'plugin:storybook/recommended',
     'plugin:prettier/recommended',
-    'testing-library',
   ],
   ignorePatterns: ['node_modules', 'build', '.cache'],
   plugins: ['prettier', 'simple-import-sort'],
@@ -16,6 +15,11 @@ module.exports = {
       rules: {
         'import/no-default-export': 'error',
       },
+    },
+    {
+      // 3) Now we enable eslint-plugin-testing-library rules or preset only for matching testing files!
+      files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
+      extends: ['plugin:testing-library/react'],
     },
   ],
   rules: {
