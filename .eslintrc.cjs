@@ -4,6 +4,7 @@ module.exports = {
     '@thoughtbot/eslint-config/typescript',
     'plugin:storybook/recommended',
     'plugin:prettier/recommended',
+    'testing-library',
   ],
   ignorePatterns: ['node_modules', 'build', '.cache'],
   plugins: ['prettier', 'simple-import-sort'],
