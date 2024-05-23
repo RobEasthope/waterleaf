@@ -12,7 +12,8 @@
     "build-storybook": "storybook build",
     "sanity-typegen": "sanity schema extract && sanity typegen generate",
     "sanity-typegen:watch": "npm-watch sanity-typegen",
-    "prepare": "pnpm run sanity-typegen"
+    "prepare": "pnpm run sanity-typegen",
+    "test": "vitest"
   },
   "watch": {
     "sanity-typegen": {
