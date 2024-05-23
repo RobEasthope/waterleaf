@@ -97,6 +97,7 @@
     "eslint-plugin-prettier": "^5.1.3",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-storybook": "^0.8.0",
+    "eslint-plugin-testing-library": "^6.2.2",
     "inquirer": "^9.2.22",
     "postcss": "^8.4.38",
     "prettier": "^3.2.5",
