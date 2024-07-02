@@ -3,4 +3,5 @@
     "@thoughtbot/eslint-config",
     "@thoughtbot/eslint-config/typescript",
   ],
+  "ignorePatterns": ["node_modules", "build", ".cache", ".vercel"],
 }
