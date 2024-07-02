@@ -22,7 +22,7 @@
     "prettier/prettier": [
       "error",
       {
-        "singleQuote": "false",
+        "singleQuote": false,
         "printWidth": 80,
         "trailingComma": "all",
       },
