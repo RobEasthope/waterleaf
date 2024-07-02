@@ -1,27 +1,29 @@
-import type { LoaderFunctionArgs } from "@remix-run/node";
+import type { LoaderFunctionArgs } from '@remix-run/node';
 import {
   json,
   Outlet,
   useLoaderData,
   useLocation,
   useOutletContext,
-} from "@remix-run/react";
-import { useQuery } from "@sanity/react-loader";
-import { VisualEditing } from "@sanity/visual-editing/remix";
-import { lazy, Suspense } from "react";
+} from '@remix-run/react';
+import { useQuery } from '@sanity/react-loader';
+import { VisualEditing } from '@sanity/visual-editing/remix';
+import { lazy, Suspense } from 'react';
 
-import { Footer } from "~/components/Footer";
-import { Header } from "~/components/Header";
-import { Title } from "~/components/Title";
-import { loadQuery } from "~/sanity/loader.server";
-import { loadQueryOptions } from "~/sanity/loadQueryOptions.server";
-import { HOME_QUERY } from "~/sanity/queries";
-import type { HomeDocument } from "~/types/home";
-import { homeZ } from "~/types/home";
-import type { ThemePreference } from "~/types/themePreference";
+import { Footer } from '~/components/Footer/Footer';
+import { Header } from '~/components/Header/Header';
+import { Title } from '~/components/Title/Title';
+import { loadQuery } from '~/sanity/loader.server';
+import { loadQueryOptions } from '~/sanity/loadQueryOptions.server';
+import { HOME_QUERY } from '~/sanity/queries';
+import type { HomeDocument } from '~/types/home';
+import { homeZ } from '~/types/home';
+import type { ThemePreference } from '~/types/themePreference';
 
-const SanityLiveMode = lazy(() => import("~/components/SanityLiveMode"));
-const ExitPreview = lazy(() => import("~/components/ExitPreview"));
+const SanityLiveMode = lazy(
+  () => import('~/components/SanityLiveMode/SanityLiveMode'),
+);
+const ExitPreview = lazy(() => import('~/components/ExitPreview/ExitPreview'));
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
   const { preview, options } = await loadQueryOptions(request.headers);
@@ -58,7 +60,7 @@ export default function Website() {
     <>
       <Header home={home} theme={theme} />
       <div className="container mx-auto p-4 lg:p-12 grid grid-cols-1 gap-4 lg:gap-12">
-        {home?.title && pathname === "/" ? <Title>{home?.title}</Title> : null}
+        {home?.title && pathname === '/' ? <Title>{home?.title}</Title> : null}
         <Outlet />
       </div>
       <Footer home={home} />
