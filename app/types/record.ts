@@ -1,4 +1,4 @@
-import {z} from 'zod'
+import { z } from "zod";
 
 // This is a Zod schema
 // https://zod.dev/
@@ -27,11 +27,11 @@ export const recordZ = z.object({
   // ...being a touch lazy here, these could be more strongly typed
   image: z.any().nullable(),
   content: z.array(z.any()).nullable(),
-})
+});
 
-export type RecordDocument = z.infer<typeof recordZ>
+export type RecordDocument = z.infer<typeof recordZ>;
 
-export const recordsZ = z.array(recordZ)
+export const recordsZ = z.array(recordZ);
 
 export const recordStubZ = z.object({
   _id: z.string(),
@@ -41,8 +41,8 @@ export const recordStubZ = z.object({
   slug: z.string().nullable(),
   artist: z.string().nullable(),
   image: z.any().nullable(),
-})
+});
 
-export const recordStubsZ = z.array(recordStubZ)
+export const recordStubsZ = z.array(recordStubZ);
 
-export type RecordStub = z.infer<typeof recordStubZ>
+export type RecordStub = z.infer<typeof recordStubZ>;

@@ -10,5 +10,5 @@ export function Header(props: LayoutProps) {
         <ThemeToggle theme={props.theme} />
       </div>
     </header>
-  )
+  );
 }
