@@ -10,8 +10,8 @@ import { useQuery } from "@sanity/react-loader";
 import { VisualEditing } from "@sanity/visual-editing/remix";
 import { lazy, Suspense } from "react";
 
-import { Footer } from "~/components/Footer/Footer";
-import { Header } from "~/components/Header/Header";
+import { Footer } from "~/components/navigation/Footer/Footer";
+import { Header } from "~/components/navigation/Header/Header";
 import { Title } from "~/components/Title/Title";
 import { loadQuery } from "~/sanity/loader.server";
 import { loadQueryOptions } from "~/sanity/loadQueryOptions.server";
