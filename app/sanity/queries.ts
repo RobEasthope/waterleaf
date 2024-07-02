@@ -1,6 +1,6 @@
-import groq from 'groq'
+import groq from "groq";
 
-export const HOME_QUERY = groq`*[_id == "home"][0]{ title, siteTitle }`
+export const HOME_QUERY = groq`*[_id == "home"][0]{ title, siteTitle }`;
 
 export const RECORDS_QUERY = groq`*[_type == "record"][0...12]|order(title asc){
     _id,
@@ -10,7 +10,7 @@ export const RECORDS_QUERY = groq`*[_type == "record"][0...12]|order(title asc){
     "slug": slug.current,
     "artist": artist->name,
     image
-  } | order(releaseDate desc)`
+  } | order(releaseDate desc)`;
 
 export const RECORD_QUERY = groq`*[_type == "record" && slug.current == $slug][0]{
   ...,
@@ -35,4 +35,4 @@ export const RECORD_QUERY = groq`*[_type == "record" && slug.current == $slug][0
     title,
     duration
   }
-}`
+}`;
