@@ -1,11 +1,11 @@
-import { createDataAttribute } from '@sanity/visual-editing/remix';
+import { createDataAttribute } from "@sanity/visual-editing/remix";
 
-import { LikeDislike } from '~/components/LikeDislike/LikeDislike';
-import { RecordCover } from '~/components/RecordCover/RecordCover';
-import { SanityContent } from '~/components/SanityContent/SanityContent';
-import { Title } from '~/components/Title/Title';
-import { secondsToMinutes } from '~/utils/secondsToMinutes';
-import type { RecordDocument } from '~/types/record';
+import { LikeDislike } from "~/components/LikeDislike/LikeDislike";
+import { RecordCover } from "~/components/RecordCover/RecordCover";
+import { SanityContent } from "~/components/SanityContent/SanityContent";
+import { Title } from "~/components/Title/Title";
+import type { RecordDocument } from "~/types/record";
+import { secondsToMinutes } from "~/utils/secondsToMinutes";
 
 type RecordProps = {
   data: RecordDocument;
@@ -15,9 +15,9 @@ export function Record({ data }: RecordProps) {
   const { _id, title, artist, content, image, tracks, likes, dislikes } = data;
   const imageDataAttribute = createDataAttribute({
     id: _id,
-    path: ['image'],
-    baseUrl: '/studio',
-    type: 'record',
+    path: ["image"],
+    baseUrl: "/studio",
+    type: "record",
   }).toString();
 
   return (
