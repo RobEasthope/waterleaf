@@ -21,9 +21,11 @@ import { homeZ } from "~/types/home";
 import type { ThemePreference } from "~/types/themePreference";
 
 const SanityLiveMode = lazy(
-  () => import("~/components/SanityLiveMode/SanityLiveMode"),
+  () => import("~/sanity/components/SanityLiveMode/SanityLiveMode"),
 );
-const ExitPreview = lazy(() => import("~/components/ExitPreview/ExitPreview"));
+const ExitPreview = lazy(
+  () => import("~/sanity/components/ExitPreview/ExitPreview"),
+);
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
   const { preview, options } = await loadQueryOptions(request.headers);
