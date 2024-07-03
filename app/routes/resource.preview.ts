@@ -6,7 +6,7 @@ import {
 } from "@remix-run/node";
 import { validatePreviewUrl } from "@sanity/preview-url-secret";
 
-import { client } from "~/sanity/client";
+import { client } from "~/components/sanity/client";
 import { commitSession, destroySession, getSession } from "~/sessions";
 
 // A `POST` request to this route will exit preview mode

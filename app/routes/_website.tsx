@@ -10,18 +10,22 @@ import { useQuery } from "@sanity/react-loader";
 import { VisualEditing } from "@sanity/visual-editing/remix";
 import { lazy, Suspense } from "react";
 
-import { Footer } from "~/components/Footer";
-import { Header } from "~/components/Header";
-import { Title } from "~/components/Title";
-import { loadQuery } from "~/sanity/loader.server";
-import { loadQueryOptions } from "~/sanity/loadQueryOptions.server";
-import { HOME_QUERY } from "~/sanity/queries";
+import { Title } from "~/components/_unsorted/Title/Title";
+import { Footer } from "~/components/navigation/Footer/Footer";
+import { Header } from "~/components/navigation/Header/Header";
+import { loadQuery } from "~/components/sanity/loader.server";
+import { loadQueryOptions } from "~/components/sanity/loadQueryOptions.server";
+import { HOME_QUERY } from "~/components/sanity/queries";
 import type { HomeDocument } from "~/types/home";
 import { homeZ } from "~/types/home";
 import type { ThemePreference } from "~/types/themePreference";
 
-const SanityLiveMode = lazy(() => import("~/components/SanityLiveMode"));
-const ExitPreview = lazy(() => import("~/components/ExitPreview"));
+const SanityLiveMode = lazy(
+  () => import("~/components/sanity/components/SanityLiveMode/SanityLiveMode"),
+);
+const ExitPreview = lazy(
+  () => import("~/components/sanity/components/ExitPreview/ExitPreview"),
+);
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
   const { preview, options } = await loadQueryOptions(request.headers);

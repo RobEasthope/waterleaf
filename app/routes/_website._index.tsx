@@ -2,11 +2,11 @@ import type { LoaderFunctionArgs, MetaFunction } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { useQuery } from "@sanity/react-loader";
 
-import { Records } from "~/components/Records";
+import { Records } from "~/components/_unsorted/Records/Records";
+import { loadQuery } from "~/components/sanity/loader.server";
+import { loadQueryOptions } from "~/components/sanity/loadQueryOptions.server";
+import { RECORDS_QUERY } from "~/components/sanity/queries";
 import type { loader as layoutLoader } from "~/routes/_website";
-import { loadQuery } from "~/sanity/loader.server";
-import { loadQueryOptions } from "~/sanity/loadQueryOptions.server";
-import { RECORDS_QUERY } from "~/sanity/queries";
 import type { RecordStub } from "~/types/record";
 import { recordStubsZ } from "~/types/record";
 

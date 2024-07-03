@@ -3,11 +3,14 @@ import { defineConfig } from "sanity";
 import { defineLocations, presentationTool } from "sanity/presentation";
 import { structureTool } from "sanity/structure";
 
-import { STUDIO_BASEPATH } from "~/sanity/constants";
-import { locate } from "~/sanity/presentation/locate";
-import { projectDetails } from "~/sanity/projectDetails";
-import schema from "~/sanity/schemaTypes";
-import { defaultDocumentNode, structure } from "~/sanity/structure";
+import { STUDIO_BASEPATH } from "~/components/sanity/constants";
+import { locate } from "~/components/sanity/presentation/locate";
+import { projectDetails } from "~/components/sanity/projectDetails";
+import schema from "~/components/sanity/sanity.schema";
+import {
+  defaultDocumentNode,
+  structure,
+} from "~/components/sanity/sanity.structure";
 
 export default defineConfig({
   ...projectDetails(),
