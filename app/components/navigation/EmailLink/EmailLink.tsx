@@ -1,15 +1,15 @@
-import { cn } from '~/utils/tailwind';
+import { cn } from "~/utils/tailwind";
 
 // Schema props
 export type EmailLinkWithTitleSchemaProps = {
-  _type: 'EmailLinkWithTitle';
+  _type: "EmailLinkWithTitle";
   _key: string;
   title: string;
   email: string;
 };
 
 export type EmailLinkSchemaProps = {
-  _type: 'EmailLinkSansTitle';
+  _type: "EmailLinkSansTitle";
   _key: string;
   newTab: boolean;
   email: string;
@@ -41,7 +41,7 @@ export function EmailLink({
       href={`mailto:${email}`}
       target="_blank"
       rel="noopener noreferrer"
-      className={cn(className, 'hover:text-saffron duration-300')}
+      className={cn(className, "hover:text-saffron duration-300")}
       {...rest}
     >
       {children || null}

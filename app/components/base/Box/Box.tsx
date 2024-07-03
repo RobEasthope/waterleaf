@@ -1,7 +1,7 @@
-import { cva, type VariantProps } from 'class-variance-authority';
-import { createElement, forwardRef } from 'react';
+import { cva, type VariantProps } from "class-variance-authority";
+import { createElement, forwardRef } from "react";
 
-import { areThereAnyStyles, cn } from '~/utils/tailwind';
+import { areThereAnyStyles, cn } from "~/utils/tailwind";
 
 const boxVariants = cva(
   // Base styles
@@ -9,16 +9,16 @@ const boxVariants = cva(
   {
     variants: {
       breakout: {
-        true: 'max-w-screen relative left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] w-screen',
+        true: "max-w-screen relative left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] w-screen",
       },
       maxWidth: {
-        none: '',
-        auto: 'max-w-auto',
-        small: 'max-w-lg',
-        text: 'max-w-prose',
-        medium: 'max-w-5xl',
-        large: 'max-w-7xl',
-        full: 'w-screen',
+        none: "",
+        auto: "max-w-auto",
+        small: "max-w-lg",
+        text: "max-w-prose",
+        medium: "max-w-5xl",
+        large: "max-w-7xl",
+        full: "w-screen",
       },
     },
     defaultVariants: {
@@ -34,7 +34,7 @@ export interface BoxProps
 }
 
 const Box = forwardRef<HTMLDivElement, BoxProps>(
-  ({ as = 'div', className, breakout, maxWidth, children, ...props }, ref) => {
+  ({ as = "div", className, breakout, maxWidth, children, ...props }, ref) => {
     if (!children) return null;
 
     return createElement(
@@ -51,6 +51,6 @@ const Box = forwardRef<HTMLDivElement, BoxProps>(
   },
 );
 
-Box.displayName = 'Box';
+Box.displayName = "Box";
 
 export { Box, boxVariants };

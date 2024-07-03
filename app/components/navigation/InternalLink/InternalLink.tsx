@@ -1,22 +1,22 @@
-import { Link } from '@remix-run/react';
+import { Link } from "@remix-run/react";
 
 import type { PageProps } from '~/components/generic/Page/Page';
 import { cn } from '~/utils/tailwind';
 
 // Schema props
 export type InternalLinkWithTitleSchemaProps = {
-  _type: 'InternalLinkWithTitle';
+  _type: "InternalLinkWithTitle";
   _key: string;
-  internalUID: SanityReference<PageProps['page']>;
-  to?: PageProps['page'];
+  internalUID: SanityReference<PageProps["page"]>;
+  to?: PageProps["page"];
   title: string;
 };
 
 export type InternalLinkSchemaProps = {
-  _type: 'InternalLinkSansTitle';
+  _type: "InternalLinkSansTitle";
   _key: string;
-  internalUID: SanityReference<PageProps['page']>;
-  to?: PageProps['page'];
+  internalUID: SanityReference<PageProps["page"]>;
+  to?: PageProps["page"];
 };
 
 // Component props
@@ -44,10 +44,10 @@ export function InternalLink({
 
   return (
     <Link
-      to={href === homePageSlug ? '/' : `/${href}`}
+      to={href === homePageSlug ? "/" : `/${href}`}
       role="link"
       tabIndex={0}
-      className={cn(className, 'hover:text-saffron duration-300')}
+      className={cn(className, "hover:text-saffron duration-300")}
       {...rest}
     >
       {children || null}

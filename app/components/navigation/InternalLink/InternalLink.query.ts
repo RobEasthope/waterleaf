@@ -1,4 +1,4 @@
-import groq from 'groq';
+import groq from "groq";
 
 export const INTERNAL_LINK_QUERY = groq`
   _type == "InternalLink" => {

@@ -1,15 +1,15 @@
-import { cn } from '~/utils/tailwind';
+import { cn } from "~/utils/tailwind";
 
 // Schema props
 export type ExternalLinkWithTitleSchemaProps = {
-  _type: 'ExternalLinkWithTitle';
+  _type: "ExternalLinkWithTitle";
   _key: string;
   title: string;
   url: string;
 };
 
 export type ExternalLinkSchemaProps = {
-  _type: 'ExternalLinkSansTitle';
+  _type: "ExternalLinkSansTitle";
   _key: string;
   newTab: boolean;
   url: string;
@@ -41,7 +41,7 @@ export function ExternalLink({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={cn(className, 'hover:text-saffron duration-300')}
+      className={cn(className, "hover:text-saffron duration-300")}
       {...rest}
     >
       {children || null}

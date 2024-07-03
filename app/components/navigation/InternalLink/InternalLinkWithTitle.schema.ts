@@ -1,28 +1,28 @@
-import { RiLinksLine } from 'react-icons/ri';
-import { defineField, defineType } from 'sanity';
+import { RiLinksLine } from "react-icons/ri";
+import { defineField, defineType } from "sanity";
 
-import type { TitleAndSubTitleListPreviewProps } from '~/types/listPreviews';
+import type { TitleAndSubTitleListPreviewProps } from "~/types/listPreviews";
 
-import { LINKABLE_DOC_TYPES } from './LINKABLE_DOC_TYPES';
+import { LINKABLE_DOC_TYPES } from "./LINKABLE_DOC_TYPES";
 
 export default defineType({
-  name: 'InternalLinkWithTitle',
-  title: 'Internal link',
-  type: 'object',
-  description: 'Link to a document on the site',
+  name: "InternalLinkWithTitle",
+  title: "Internal link",
+  type: "object",
+  description: "Link to a document on the site",
   icon: RiLinksLine,
   fields: [
     defineField({
-      name: 'title',
-      title: 'Title',
-      type: 'string',
+      name: "title",
+      title: "Title",
+      type: "string",
 
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'internalUID',
-      title: 'Page',
-      type: 'reference',
+      name: "internalUID",
+      title: "Page",
+      type: "reference",
       to: LINKABLE_DOC_TYPES,
 
       validation: (Rule) => Rule.required(),
@@ -30,12 +30,12 @@ export default defineType({
   ],
   preview: {
     select: {
-      title: 'title',
+      title: "title",
     },
     prepare({ title }: TitleAndSubTitleListPreviewProps) {
       return {
-        title: title || 'Internal link',
-        subtitle: title && 'Internal link',
+        title: title || "Internal link",
+        subtitle: title && "Internal link",
       };
     },
   },

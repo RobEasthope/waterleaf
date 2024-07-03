@@ -1,40 +1,40 @@
-import { RxLayers } from 'react-icons/rx';
-import { defineField, defineType } from 'sanity';
+import { RxLayers } from "react-icons/rx";
+import { defineField, defineType } from "sanity";
 
-import { TitleListPreviewProps } from '~/types/listPreviews';
+import { TitleListPreviewProps } from "~/types/listPreviews";
 
 export default defineType({
-  name: 'Collection',
-  title: 'Collection',
-  type: 'document',
+  name: "Collection",
+  title: "Collection",
+  type: "document",
   icon: RxLayers,
   fields: [
     defineField({
-      name: 'name',
-      type: 'string',
+      name: "name",
+      type: "string",
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'description',
-      type: 'text',
+      name: "description",
+      type: "text",
     }),
     defineField({
-      name: 'slug',
-      type: 'slug',
+      name: "slug",
+      type: "slug",
       options: {
-        source: 'name',
+        source: "name",
       },
       validation: (Rule) => Rule.required(),
     }),
   ],
   preview: {
     select: {
-      title: 'name',
+      title: "name",
     },
     prepare({ title }: TitleListPreviewProps) {
       return {
-        title: title || 'Unnamed Collection',
-        subtitle: title && 'Collection',
+        title: title || "Unnamed Collection",
+        subtitle: title && "Collection",
       };
     },
   },
