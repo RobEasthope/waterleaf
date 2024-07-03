@@ -7,7 +7,7 @@ import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { useQuery } from "@sanity/react-loader";
 
-import { Record } from "~/components/Record";
+import { Record } from "~/components/Record/Record";
 import type { loader as layoutLoader } from "~/routes/_website";
 import { OG_IMAGE_HEIGHT, OG_IMAGE_WIDTH } from "~/routes/resource.og";
 import { client } from "~/sanity/client";

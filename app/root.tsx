@@ -10,9 +10,9 @@ import {
 } from "@remix-run/react";
 
 import { themePreferenceCookie } from "~/cookies";
-import { getBodyClassNames } from "~/lib/getBodyClassNames";
 import styles from "~/tailwind.css?url";
 import { themePreference } from "~/types/themePreference";
+import { getBodyClassNames } from "~/utils/getBodyClassNames";
 
 export const links: LinksFunction = () => {
   return [
