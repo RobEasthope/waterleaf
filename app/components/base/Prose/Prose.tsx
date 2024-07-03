@@ -3,8 +3,8 @@ import "./prose.css";
 import type { PortableTextComponents } from "@portabletext/react";
 import { PortableText } from "@portabletext/react";
 
-import { Box } from '~/components/ui/Box/Box';
-import { cn } from '~/utils/tailwind';
+import { Box } from "~/components/base/Box/Box";
+import { cn } from "~/utils/tailwind";
 
 export type ProseProps = {
   as: string;

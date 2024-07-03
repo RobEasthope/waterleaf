@@ -7,7 +7,7 @@ import type { PortableTextComponents } from "@portabletext/react";
 import { EmailLink } from "~/components/navigation/EmailLink/EmailLink";
 import { ExternalLink } from "~/components/navigation/ExternalLink/ExternalLink";
 import { InternalLink } from "~/components/navigation/InternalLink/InternalLink";
-import { Type } from "~/components/ui/Type/Type";
+import { Type } from "~/components/base/Type/Type";
 
 export type StockProseProps = Array<SanityKeyed<SanityBlock>>;
 
