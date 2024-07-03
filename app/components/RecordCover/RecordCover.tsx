@@ -1,7 +1,7 @@
 import type { SanityImageObjectStub } from "@sanity/asset-utils";
 import urlBuilder from "@sanity/image-url";
 
-import { dataset, projectId } from "~/sanity/projectDetails";
+import { dataset, projectId } from "~/components/sanity/projectDetails";
 
 type RecordCoverProps = {
   image?: SanityImageObjectStub & { alt: string };

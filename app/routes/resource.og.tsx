@@ -1,7 +1,7 @@
 import type { LoaderFunctionArgs } from "@remix-run/node";
 import groq from "groq";
 
-import { viewClient } from "~/sanity/client.server";
+import { viewClient } from "~/components/sanity/client.server";
 import { generatePngFromDocument } from "~/utils/og.server";
 
 export const OG_IMAGE_WIDTH = 1200;

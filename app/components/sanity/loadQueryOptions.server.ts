@@ -1,7 +1,7 @@
 import type { loadQuery } from "@sanity/react-loader";
 
-import { client } from "~/sanity/client";
-import { STUDIO_BASEPATH } from "~/sanity/constants";
+import { client } from "~/components/sanity/client";
+import { STUDIO_BASEPATH } from "~/components/sanity/constants";
 import { getSession } from "~/sessions";
 
 // I wish I could do this in middleware

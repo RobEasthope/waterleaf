@@ -13,18 +13,18 @@ import { lazy, Suspense } from "react";
 import { Footer } from "~/components/navigation/Footer/Footer";
 import { Header } from "~/components/navigation/Header/Header";
 import { Title } from "~/components/Title/Title";
-import { loadQuery } from "~/sanity/loader.server";
-import { loadQueryOptions } from "~/sanity/loadQueryOptions.server";
-import { HOME_QUERY } from "~/sanity/queries";
+import { loadQuery } from "~/components/sanity/loader.server";
+import { loadQueryOptions } from "~/components/sanity/loadQueryOptions.server";
+import { HOME_QUERY } from "~/components/sanity/queries";
 import type { HomeDocument } from "~/types/home";
 import { homeZ } from "~/types/home";
 import type { ThemePreference } from "~/types/themePreference";
 
 const SanityLiveMode = lazy(
-  () => import("~/sanity/components/SanityLiveMode/SanityLiveMode"),
+  () => import("~/components/sanity/components/SanityLiveMode/SanityLiveMode"),
 );
 const ExitPreview = lazy(
-  () => import("~/sanity/components/ExitPreview/ExitPreview"),
+  () => import("~/components/sanity/components/ExitPreview/ExitPreview"),
 );
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {

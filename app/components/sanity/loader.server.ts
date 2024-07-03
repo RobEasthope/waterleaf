@@ -1,6 +1,6 @@
 import * as queryStore from "@sanity/react-loader";
 
-import { client } from "~/sanity/client";
+import { client } from "~/components/sanity/client";
 // import {STUDIO_BASEPATH} from '~/sanity/constants'
 
 // In a perfect world, these could be dynamic based on the Request
