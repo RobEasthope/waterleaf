@@ -1,5 +1,6 @@
 import tailwindcssTypography from "@tailwindcss/typography";
 import tailwindcssAnimate from "tailwindcss-animate";
+import tailwindcssRadixColors from "tailwindcss-radix-colors";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -76,5 +77,5 @@ export default {
       },
     },
   },
-  plugins: [tailwindcssAnimate, tailwindcssTypography],
+  plugins: [tailwindcssAnimate, tailwindcssTypography, tailwindcssRadixColors],
 };
