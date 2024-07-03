@@ -1,7 +1,7 @@
 import type { LinksFunction, MetaFunction } from "@remix-run/node";
 import { Studio } from "sanity";
 
-import { Hydrated } from "~/components/Hydrated/Hydrated";
+import { Hydrated } from "~/components/_unsorted/Hydrated/Hydrated";
 import studio from "~/styles/studio.css?url";
 
 import config from "../../sanity.config";

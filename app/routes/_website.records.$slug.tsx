@@ -7,13 +7,13 @@ import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { useQuery } from "@sanity/react-loader";
 
-import { Record } from "~/components/Record/Record";
-import type { loader as layoutLoader } from "~/routes/_website";
-import { OG_IMAGE_HEIGHT, OG_IMAGE_WIDTH } from "~/routes/resource.og";
 import { client } from "~/components/sanity/client";
 import { loadQuery } from "~/components/sanity/loader.server";
 import { loadQueryOptions } from "~/components/sanity/loadQueryOptions.server";
 import { RECORD_QUERY } from "~/components/sanity/queries";
+import { Record } from "~/components/_unsorted/Record/Record";
+import type { loader as layoutLoader } from "~/routes/_website";
+import { OG_IMAGE_HEIGHT, OG_IMAGE_WIDTH } from "~/routes/resource.og";
 import { type RecordDocument, recordZ } from "~/types/record";
 
 export const meta: MetaFunction<

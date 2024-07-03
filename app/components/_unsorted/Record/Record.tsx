@@ -1,8 +1,8 @@
 import { createDataAttribute } from "@sanity/visual-editing/remix";
 
-import { LikeDislike } from "~/components/LikeDislike/LikeDislike";
-import { RecordCover } from "~/components/RecordCover/RecordCover";
-import { Title } from "~/components/Title/Title";
+import { LikeDislike } from "~/components/_unsorted/LikeDislike/LikeDislike";
+import { RecordCover } from "~/components/_unsorted/RecordCover/RecordCover";
+import { Title } from "~/components/_unsorted/Title/Title";
 import { SanityContent } from "~/components/sanity/components/SanityContent/SanityContent";
 import type { RecordDocument } from "~/types/record";
 import { secondsToMinutes } from "~/utils/secondsToMinutes";
