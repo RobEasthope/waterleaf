@@ -12,19 +12,17 @@ import { client } from "~/components/sanity/client";
 import { loadQuery } from "~/components/sanity/loader.server";
 import { loadQueryOptions } from "~/components/sanity/loadQueryOptions.server";
 import { RECORD_QUERY } from "~/components/sanity/queries";
-import type { loader as layoutLoader } from "~/routes/_website";
+import type { loader as layoutLoader } from "~/routes/_app";
 import { OG_IMAGE_HEIGHT, OG_IMAGE_WIDTH } from "~/routes/resource.og";
 import { type RecordDocument, recordZ } from "~/types/record";
 
 export const meta: MetaFunction<
   typeof loader,
   {
-    "routes/_website": typeof layoutLoader;
+    "routes/_app": typeof layoutLoader;
   }
 > = ({ data, matches }) => {
-  const layoutData = matches.find(
-    (match) => match.id === `routes/_website`,
-  )?.data;
+  const layoutData = matches.find((match) => match.id === `routes/_app`)?.data;
   const home = layoutData ? layoutData.initial.data : null;
   const title = [data?.initial?.data?.title, home?.siteTitle]
     .filter(Boolean)
