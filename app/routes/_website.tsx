@@ -18,7 +18,6 @@ import { loadQueryOptions } from "~/components/sanity/loadQueryOptions.server";
 import { HOME_QUERY } from "~/components/sanity/queries";
 import type { HomeDocument } from "~/types/home";
 import { homeZ } from "~/types/home";
-import type { ThemePreference } from "~/types/themePreference";
 
 const SanityLiveMode = lazy(
   () => import("~/components/sanity/components/SanityLiveMode/SanityLiveMode"),
@@ -56,11 +55,10 @@ export default function Website() {
     initial,
   });
   const { pathname } = useLocation();
-  const { theme } = useOutletContext<{ theme: ThemePreference }>();
 
   return (
     <>
-      <Header home={home} theme={theme} />
+      <Header home={home} />
       <div className="container mx-auto p-4 lg:p-12 grid grid-cols-1 gap-4 lg:gap-12">
         {home?.title && pathname === "/" ? <Title>{home?.title}</Title> : null}
         <Outlet />
