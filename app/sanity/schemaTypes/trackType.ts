@@ -1,6 +1,6 @@
 import { defineField, defineType } from "sanity";
 
-import Duration from "~/sanity/components/Duration";
+import Duration from "~/sanity/components/Duration/Duration";
 import { secondsToMinutes } from "~/utils/secondsToMinutes";
 
 export const trackType = defineType({
