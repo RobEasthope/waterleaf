@@ -5,7 +5,7 @@ import type {
 } from "sanity/structure";
 
 import OGPreview from "~/sanity/components/OGPreview/OGPreview";
-import { resolveOGUrl } from "~/sanity/structure/resolveOGUrl";
+import { resolveOGUrl } from "~/sanity/utils/resolveOGUrl";
 
 export const structure: StructureResolver = (S) =>
   S.list()
