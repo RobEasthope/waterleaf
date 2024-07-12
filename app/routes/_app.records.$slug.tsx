@@ -1,14 +1,7 @@
-import type {
-  ActionFunction,
-  LoaderFunctionArgs,
-  MetaFunction,
-} from "@remix-run/node";
-import { json } from "@remix-run/node";
+import type { LoaderFunctionArgs, MetaFunction } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { useQuery } from "@sanity/react-loader";
 
-import { Record } from "~/components/_unsorted/Record/Record";
-import { client } from "~/components/sanity/client";
 import { loadQuery } from "~/components/sanity/loader.server";
 import { loadQueryOptions } from "~/components/sanity/loadQueryOptions.server";
 import { RECORD_QUERY } from "~/components/sanity/queries";
@@ -38,59 +31,6 @@ export const meta: MetaFunction<
     { property: "og:image:height", content: String(OG_IMAGE_HEIGHT) },
     { property: "og:image", content: ogImageUrl },
   ];
-};
-
-// Perform a `like` or `dislike` mutation on a `record` document
-export const action: ActionFunction = async ({ request }) => {
-  if (request.method !== "POST") {
-    throw new Response("Method not allowed", { status: 405 });
-  }
-
-  const writeClient = client.withConfig({
-    useCdn: false,
-    token: process.env.SANITY_WRITE_TOKEN,
-  });
-  const { token, projectId } = writeClient.config();
-
-  if (!token) {
-    throw new Response(
-      `Setup "SANITY_WRITE_TOKEN" with a token with "Editor" permissions to your environment variables. Create one at https://sanity.io/manage/project/${projectId}/api#tokens`,
-      { status: 401 },
-    );
-  }
-
-  const body = await request.formData();
-  const id = String(body.get("id"));
-  const action = String(body.get("action"));
-
-  if (id) {
-    switch (action) {
-      case "LIKE":
-        return await writeClient
-          .patch(id)
-          .setIfMissing({ likes: 0 })
-          .inc({ likes: 1 })
-          .commit()
-          .then(({ likes, dislikes }) => ({
-            likes: likes ?? 0,
-            dislikes: dislikes ?? 0,
-          }));
-      case "DISLIKE":
-        return await writeClient
-          .patch(id)
-          .setIfMissing({ dislikes: 0 })
-          .inc({ dislikes: 1 })
-          .commit()
-          .then(({ likes, dislikes }) => ({
-            likes: likes ?? 0,
-            dislikes: dislikes ?? 0,
-          }));
-      default:
-        return json({ message: "Invalid action" }, 400);
-    }
-  }
-
-  return json({ message: "Bad request" }, 400);
 };
 
 // Load the `record` document with this slug
