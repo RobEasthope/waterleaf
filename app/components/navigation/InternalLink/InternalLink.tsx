@@ -1,7 +1,7 @@
 import { Link } from "@remix-run/react";
 
-import type { PageProps } from '~/components/generic/Page/Page';
-import { cn } from '~/utils/tailwind';
+import type { PageProps } from "~/components/generic/Page/Page";
+import { cn } from "~/utils/tailwind";
 
 // Schema props
 export type InternalLinkWithTitleSchemaProps = {
