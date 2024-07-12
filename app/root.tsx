@@ -10,7 +10,6 @@ import {
 } from "@remix-run/react";
 
 import styles from "~/tailwind.css?url";
-import { getBodyClassNames } from "~/utils/getBodyClassNames";
 
 export const links: LinksFunction = () => {
   return [
@@ -35,17 +34,17 @@ export const links: LinksFunction = () => {
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
   return json({
-    bodyClassNames,
     ENV: {
-      VITE_SANITY_PROJECT_ID: import.meta.env.VITE_SANITY_PROJECT_ID,
-      VITE_SANITY_DATASET: import.meta.env.VITE_SANITY_DATASET,
-      VITE_SANITY_API_VERSION: import.meta.env.VITE_SANITY_API_VERSION,
+      VITE_SANITY_PROJECT_ID: import.meta.env.VITE_SANITY_PROJECT_ID as unknown,
+      VITE_SANITY_DATASET: import.meta.env.VITE_SANITY_DATASET as unknown,
+      VITE_SANITY_API_VERSION: import.meta.env
+        .VITE_SANITY_API_VERSION as unknown,
     },
   });
 };
 
 export default function App() {
-  const { bodyClassNames, ENV } = useLoaderData<typeof loader>();
+  const { ENV } = useLoaderData<typeof loader>();
 
   return (
     <html lang="en">
@@ -56,10 +55,11 @@ export default function App() {
         <link rel="icon" href="https://fav.farm/🤘" />
         <Links />
       </head>
-      <body className={bodyClassNames}>
+      <body>
         <Outlet />
         <ScrollRestoration />
         <script
+          // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{
             __html: `window.ENV = ${JSON.stringify(ENV)}`,
           }}

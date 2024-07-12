@@ -1,29 +1,30 @@
 import { Link } from "@remix-run/react";
+import { SanityReference } from "@sanity/asset-utils";
+import React from "react";
 
-import type { PageProps } from '~/components/generic/Page/Page';
-import { cn } from '~/utils/tailwind';
+import { cn } from "~/utils/tailwind";
 
 // Schema props
 export type InternalLinkWithTitleSchemaProps = {
   _type: "InternalLinkWithTitle";
   _key: string;
-  internalUID: SanityReference<PageProps["page"]>;
-  to?: PageProps["page"];
+  internalUID: SanityReference;
+  to?: unknown;
   title: string;
 };
 
 export type InternalLinkSchemaProps = {
   _type: "InternalLinkSansTitle";
   _key: string;
-  internalUID: SanityReference<PageProps["page"]>;
-  to?: PageProps["page"];
+  internalUID: SanityReference;
+  to?: unknown;
 };
 
 // Component props
 export type InternalLinkProps = React.HTMLAttributes<HTMLAnchorElement> & {
   href: string | undefined;
   className?: string;
-  children: any;
+  children: React.ReactNode;
   homePageSlug?: string;
 };
 

@@ -1,9 +1,10 @@
 import { PortableText } from "@portabletext/react";
+import { TypedObject } from "sanity";
 
 import { SanityImage } from "~/components/base/SanityImage/SanityImage";
 
 type ContentProps = {
-  value: any[];
+  value: TypedObject[];
 };
 
 const components = {

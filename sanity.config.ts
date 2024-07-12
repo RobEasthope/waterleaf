@@ -4,6 +4,7 @@ import { defineLocations, presentationTool } from "sanity/presentation";
 import { structureTool } from "sanity/structure";
 
 import { STUDIO_BASEPATH } from "~/components/sanity/constants";
+// import { locate } from "~/components/sanity/presentation/locate";
 import { projectDetails } from "~/components/sanity/projectDetails";
 import schema from "~/components/sanity/sanity.schema";
 import {
@@ -33,8 +34,9 @@ export default defineConfig({
             resolve: (doc) => ({
               locations: [
                 {
+                  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                   title: doc?.title || "Untitled",
-                  href: `/records/${doc?.slug}`,
+                  href: `/records/${String(doc?.slug)}`,
                 },
                 { title: "Home", href: `/` },
               ],

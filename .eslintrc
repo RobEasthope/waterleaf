@@ -19,6 +19,10 @@
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
     "import/prefer-default-export": "off",
+    // Switch off no-underscore-dangle rule as Sanity uses them a lot for internal properties
+    "no-underscore-dangle": "off",
+
+    // Prettier rules
     "prettier/prettier": [
       "error",
       {

@@ -2,7 +2,6 @@ import type { LoaderFunctionArgs, MetaFunction } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { useQuery } from "@sanity/react-loader";
 
-import { Records } from "~/components/_unsorted/Records/Records";
 import { loadQuery } from "~/components/sanity/loader.server";
 import { loadQueryOptions } from "~/components/sanity/loadQueryOptions.server";
 import { RECORDS_QUERY } from "~/components/sanity/queries";
@@ -45,7 +44,7 @@ export default function Index() {
   const { initial, query, params } = useLoaderData<typeof loader>();
   const { data } = useQuery<typeof initial.data>(query, params, {
     // There's a TS issue with how initial comes over the wire
-    // @ts-expect-error
+    // @ts-expect-error Remix should fix this
     initial,
   });
 

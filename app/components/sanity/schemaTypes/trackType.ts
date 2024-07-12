@@ -26,7 +26,7 @@ export const trackType = defineType({
       title: "title",
       duration: "duration",
     },
-    prepare({ title, duration }) {
+    prepare({ title, duration }: { title: string; duration: number }) {
       return {
         title,
         subtitle: secondsToMinutes(duration),

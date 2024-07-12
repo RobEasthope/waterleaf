@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { Resvg } from "@resvg/resvg-js";
 import type { SanityDocument } from "@sanity/client";
 import urlBuilder from "@sanity/image-url";
@@ -5,6 +7,7 @@ import type { SatoriOptions } from "satori";
 import satori from "satori";
 
 import { dataset, projectId } from "~/components/sanity/projectDetails";
+// eslint-disable-next-line import/no-cycle
 import { OG_IMAGE_HEIGHT, OG_IMAGE_WIDTH } from "~/routes/resource.og";
 
 // Load the font from the "public" directory
@@ -75,7 +78,6 @@ export async function generatePngFromDocument(
           <img
             alt=""
             src={urlBuilder({ projectId, dataset })
-              // @ts-ignore
               .image(image.asset._ref)
               .height(800)
               .width(800)

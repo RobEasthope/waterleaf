@@ -2,6 +2,7 @@ import type { LoaderFunctionArgs } from "@remix-run/node";
 import groq from "groq";
 
 import { viewClient } from "~/components/sanity/client.server";
+// eslint-disable-next-line import/no-cycle
 import { generatePngFromDocument } from "~/utils/og.server";
 
 export const OG_IMAGE_WIDTH = 1200;
@@ -15,6 +16,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
     return new Response("Bad request", { status: 400 });
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const doc = await viewClient.fetch(groq`*[_id == $id][0]{ ..., artist-> }`, {
     id,
   });
@@ -24,6 +26,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
     return new Response("Bad request", { status: 400 });
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
   const png = await generatePngFromDocument(doc, origin);
 
   // Respond with the PNG buffer

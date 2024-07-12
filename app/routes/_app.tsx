@@ -1,11 +1,5 @@
 import type { LoaderFunctionArgs } from "@remix-run/node";
-import {
-  json,
-  Outlet,
-  useLoaderData,
-  useLocation,
-  useOutletContext,
-} from "@remix-run/react";
+import { json, Outlet, useLoaderData, useLocation } from "@remix-run/react";
 import { useQuery } from "@sanity/react-loader";
 import { VisualEditing } from "@sanity/visual-editing/remix";
 import { lazy, Suspense } from "react";
@@ -51,7 +45,7 @@ export default function Website() {
   const { initial, query, params, sanity } = useLoaderData<typeof loader>();
   const { data: home } = useQuery<typeof initial.data>(query, params, {
     // There's a TS issue with how initial comes over the wire
-    // @ts-expect-error
+    // @ts-expect-error Remix should fix this
     initial,
   });
   const { pathname } = useLocation();
