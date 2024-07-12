@@ -35,9 +35,10 @@ export const links: LinksFunction = () => {
 export const loader = async ({ request }: LoaderFunctionArgs) => {
   return json({
     ENV: {
-      VITE_SANITY_PROJECT_ID: import.meta.env.VITE_SANITY_PROJECT_ID,
-      VITE_SANITY_DATASET: import.meta.env.VITE_SANITY_DATASET,
-      VITE_SANITY_API_VERSION: import.meta.env.VITE_SANITY_API_VERSION,
+      VITE_SANITY_PROJECT_ID: import.meta.env.VITE_SANITY_PROJECT_ID as unknown,
+      VITE_SANITY_DATASET: import.meta.env.VITE_SANITY_DATASET as unknown,
+      VITE_SANITY_API_VERSION: import.meta.env
+        .VITE_SANITY_API_VERSION as unknown,
     },
   });
 };
