@@ -143,7 +143,7 @@ export default defineType({
       title: "Quantity",
       type: "number",
       group: "config",
-      hidden: ({ parent, value }) => !value && parent?.singleItem,
+      // hidden: ({ parent, value }) => !value && parent?.singleItem,
     }),
     defineField({
       name: "active",
