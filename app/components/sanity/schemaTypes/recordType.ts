@@ -103,7 +103,15 @@ export const recordType = defineType({
       artist: "artist.name",
       media: "image",
     },
-    prepare({ title, artist, media }) {
+    prepare({
+      title,
+      artist,
+      media,
+    }: {
+      title: string;
+      artist: string;
+      media: string;
+    }) {
       return {
         title,
         subtitle: artist,
