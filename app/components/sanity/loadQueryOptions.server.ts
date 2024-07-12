@@ -17,7 +17,7 @@ export async function loadQueryOptions(
     throw new Error(
       `Cannot activate preview mode without a "SANITY_READ_TOKEN" token in your environment variables. \n\n
       Create one with "Viewer" permissions at\n\n
-      https://sanity.io/manage/project/${client.config().projectId}/api#tokens`,
+      https://sanity.io/manage/project/${String(client.config().projectId)}/api#tokens`,
     );
   }
 
