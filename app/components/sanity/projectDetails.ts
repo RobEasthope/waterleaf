@@ -14,15 +14,15 @@ declare global {
   }
 }
 
-let projectId: string | undefined;
-let dataset: string | undefined;
-let apiVersion: string | undefined;
+let projectId: string;
+let dataset: string;
+let apiVersion: string;
 const defaultApiVersion = `2024-02-13`;
 
 if (typeof document === "undefined") {
   if (typeof process !== "undefined") {
-    projectId = process.env.VITE_SANITY_PROJECT_ID;
-    dataset = process.env.VITE_SANITY_DATASET;
+    projectId = process.env.VITE_SANITY_PROJECT_ID || "";
+    dataset = process.env.VITE_SANITY_DATASET || "";
     apiVersion = process.env.VITE_SANITY_API_VERSION ?? defaultApiVersion;
   } else {
     projectId = import.meta.env.VITE_SANITY_PROJECT_ID as string;
