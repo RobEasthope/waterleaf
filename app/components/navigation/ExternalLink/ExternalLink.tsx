@@ -1,3 +1,5 @@
+import React from "react";
+
 import { cn } from "~/utils/tailwind";
 
 // Schema props
@@ -19,7 +21,7 @@ export type ExternalLinkSchemaProps = {
 export type ExternalLinkProps = React.HTMLAttributes<HTMLAnchorElement> & {
   href: string | null;
   className?: string;
-  children: any;
+  children: React.ReactNode;
 };
 
 export function ExternalLink({

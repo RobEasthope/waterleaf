@@ -1,3 +1,5 @@
+import React from "react";
+
 import { cn } from "~/utils/tailwind";
 
 // Schema props
@@ -19,7 +21,7 @@ export type EmailLinkSchemaProps = {
 export type EmailLinkProps = React.HTMLAttributes<HTMLAnchorElement> & {
   email: string | null;
   className?: string;
-  children: any;
+  children: React.ReactNode;
 };
 
 export function EmailLink({
