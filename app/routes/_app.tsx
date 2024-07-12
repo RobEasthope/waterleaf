@@ -1,11 +1,5 @@
 import type { LoaderFunctionArgs } from "@remix-run/node";
-import {
-  json,
-  Outlet,
-  useLoaderData,
-  useLocation,
-  useOutletContext,
-} from "@remix-run/react";
+import { json, Outlet, useLoaderData, useLocation } from "@remix-run/react";
 import { useQuery } from "@sanity/react-loader";
 import { VisualEditing } from "@sanity/visual-editing/remix";
 import { lazy, Suspense } from "react";
