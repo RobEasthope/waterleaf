@@ -34,7 +34,7 @@ export default defineConfig({
               locations: [
                 {
                   title: doc?.title || "Untitled",
-                  href: `/records/${doc?.slug}`,
+                  href: `/records/${String(doc?.slug)}`,
                 },
                 { title: "Home", href: `/` },
               ],
