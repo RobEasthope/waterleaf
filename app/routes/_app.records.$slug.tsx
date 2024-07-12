@@ -132,5 +132,5 @@ export default function RecordPage() {
     initial,
   });
 
-  return data ? <Record data={data} /> : null;
+  return data ? <div>Page data</div> : null;
 }

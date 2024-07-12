@@ -49,5 +49,5 @@ export default function Index() {
     initial,
   });
 
-  return data ? <Records records={data} /> : null;
+  return data ? <div>Page data</div> : null;
 }
