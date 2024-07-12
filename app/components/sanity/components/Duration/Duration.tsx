@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 import { Box, Code, Flex } from "@sanity/ui";
 import type { NumberInputProps } from "sanity";
 
