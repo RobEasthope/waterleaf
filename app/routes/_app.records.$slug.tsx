@@ -128,7 +128,7 @@ export default function RecordPage() {
   const { initial, query, params } = useLoaderData<typeof loader>();
   const { data } = useQuery<typeof initial.data>(query, params, {
     // There's a TS issue with how initial comes over the wire
-    // @ts-expect-error
+    // @ts-expect-error Remix should fix this
     initial,
   });
 

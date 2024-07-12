@@ -51,7 +51,7 @@ export default function Website() {
   const { initial, query, params, sanity } = useLoaderData<typeof loader>();
   const { data: home } = useQuery<typeof initial.data>(query, params, {
     // There's a TS issue with how initial comes over the wire
-    // @ts-expect-error
+    // @ts-expect-error Remix should fix this
     initial,
   });
   const { pathname } = useLocation();
