@@ -76,7 +76,6 @@ export async function generatePngFromDocument(
           <img
             alt=""
             src={urlBuilder({ projectId, dataset })
-              // @ts-ignore
               .image(image.asset._ref)
               .height(800)
               .width(800)
