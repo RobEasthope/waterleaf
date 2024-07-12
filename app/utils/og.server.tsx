@@ -5,6 +5,7 @@ import type { SatoriOptions } from "satori";
 import satori from "satori";
 
 import { dataset, projectId } from "~/components/sanity/projectDetails";
+// eslint-disable-next-line import/no-cycle
 import { OG_IMAGE_HEIGHT, OG_IMAGE_WIDTH } from "~/routes/resource.og";
 
 // Load the font from the "public" directory
