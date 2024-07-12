@@ -30,7 +30,6 @@ export function Record({ data }: RecordProps) {
       </div>
       <div className="flex flex-shrink-0 flex-col gap-4 lg:gap-6 lg:w-2/3">
         <header>
-          {title ? <Title>{title}</Title> : null}
           {artist ? (
             <h2 className="bg-black text-2xl font-bold tracking-tighter text-white">
               {artist}
