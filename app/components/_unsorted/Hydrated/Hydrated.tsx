@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 let isHydrating = true;
 
-export function Hydrated(props: PropsWithChildren): JSX.Element {
+export function Hydrated({ children }: PropsWithChildren): JSX.Element {
   const [isHydrated, setIsHydrated] = useState(!isHydrating);
 
   useEffect(() => {
@@ -12,5 +12,6 @@ export function Hydrated(props: PropsWithChildren): JSX.Element {
     setIsHydrated(true);
   }, []);
 
-  return isHydrated && props.children ? <>{props.children}</> : <></>;
+  // eslint-disable-next-line react/jsx-no-useless-fragment
+  return isHydrated && children ? <>{children}</> : <></>;
 }

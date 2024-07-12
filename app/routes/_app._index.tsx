@@ -6,19 +6,17 @@ import { Records } from "~/components/_unsorted/Records/Records";
 import { loadQuery } from "~/components/sanity/loader.server";
 import { loadQueryOptions } from "~/components/sanity/loadQueryOptions.server";
 import { RECORDS_QUERY } from "~/components/sanity/queries";
-import type { loader as layoutLoader } from "~/routes/_website";
+import type { loader as layoutLoader } from "~/routes/_app";
 import type { RecordStub } from "~/types/record";
 import { recordStubsZ } from "~/types/record";
 
 export const meta: MetaFunction<
   typeof loader,
   {
-    "routes/_website": typeof layoutLoader;
+    "routes/_app": typeof layoutLoader;
   }
 > = ({ matches }) => {
-  const layoutData = matches.find(
-    (match) => match.id === `routes/_website`,
-  )?.data;
+  const layoutData = matches.find((match) => match.id === `routes/_app`)?.data;
   const home = layoutData ? layoutData.initial.data : null;
   const title = [home?.title, home?.siteTitle].filter(Boolean).join(" | ");
 
@@ -51,5 +49,5 @@ export default function Index() {
     initial,
   });
 
-  return data ? <Records records={data} /> : null;
+  return data ? <div>Page data</div> : null;
 }

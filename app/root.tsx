@@ -9,9 +9,7 @@ import {
   useLoaderData,
 } from "@remix-run/react";
 
-import { themePreferenceCookie } from "~/cookies";
 import styles from "~/tailwind.css?url";
-import { themePreference } from "~/types/themePreference";
 import { getBodyClassNames } from "~/utils/getBodyClassNames";
 
 export const links: LinksFunction = () => {
@@ -36,14 +34,7 @@ export const links: LinksFunction = () => {
 };
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
-  // Dark/light mode
-  const cookieHeader = request.headers.get("Cookie");
-  const cookieValue = (await themePreferenceCookie.parse(cookieHeader)) || {};
-  const theme = themePreference.parse(cookieValue.themePreference) || "light";
-  const bodyClassNames = getBodyClassNames(theme);
-
   return json({
-    theme,
     bodyClassNames,
     ENV: {
       VITE_SANITY_PROJECT_ID: import.meta.env.VITE_SANITY_PROJECT_ID,
@@ -54,7 +45,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 };
 
 export default function App() {
-  const { theme, bodyClassNames, ENV } = useLoaderData<typeof loader>();
+  const { bodyClassNames, ENV } = useLoaderData<typeof loader>();
 
   return (
     <html lang="en">
@@ -66,7 +57,7 @@ export default function App() {
         <Links />
       </head>
       <body className={bodyClassNames}>
-        <Outlet context={{ theme }} />
+        <Outlet />
         <ScrollRestoration />
         <script
           dangerouslySetInnerHTML={{
